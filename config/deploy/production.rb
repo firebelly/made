@@ -1,6 +1,6 @@
 set :stage, :production
 set :login, 'firebelly'
-set :application, 'fb-bedrock'
+set :application, 'made-staging'
 
 
 # Simple Role Syntax
