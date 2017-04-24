@@ -1,6 +1,6 @@
 set :application, 'made_staging'
 set :domain, 'made.firebelly.co'
-set :theme, 'agency'
+set :theme, 'infinity'
 set :login, 'firebelly'
 set :repo_url, 'git@github.com:firebelly/made.git'
 set :php, 'php70'
