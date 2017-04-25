@@ -51,6 +51,7 @@ function infinity_enqueue_scripts_styles() {
 
 	wp_enqueue_style( 'infinity-fonts', '//fonts.googleapis.com/css?family=Cormorant+Garamond:400,400i,700|Raleway:700', array(), CHILD_THEME_VERSION );
 	wp_enqueue_style( 'infinity-ionicons', '//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css', array(), CHILD_THEME_VERSION );
+	wp_enqueue_style( 'main-css', get_stylesheet_directory_uri() . '/css/main.min.css', array(), CHILD_THEME_VERSION );
 
 	wp_enqueue_script( 'infinity-match-height', get_stylesheet_directory_uri() . '/js/match-height.js', array( 'jquery' ), '0.5.2', true );
 	wp_enqueue_script( 'infinity-global', get_stylesheet_directory_uri() . '/js/global.js', array( 'jquery', 'infinity-match-height' ), '1.0.0', true );

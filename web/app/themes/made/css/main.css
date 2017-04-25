@@ -3058,3 +3058,16 @@ Loaded on the front page */
     margin-bottom: 20px;
   }
 }
+.front-page-1 {
+  height: 70vh;
+}
+
+.front-page-2 {
+  padding-top: 50px;
+}
+
+.entry-content, .entry-header {
+  max-width: 1000px;
+  margin: auto;
+  text-align: left;
+}
