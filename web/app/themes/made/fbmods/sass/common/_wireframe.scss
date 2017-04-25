@@ -6,12 +6,50 @@
   padding-top: 50px;
 }
 
+// Home page
+// Add footer
+// Featured Art -- get rid of your smartass nonsense replace with latin
+
+
+// ABout page
+// Artist profiles -- and artist pages -- rows 3
+// Add big image below boty anthology text
+
+// X images
+
 // Make sticky nav ALWAYS be white (.white)
 // implement calibre
 // pink-> gray
 
+// POSTS
+// featured images 
+// inline images (are captions possible?)
+
+//  Cat Project -> Current Project
+
+// LISTING
+// shorten excerpts
+// Add featured image
+// remove category meta and author meta
+
+
+// Qs
+// Sample Content
+
+// FEATURED ARTWORK
+
+
+
 .entry-content, .entry-header {
-    max-width: 1000px;
+    max-width: 1024px;
     margin: auto;
     text-align: left;
+}
+
+.archive .archive-description, .page .entry-header {
+  display: none !important;
+}
+
+.archive .category-featured-artwork .entry-title {
+  font-size: 3rem;
 }

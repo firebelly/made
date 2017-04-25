@@ -3067,7 +3067,15 @@ Loaded on the front page */
 }
 
 .entry-content, .entry-header {
-  max-width: 1000px;
+  max-width: 1024px;
   margin: auto;
   text-align: left;
+}
+
+.archive .archive-description, .page .entry-header {
+  display: none !important;
+}
+
+.archive .category-featured-artwork .entry-title {
+  font-size: 3rem;
 }
