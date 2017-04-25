@@ -51,7 +51,6 @@ function infinity_enqueue_scripts_styles() {
 
 	wp_enqueue_style( 'infinity-fonts', '//fonts.googleapis.com/css?family=Cormorant+Garamond:400,400i,700|Raleway:700', array(), CHILD_THEME_VERSION );
 	wp_enqueue_style( 'infinity-ionicons', '//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css', array(), CHILD_THEME_VERSION );
-	wp_enqueue_style( 'main-css', get_stylesheet_directory_uri() . '/css/main.min.css', array(), CHILD_THEME_VERSION );
 
 	wp_enqueue_script( 'infinity-match-height', get_stylesheet_directory_uri() . '/js/match-height.js', array( 'jquery' ), '0.5.2', true );
 	wp_enqueue_script( 'infinity-global', get_stylesheet_directory_uri() . '/js/global.js', array( 'jquery', 'infinity-match-height' ), '1.0.0', true );
@@ -286,3 +285,17 @@ genesis_register_sidebar( array(
 	'name'        => __( 'Offscreen Content', 'infinity-pro' ),
 	'description' => __( 'This is the offscreen content section.', 'infinity-pro' ),
 ) );
+
+
+
+
+
+
+// FIREBELLY ADDITIONS -- to refactor to a seperate file as soon as I get around to it
+
+// Enqueue scripts and styles.
+add_action( 'wp_enqueue_scripts', 'fb_enqueue_scripts_styles' );
+function fb_enqueue_scripts_styles() {
+	wp_enqueue_style( 'main-css', get_stylesheet_directory_uri() . '/fbmods/css/main.min.css', array(), CHILD_THEME_VERSION );
+
+}

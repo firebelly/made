@@ -35,10 +35,10 @@ gulp.task('browser-sync', function() {
 gulp.task('styles', function() {
   return sass('fbmods/sass/main.scss', { style: 'expanded' })
     .pipe(autoprefixer())
-    .pipe(gulp.dest('css'))
+    .pipe(gulp.dest('fbmods/css'))
     .pipe(rename({suffix: '.min'}))
     .pipe(minifycss())
-    .pipe(gulp.dest('css'))
+    .pipe(gulp.dest('fbmods/css'))
     .pipe(browserSync.stream());
 });
 

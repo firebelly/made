@@ -26,8 +26,6 @@ function infinity_front_page_genesis_meta() {
 
 			wp_enqueue_script( 'infinity-front-scripts', get_stylesheet_directory_uri() . '/js/front-page.js', array( 'jquery' ), CHILD_THEME_VERSION, true );
 
-			wp_enqueue_style( 'infinity-front-styles', get_stylesheet_directory_uri() . '/css/main.min.css' );
-
 		}
 
 		// Add front-page body class.
