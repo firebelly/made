@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "6da061c0d2ba7b5bbc63ed8574706005",
-    "content-hash": "d2f81af2609d63d45ac36bc32be5d5c3",
+    "hash": "c9be3b892307c4abdd05a7ac13d22596",
+    "content-hash": "f7476ac4eee0b931722c451d97c9a5b9",
     "packages": [
         {
             "name": "composer/installers",
@@ -421,6 +421,26 @@
             "homepage": "https://wordpress.org/plugins/regenerate-thumbnails/"
         },
         {
+            "name": "wpackagist-plugin/widget-clone",
+            "version": "1.1",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/widget-clone/",
+                "reference": "tags/1.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/widget-clone.1.1.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/widget-clone/"
+        },
+        {
             "name": "wpackagist-plugin/wp-migrate-db",
             "version": "0.9.2",
             "source": {
@@ -439,6 +459,26 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/wp-migrate-db/"
+        },
+        {
+            "name": "wpackagist-plugin/wp-widgets-shortcode",
+            "version": "1.0.3",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/wp-widgets-shortcode/",
+                "reference": "tags/1.0.3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/wp-widgets-shortcode.1.0.3.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/wp-widgets-shortcode/"
         }
     ],
     "packages-dev": [
