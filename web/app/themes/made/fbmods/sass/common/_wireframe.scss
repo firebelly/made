@@ -6,55 +6,61 @@
   padding-top: 50px;
 }
 
-// Home page
-// Add footer
-// Featured Art -- get rid of your smartass nonsense replace with latin
-
-
-// ABout page
-// Artist profiles -- and artist pages -- rows 3
-// Add big image below boty anthology text
-
 // X images
+// add smooth scroll to login link
 
-// Make sticky nav ALWAYS be white (.white)
-// implement calibre
-// pink-> gray
+// Global
 
-// POSTS
-// featured images 
-// inline images (are captions possible?)
-
-//  Cat Project -> Current Project
-
-// LISTING
-// shorten excerpts
-// Add featured image
-// remove category meta and author meta
+// Selectively remove headers that are redundant because the top nav also shows page title
+.archive .archive-description, 
+.page-about .entry-header,
+.page-get-involved .entry-header
+ {
+  // display: none;
+  @include sr-only;
+}
 
 
-// Qs
-// Sample Content
+// Cleanse the fonts
+* {
+  font-family: 'Calibre' !important;
+  letter-spacing: 0.02em !important;
+  text-transform: none !important;
+}
 
-// FEATURED ARTWORK
 
-// anchor link to login in main nav
-
-
+// FRONT PAGE
+// Restyle current-project excerpt
 .entry-content, .entry-header {
     max-width: 1024px;
     margin: auto;
     text-align: left;
 }
 
-.archive .archive-description, .page .entry-header {
-  display: none !important;
-}
 
+// Smaller titles on featured artwork page
 .archive .category-featured-artwork .entry-title {
   font-size: 3rem;
 }
 
-body, h1, h2, h3, h4, h5, p, a {
-  font-family: 'Calibre' !important;
+// Make content images full-width
+.page {
+  .entry-content {
+    img {
+      width: 100%;
+    }
+  }
+}
+
+// Band-aid in a few styles to contributing artist widget on About page
+.contributing-artists-widget {
+  @include clearfix();
+  .widget_text {
+    padding: 0;
+  }
+}
+
+// Display Featured Image on top of the post 
+.entry-header::after {
+  display: none;
 }

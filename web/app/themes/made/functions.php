@@ -287,15 +287,5 @@ genesis_register_sidebar( array(
 ) );
 
 
-
-
-
-
-// FIREBELLY ADDITIONS -- to refactor to a seperate file as soon as I get around to it
-
-// Enqueue scripts and styles.
-add_action( 'wp_enqueue_scripts', 'fb_enqueue_scripts_styles' );
-function fb_enqueue_scripts_styles() {
-	wp_enqueue_style( 'main-css', get_stylesheet_directory_uri() . '/fbmods/css/main.min.css', array(), CHILD_THEME_VERSION );
-
-}
+// Add Firebelly's custom functions
+include_once( get_stylesheet_directory()  . '/fbmods/fb-functions.php' );

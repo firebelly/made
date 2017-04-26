@@ -48,7 +48,7 @@ function infinity_front_page_genesis_meta() {
 		remove_action( 'genesis_loop', 'genesis_do_loop' );
 
 		// Remove site footer widgets.
-		remove_theme_support( 'genesis-footer-widgets' );
+		// remove_theme_support( 'genesis-footer-widgets' ); -- REMOVED BY FB -- We want the footer on all pages
 
 		// Add front page widgets.
 		add_action( 'genesis_loop', 'infinity_front_page_widgets' );
