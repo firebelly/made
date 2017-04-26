@@ -3343,6 +3343,7 @@ body#tinymce {
 
 .contributing-artists-widget {
   *zoom: 1;
+  margin: 0 -10px;
 }
 .contributing-artists-widget:before, .contributing-artists-widget:after {
   content: "\0020";
@@ -3352,9 +3353,6 @@ body#tinymce {
 }
 .contributing-artists-widget:after {
   clear: both;
-}
-.contributing-artists-widget .widget_text {
-  padding: 0;
 }
 
 .entry-header::after {

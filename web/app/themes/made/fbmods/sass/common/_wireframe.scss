@@ -55,9 +55,7 @@
 // Band-aid in a few styles to contributing artist widget on About page
 .contributing-artists-widget {
   @include clearfix();
-  .widget_text {
-    padding: 0;
-  }
+  margin: 0 -10px;
 }
 
 // Display Featured Image on top of the post 
