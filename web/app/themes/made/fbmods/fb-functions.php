@@ -3,13 +3,13 @@
 // Enqueue styles.
 add_action( 'wp_enqueue_scripts', 'fb_enqueue_styles', 1 );
 function fb_enqueue_styles() {
-  wp_enqueue_style( 'main-css', get_stylesheet_directory_uri() . '/fbmods/css/main.min.css?Papr-26-17', array(), CHILD_THEME_VERSION );
+  wp_enqueue_style( 'main-css', get_stylesheet_directory_uri() . '/fbmods/css/main.min.css?Papr-27-17', array(), CHILD_THEME_VERSION );
 }
 
 // Enqueue scripts.
 add_action( 'wp_enqueue_scripts', 'fb_enqueue_scripts', 11);
 function fb_enqueue_scripts() {
-  wp_enqueue_script( 'site-js', get_stylesheet_directory_uri() . '/fbmods/js/build/site.min.js?Papr-26-17',  array(), CHILD_THEME_VERSION  );
+  wp_enqueue_script( 'site-js', get_stylesheet_directory_uri() . '/fbmods/js/build/site.min.js?Papr-27-17',  array(), CHILD_THEME_VERSION  );
 }
 
 // Override site footer text
