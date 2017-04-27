@@ -48,7 +48,10 @@ var Main = (function ($) {
         Main.smoothScroll();
 
 
+      setTimeout(Main.wireframifyImages, 500);
       setTimeout(Main.wireframifyImages, 1000);
+      setTimeout(Main.wireframifyImages, 2000);
+      setTimeout(Main.wireframifyImages, 3000);
       });
     }
   };
