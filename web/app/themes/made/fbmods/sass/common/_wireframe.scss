@@ -11,13 +11,6 @@
     padding: 0;
     position: relative;
   }
-  // .entry-content {
-  //   background-color: #000;
-  //   clear: both;
-  //   padding: 20px;
-  //   position: relative;
-  //   z-index: 10;
-  // }
   .entry-header {
     background-color: rgba(0, 0, 0, 0.8);
     height: 100%;
@@ -117,7 +110,7 @@
 }
 
 // Cleanse the fonts
-* {
+.site-container * {
   font-family: 'Calibre' !important;
   letter-spacing: 0.02em !important;
   // text-transform: none !important;

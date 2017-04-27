@@ -3294,7 +3294,7 @@ body#tinymce {
   border: 0;
 }
 
-* {
+.site-container * {
   font-family: 'Calibre' !important;
   letter-spacing: 0.02em !important;
 }
