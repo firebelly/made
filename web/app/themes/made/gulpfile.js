@@ -48,10 +48,10 @@ gulp.task('scripts', function() {
     .pipe(jshint())
     .pipe(jshint.reporter('default'))
     .pipe(concat('site.js'))
-    .pipe(gulp.dest('js/build'))
+    .pipe(gulp.dest('fbmods/js/build'))
     .pipe(rename({suffix: '.min'}))
     .pipe(uglify())
-    .pipe(gulp.dest('js/build'))
+    .pipe(gulp.dest('fbmods/js/build'))
     .pipe(browserSync.stream());
 });
 
@@ -101,7 +101,7 @@ gulp.task('watch', function() {
   // Watch sass files
   gulp.watch(paths.scssSrc, ['styles']);
   // Watch js files
-  gulp.watch(['js/libs/*.js', 'js/main.js'], ['scripts']);
+  gulp.watch(['fbmods/js/libs/*.js', 'fbmods/js/main.js'], ['scripts']);
   // Watch SVGs
   gulp.watch(paths.svgSrc, ['svgs']);
 });

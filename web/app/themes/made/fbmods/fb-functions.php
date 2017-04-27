@@ -9,7 +9,7 @@ function fb_enqueue_styles() {
 // Enqueue scripts.
 add_action( 'wp_enqueue_scripts', 'fb_enqueue_scripts', 11);
 function fb_enqueue_scripts() {
-  wp_enqueue_script( 'main-js', get_stylesheet_directory_uri() . '/fbmods/js/main.js?Papr-26-17',  array(), CHILD_THEME_VERSION  );
+  wp_enqueue_script( 'site-js', get_stylesheet_directory_uri() . '/fbmods/js/build/site.min.js?Papr-26-17',  array(), CHILD_THEME_VERSION  );
 }
 
 // Override site footer text
