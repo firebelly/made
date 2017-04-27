@@ -32,7 +32,7 @@ var Main = (function ($) {
     },
     wireframifyImages: function () {
 
-      $('img:not(.no-wireframify)').wrap('<div class="wireframe-image-wrapper"></div>');
+      $('img:not(.no-wireframify)').wrap('<div class="wireframe-image-wrapper"></div>').addclass('no-wireframify');
       $('.wireframe-image-wrapper').each(function() {
         var $this = $(this);
         var $image = $this.find('img');
@@ -51,6 +51,9 @@ var Main = (function ($) {
       $(document).ready(function () {
         Main.wireframifyImages();
         Main.smoothScroll();
+
+
+      setTimeout(Main.wireframifyImages, 1000);
       });
     }
   };
