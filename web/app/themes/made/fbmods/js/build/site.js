@@ -48,17 +48,12 @@ var Main = (function ($) {
     },
     initMain: function () {
       $(document).ready(function () {
-        Main.wireframifyImages();
         Main.smoothScroll();
-
-
-      setTimeout(Main.wireframifyImages, 500);
-      setTimeout(Main.wireframifyImages, 1000);
-      setTimeout(Main.wireframifyImages, 2000);
-      setTimeout(Main.wireframifyImages, 3000);
-      setTimeout(Main.wireframifyImages, 4000);
-      setTimeout(Main.wireframifyImages, 5000);
       });
+      $(window).on('load', function () {
+        Main.wireframifyImages();
+      });
+
     }
   };
 // Pass in jQuery.
