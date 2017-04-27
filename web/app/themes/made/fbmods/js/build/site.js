@@ -32,7 +32,7 @@ var Main = (function ($) {
     },
     wireframifyImages: function () {
 
-      $('img:not(.no-wireframify)').wrap('<div class="wireframe-image-wrapper"></div>').addClass('no-wireframify');
+      $('img:not(.no-wireframify)').addClass('no-wireframify').wrap('<div class="wireframe-image-wrapper"></div>');
       $('.wireframe-image-wrapper').each(function() {
         var $this = $(this);
         var $image = $this.find('img');
