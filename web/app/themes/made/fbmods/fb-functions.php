@@ -1,10 +1,15 @@
 <?php 
 
-// Enqueue scripts and styles.
-add_action( 'wp_enqueue_scripts', 'fb_enqueue_scripts_styles', 1 );
-function fb_enqueue_scripts_styles() {
+// Enqueue styles.
+add_action( 'wp_enqueue_scripts', 'fb_enqueue_styles', 1 );
+function fb_enqueue_styles() {
   wp_enqueue_style( 'main-css', get_stylesheet_directory_uri() . '/fbmods/css/main.min.css', array(), CHILD_THEME_VERSION );
+}
 
+// Enqueue scripts.
+add_action( 'wp_enqueue_scripts', 'fb_enqueue_scripts', 11);
+function fb_enqueue_scripts() {
+  wp_enqueue_script( 'main-js', get_stylesheet_directory_uri() . '/fbmods/js/main.js',  array(), CHILD_THEME_VERSION  );
 }
 
 // Override site footer text

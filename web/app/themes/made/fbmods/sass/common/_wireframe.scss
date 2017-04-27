@@ -1,46 +1,133 @@
+// A refactor of .team-member hover class--but more generalized....
+.hover-card {
+  a {
+    &.aligncenter, &.alignleft, &.alignnone, &.alignright {
+      display: block;
+      margin: 0;
+    }
+  }
+  &.entry {
+    color: #fff;
+    padding: 0;
+    position: relative;
+  }
+  // .entry-content {
+  //   background-color: #000;
+  //   clear: both;
+  //   padding: 20px;
+  //   position: relative;
+  //   z-index: 10;
+  // }
+  .entry-header {
+    background-color: rgba(0, 0, 0, 0.8);
+    height: 100%;
+    display: block;
+    left: 0;
+    opacity: 0;
+    -ms-filter: "alpha(Opacity=0)";
+    filter: alpha(opacity = 0);
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 0;
+    &:after {
+      border-width: 0;
+      padding-bottom: 0;
+    }
+  }
+  &.entry {
+    &:hover .entry-header, &:focus .entry-header, &.focused .entry-header {
+      background-color: rgba(0, 0, 0, 0.8);
+      opacity: 1;
+      -ms-filter: "alpha(Opacity=1)";
+      filter: alpha(opacity = 1);
+    }
+  }
+  .entry-header {
+    a {
+      display: table-cell;
+      padding: 20px;
+      position: relative;
+      transform: translateY(10px);
+      transition: transform .4s ease-in-out;
+      vertical-align: middle;
+      z-index: 3;
+    }
+    &.position-top a {
+      padding-top: 45px;
+      vertical-align: top;
+    }
+  }
+  &:hover .entry-header a, &:focus .entry-header a, &.focused .entry-header a {
+    transform: translateY(1px);
+  }
+  .more-link {
+    &:hover, &:focus {
+      color: #fff;
+    }
+  }
+  .entry-title {
+    display: table;
+    font-size: 27px;
+    font-size: 2.7rem;
+    height: 100%;
+    margin-top: 0;
+    margin-bottom: 10px;
+    overflow: hidden;
+    width: 100%;
+    text-align: center;
+     a {
+      color: #fff;
+    }
+    a:focus .hover-card {
+      border-bottom: 1px #fff dotted;
+    }
+  }
+  p {
+    color: #fff;
+    font-size: 22px;
+    font-size: 2.2rem;
+    font-weight: 400;
+  }
+  .entry-title .team-title {
+    color: #fff;
+    font-size: 22px;
+    font-size: 2.2rem;
+    font-weight: 400;
+    display: block;
+    padding-top: 10px;
+  }
+}
+
+// Shrink first section in home page
 .front-page-1 {
   height: 70vh;
 }
-
 .front-page-2 {
   padding-top: 50px;
 }
 
-// X images
-// add smooth scroll to login link
-
-// Global
-
 // Selectively remove headers that are redundant because the top nav also shows page title
 .archive .archive-description, 
-.page-about .entry-header,
-.page-get-involved .entry-header
+.page-about main > article > .entry-header,
+.page-get-involved main > article > .entry-header
  {
   // display: none;
   @include sr-only;
 }
 
-
 // Cleanse the fonts
 * {
   font-family: 'Calibre' !important;
   letter-spacing: 0.02em !important;
-  text-transform: none !important;
+  // text-transform: none !important;
 }
 
-
-// FRONT PAGE
-// Restyle current-project excerpt
+// Restyle current-project excerpt on front page
 .entry-content, .entry-header {
     max-width: 1024px;
     margin: auto;
     text-align: left;
-}
-
-
-// Smaller titles on featured artwork page
-.archive .category-featured-artwork .entry-title {
-  font-size: 3rem;
 }
 
 // Make content images full-width
@@ -53,12 +140,62 @@
 }
 
 // Band-aid in a few styles to contributing artist widget on About page
-.contributing-artists-widget {
+.front-page-3 .widget-area, .contributing-artists-widget {
   @include clearfix();
   margin: 0 -10px;
+  article {
+    @extend .hover-card;
+  }
+  img { 
+    display: block;
+  }
 }
 
 // Display Featured Image on top of the post 
 .entry-header::after {
   display: none;
 }
+
+// Adjust spacing of nav links
+.genesis-nav-menu a{
+  padding: 30px 10px;
+}
+
+// Smaller titles
+.front-page-2 p, .entry-title {
+  font-size: 2.2rem;
+}
+
+// Reduce size of meta
+p.entry-meta {
+  font-size: 1.5rem;
+}
+
+// Override whacky last-child removal of margin
+.front-page-2 p.entry-meta {
+  margin-bottom: 30px !important;
+}
+
+// This, in conjunction with wireframifyImages() in j
+.wireframe-image-wrapper { // A wrapper attached to all img
+  position: relative;
+
+  .wireframe-image { // An element placed within the wrapper, and given appropriate height with js
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('../svgs/wire-image.svg');
+    background-size: 100% 100%;
+    opacity: 0.5;
+  }
+}
+.front-page-1, .front-page-3 {
+    background-image: url('../svgs/wire-image-dark.svg') !important;
+    background-size: 100% 100% !important;
+}
+
+// TODO
+// redo Footer

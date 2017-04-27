@@ -2792,119 +2792,6 @@ Loaded on the front page */
 
 /* Team Overlay
 ---------------------------------------------------------------------------------------------------- */
-.featuredpage .team-member a.aligncenter,
-.featuredpage .team-member a.alignleft,
-.featuredpage .team-member a.alignnone,
-.featuredpage .team-member a.alignright {
-  display: block;
-  margin: 0;
-}
-
-.featuredpage .team-member.entry {
-  color: #fff;
-  padding: 0;
-  position: relative;
-}
-
-.featuredpage .team-member .entry-content {
-  background-color: #000;
-  clear: both;
-  padding: 20px;
-  position: relative;
-  z-index: 10;
-}
-
-.featuredpage .team-member .entry-header {
-  background-color: rgba(0, 0, 0, 0.8);
-  bottom: 0;
-  display: block;
-  left: 0;
-  opacity: 0;
-  -ms-filter: "alpha(Opacity=0)";
-  filter: alpha(opacity=0);
-  position: absolute;
-  right: 0;
-  top: 0;
-  z-index: 0;
-}
-
-.featuredpage .team-member .entry-header:after {
-  border-width: 0;
-  padding-bottom: 0;
-}
-
-.featuredpage .team-member.entry:hover .entry-header,
-.featuredpage .team-member.entry:focus .entry-header,
-.featuredpage .team-member.entry.focused .entry-header {
-  background-color: rgba(0, 0, 0, 0.8);
-  opacity: 1;
-  -ms-filter: "alpha(Opacity=1)";
-  filter: alpha(opacity=1);
-}
-
-.featuredpage .team-member .entry-header a {
-  display: table-cell;
-  padding: 20px;
-  position: relative;
-  -webkit-transform: translateY(10px);
-          transform: translateY(10px);
-  transition: -webkit-transform .4s ease-in-out;
-  transition: transform .4s ease-in-out;
-  vertical-align: middle;
-  z-index: 3;
-}
-
-.featuredpage .team-member .entry-header.position-top a {
-  padding-top: 45px;
-  vertical-align: top;
-}
-
-.featuredpage .team-member:hover .entry-header a,
-.featuredpage .team-member:focus .entry-header a,
-.featuredpage .team-member.focused .entry-header a {
-  -webkit-transform: translateY(0);
-          transform: translateY(0);
-}
-
-.featuredpage .team-member .entry-title a,
-.featuredpage .team-member .more-link:hover,
-.featuredpage .team-member .more-link:focus {
-  color: #fff;
-}
-
-.featuredpage .team-member .entry-title {
-  display: table;
-  font-size: 27px;
-  font-size: 2.7rem;
-  height: 100%;
-  margin-bottom: 10px;
-  overflow: hidden;
-  width: 100%;
-}
-
-.featuredpage .team-member .entry-title a:focus .team-name {
-  border-bottom: 1px #fff dotted;
-}
-
-.featuredpage .team-member p,
-.featuredpage .team-member .entry-title .team-title {
-  color: #fff;
-  font-size: 22px;
-  font-size: 2.2rem;
-  font-weight: 400;
-}
-
-.featuredpage .team-member .entry-title .team-title {
-  display: block;
-  padding-top: 10px;
-}
-
-.front-page-6 .flexible-widgets.widget-halves.uneven .featuredpage.widget:last-of-type {
-  float: none;
-  margin: 0 auto;
-  max-width: 50%;
-}
-
 /* Fadeup Effect
 ---------------------------------------------------------------------------------------------------- */
 .js .fadeup-effect {
@@ -3300,6 +3187,92 @@ body#tinymce {
   margin: 12px !important;
 }
 
+.hover-card a.aligncenter, .front-page-3 .widget-area article a.aligncenter, .contributing-artists-widget article a.aligncenter, .hover-card a.alignleft, .front-page-3 .widget-area article a.alignleft, .contributing-artists-widget article a.alignleft, .hover-card a.alignnone, .front-page-3 .widget-area article a.alignnone, .contributing-artists-widget article a.alignnone, .hover-card a.alignright, .front-page-3 .widget-area article a.alignright, .contributing-artists-widget article a.alignright {
+  display: block;
+  margin: 0;
+}
+.hover-card.entry, .front-page-3 .widget-area article.entry, .contributing-artists-widget article.entry {
+  color: #fff;
+  padding: 0;
+  position: relative;
+}
+.hover-card .entry-header, .front-page-3 .widget-area article .entry-header, .contributing-artists-widget article .entry-header {
+  background-color: rgba(0, 0, 0, 0.8);
+  height: 100%;
+  display: block;
+  left: 0;
+  opacity: 0;
+  -ms-filter: "alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 0;
+}
+.hover-card .entry-header:after, .front-page-3 .widget-area article .entry-header:after, .contributing-artists-widget article .entry-header:after {
+  border-width: 0;
+  padding-bottom: 0;
+}
+.hover-card.entry:hover .entry-header, .front-page-3 .widget-area article.entry:hover .entry-header, .contributing-artists-widget article.entry:hover .entry-header, .hover-card.entry:focus .entry-header, .front-page-3 .widget-area article.entry:focus .entry-header, .contributing-artists-widget article.entry:focus .entry-header, .hover-card.entry.focused .entry-header, .front-page-3 .widget-area article.entry.focused .entry-header, .contributing-artists-widget article.entry.focused .entry-header {
+  background-color: rgba(0, 0, 0, 0.8);
+  opacity: 1;
+  -ms-filter: "alpha(Opacity=1)";
+  filter: alpha(opacity=1);
+}
+.hover-card .entry-header a, .front-page-3 .widget-area article .entry-header a, .contributing-artists-widget article .entry-header a {
+  display: table-cell;
+  padding: 20px;
+  position: relative;
+  -webkit-transform: translateY(10px);
+          transform: translateY(10px);
+  transition: -webkit-transform .4s ease-in-out;
+  transition: transform .4s ease-in-out;
+  vertical-align: middle;
+  z-index: 3;
+}
+.hover-card .entry-header.position-top a, .front-page-3 .widget-area article .entry-header.position-top a, .contributing-artists-widget article .entry-header.position-top a {
+  padding-top: 45px;
+  vertical-align: top;
+}
+.hover-card:hover .entry-header a, .front-page-3 .widget-area article:hover .entry-header a, .contributing-artists-widget article:hover .entry-header a, .hover-card:focus .entry-header a, .front-page-3 .widget-area article:focus .entry-header a, .contributing-artists-widget article:focus .entry-header a, .hover-card.focused .entry-header a, .front-page-3 .widget-area article.focused .entry-header a, .contributing-artists-widget article.focused .entry-header a {
+  -webkit-transform: translateY(1px);
+          transform: translateY(1px);
+}
+.hover-card .more-link:hover, .front-page-3 .widget-area article .more-link:hover, .contributing-artists-widget article .more-link:hover, .hover-card .more-link:focus, .front-page-3 .widget-area article .more-link:focus, .contributing-artists-widget article .more-link:focus {
+  color: #fff;
+}
+.hover-card .entry-title, .front-page-3 .widget-area article .entry-title, .contributing-artists-widget article .entry-title {
+  display: table;
+  font-size: 27px;
+  font-size: 2.7rem;
+  height: 100%;
+  margin-top: 0;
+  margin-bottom: 10px;
+  overflow: hidden;
+  width: 100%;
+  text-align: center;
+}
+.hover-card .entry-title a, .front-page-3 .widget-area article .entry-title a, .contributing-artists-widget article .entry-title a {
+  color: #fff;
+}
+.hover-card .entry-title a:focus .hover-card, .front-page-3 .widget-area article .entry-title a:focus .hover-card, .contributing-artists-widget article .entry-title a:focus .hover-card, .hover-card .entry-title a:focus .front-page-3 .widget-area article, .front-page-3 .widget-area .hover-card .entry-title a:focus article, .front-page-3 .widget-area article .entry-title a:focus article, .contributing-artists-widget article .entry-title a:focus .front-page-3 .widget-area article, .hover-card .entry-title a:focus .contributing-artists-widget article, .contributing-artists-widget .hover-card .entry-title a:focus article, .contributing-artists-widget article .entry-title a:focus article {
+  border-bottom: 1px #fff dotted;
+}
+.hover-card p, .front-page-3 .widget-area article p, .contributing-artists-widget article p {
+  color: #fff;
+  font-size: 22px;
+  font-size: 2.2rem;
+  font-weight: 400;
+}
+.hover-card .entry-title .team-title, .front-page-3 .widget-area article .entry-title .team-title, .contributing-artists-widget article .entry-title .team-title {
+  color: #fff;
+  font-size: 22px;
+  font-size: 2.2rem;
+  font-weight: 400;
+  display: block;
+  padding-top: 10px;
+}
+
 .front-page-1 {
   height: 70vh;
 }
@@ -3309,8 +3282,8 @@ body#tinymce {
 }
 
 .archive .archive-description,
-.page-about .entry-header,
-.page-get-involved .entry-header {
+.page-about main > article > .entry-header,
+.page-get-involved main > article > .entry-header {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -3324,7 +3297,6 @@ body#tinymce {
 * {
   font-family: 'Calibre' !important;
   letter-spacing: 0.02em !important;
-  text-transform: none !important;
 }
 
 .entry-content, .entry-header {
@@ -3333,28 +3305,63 @@ body#tinymce {
   text-align: left;
 }
 
-.archive .category-featured-artwork .entry-title {
-  font-size: 3rem;
-}
-
 .page .entry-content img {
   width: 100%;
 }
 
-.contributing-artists-widget {
+.front-page-3 .widget-area, .contributing-artists-widget {
   *zoom: 1;
   margin: 0 -10px;
 }
-.contributing-artists-widget:before, .contributing-artists-widget:after {
+.front-page-3 .widget-area:before, .front-page-3 .widget-area:after, .contributing-artists-widget:before, .contributing-artists-widget:after {
   content: "\0020";
   display: block;
   height: 0;
   overflow: hidden;
 }
-.contributing-artists-widget:after {
+.front-page-3 .widget-area:after, .contributing-artists-widget:after {
   clear: both;
+}
+.front-page-3 .widget-area img, .contributing-artists-widget img {
+  display: block;
 }
 
 .entry-header::after {
   display: none;
+}
+
+.genesis-nav-menu a {
+  padding: 30px 10px;
+}
+
+.front-page-2 p, .entry-title {
+  font-size: 2.2rem;
+}
+
+p.entry-meta {
+  font-size: 1.5rem;
+}
+
+.front-page-2 p.entry-meta {
+  margin-bottom: 30px !important;
+}
+
+.wireframe-image-wrapper {
+  position: relative;
+}
+.wireframe-image-wrapper .wireframe-image {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("../svgs/wire-image.svg");
+  background-size: 100% 100%;
+  opacity: 0.5;
+}
+
+.front-page-1, .front-page-3 {
+  background-image: url("../svgs/wire-image-dark.svg") !important;
+  background-size: 100% 100% !important;
 }
