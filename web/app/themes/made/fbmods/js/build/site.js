@@ -35,17 +35,16 @@ var Main = (function ($) {
       $('img:not(.no-wireframify)').addClass('no-wireframify').wrap('<div class="wireframe-image-wrapper"></div>');
       $('.wireframe-image-wrapper').each(function() {
         var $this = $(this);
-        var $image = $this.find('img');
-        var $wireframeImage = $('<div class="wireframe-image"></div>').appendTo($this);
-        $wireframeImage.height($image.height());
-
-        $(window).resize(function () {
+        if(!$this.find('.wireframe-image').length) {
+          var $image = $this.find('img');
+          var $wireframeImage = $('<div class="wireframe-image"></div>').appendTo($this);
           $wireframeImage.height($image.height());
-        });
 
+          $(window).resize(function () {
+            $wireframeImage.height($image.height());
+          });
+        }
       });
-
-
     },
     initMain: function () {
       $(document).ready(function () {
@@ -57,6 +56,8 @@ var Main = (function ($) {
       setTimeout(Main.wireframifyImages, 1000);
       setTimeout(Main.wireframifyImages, 2000);
       setTimeout(Main.wireframifyImages, 3000);
+      setTimeout(Main.wireframifyImages, 4000);
+      setTimeout(Main.wireframifyImages, 5000);
       });
     }
   };
