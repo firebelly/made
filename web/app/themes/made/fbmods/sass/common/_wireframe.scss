@@ -142,7 +142,7 @@
 // Band-aid in a few styles to contributing artist widget on About page
 .front-page-3 .widget-area, .contributing-artists-widget {
   @include clearfix();
-  margin: 0 -10px;
+  margin: 0 -10px 30px;
   article {
     @extend .hover-card;
   }
@@ -210,7 +210,3 @@ p.entry-meta {
     margin-right: 10px;
   }
 }
-
-// TODO
-// redo Footer
-// smoothscroll

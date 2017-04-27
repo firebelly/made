@@ -3311,7 +3311,7 @@ body#tinymce {
 
 .front-page-3 .widget-area, .contributing-artists-widget {
   *zoom: 1;
-  margin: 0 -10px;
+  margin: 0 -10px 30px;
 }
 .front-page-3 .widget-area:before, .front-page-3 .widget-area:after, .contributing-artists-widget:before, .contributing-artists-widget:after {
   content: "\0020";
