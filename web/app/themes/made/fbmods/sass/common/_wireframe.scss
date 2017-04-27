@@ -148,6 +148,7 @@
   }
   img { 
     display: block;
+    width: 100%;
   }
 }
 
@@ -195,6 +196,19 @@ p.entry-meta {
 .front-page-1, .front-page-3 {
     background-image: url('../svgs/wire-image-dark.svg') !important;
     background-size: 100% 100% !important;
+}
+
+.footer-widgets {
+  .widget-title {
+    text-align: left;
+  }
+  .social-link {
+    display: inline-block;
+  }
+  .social-icon {
+    width: 40px;
+    margin-right: 10px;
+  }
 }
 
 // TODO

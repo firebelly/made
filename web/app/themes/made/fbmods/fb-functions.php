@@ -64,3 +64,38 @@ function fb_post_info_filter( $post_info ) {
 
 // Remove entry-footer with "Filed Under" category on posts
 remove_action( 'genesis_entry_footer', 'genesis_post_meta' );
+
+
+// Shortcodes in Widgets --source: https://www.billerickson.net/wordpress-shortcode-sidebar-widget/
+add_filter('widget_text', 'do_shortcode');
+/**
+ * URL Shortcode
+ * @author Bill Erickson
+ * @link http://www.billerickson.net/wordpress-shortcode-sidebar-widget/
+ * @return Site URL.
+ */
+function fb_url_shortcode() {
+  return get_bloginfo('url');
+}
+add_shortcode('url','fb_url_shortcode');
+/**
+ * WordPress URL
+ * WordPress isn't always installed in same directory as Site URL.
+ * @author Bill Erickson
+ * @link http://www.billerickson.net/wordpress-shortcode-sidebar-widget/
+ * @return WordPress URL
+ */
+function fb_wpurl_shortcode() {
+  return get_bloginfo('wpurl');
+}
+add_shortcode('wpurl', 'fb_wpurl_shortcode');
+/**
+ * Child Theme URL
+ * @author Bill Erickson
+ * @link http://www.billerickson.net/wordpress-shortcode-sidebar-widget/
+ * @return child theme directory URL
+ */
+function fb_child_shortcode() {
+  return get_bloginfo('stylesheet_directory');
+}
+add_shortcode('child', 'fb_child_shortcode');

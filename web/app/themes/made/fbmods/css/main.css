@@ -3324,6 +3324,7 @@ body#tinymce {
 }
 .front-page-3 .widget-area img, .contributing-artists-widget img {
   display: block;
+  width: 100%;
 }
 
 .entry-header::after {
@@ -3364,4 +3365,15 @@ p.entry-meta {
 .front-page-1, .front-page-3 {
   background-image: url("../svgs/wire-image-dark.svg") !important;
   background-size: 100% 100% !important;
+}
+
+.footer-widgets .widget-title {
+  text-align: left;
+}
+.footer-widgets .social-link {
+  display: inline-block;
+}
+.footer-widgets .social-icon {
+  width: 40px;
+  margin-right: 10px;
 }

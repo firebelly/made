@@ -4,7 +4,7 @@ var Main = (function ($) {
   return {
     wireframifyImages: function () {
 
-      $('img').wrap('<div class="wireframe-image-wrapper"></div>');
+      $('img:not(.no-wireframify)').wrap('<div class="wireframe-image-wrapper"></div>');
       $('.wireframe-image-wrapper').each(function() {
         var $this = $(this);
         var $image = $this.find('img')
