@@ -65,19 +65,19 @@ gulp.task('images', function() {
 
 // SVG time!
 gulp.task('svgs', function() {
-  return gulp.src(paths.svgSrc)
-    .pipe(svgmin({
-        plugins: [{
-            removeViewBox: false
-        }, {
-            removeEmptyAttrs: false
-        }]
-    }))
-    .pipe(gulp.dest('svgs'))
-    .pipe(svgstore({ inlineSvg: true }))
-    .pipe(rename({suffix: '-defs'}))
-    .pipe(gulp.dest('svgs/build'))
-    .pipe(browserSync.stream());
+  // return gulp.src(paths.svgSrc)
+  //   .pipe(svgmin({
+  //       plugins: [{
+  //           removeViewBox: false
+  //       }, {
+  //           removeEmptyAttrs: false
+  //       }]
+  //   }))
+  //   .pipe(gulp.dest('svgs'))
+  //   .pipe(svgstore({ inlineSvg: true }))
+  //   .pipe(rename({suffix: '-defs'}))
+  //   .pipe(gulp.dest('svgs/build'))
+  //   .pipe(browserSync.stream());
 });
 
 // Do the build
