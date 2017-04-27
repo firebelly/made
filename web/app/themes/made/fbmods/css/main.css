@@ -3187,16 +3187,16 @@ body#tinymce {
   margin: 12px !important;
 }
 
-.hover-card a.aligncenter, .front-page-3 .widget-area article a.aligncenter, .contributing-artists-widget article a.aligncenter, .hover-card a.alignleft, .front-page-3 .widget-area article a.alignleft, .contributing-artists-widget article a.alignleft, .hover-card a.alignnone, .front-page-3 .widget-area article a.alignnone, .contributing-artists-widget article a.alignnone, .hover-card a.alignright, .front-page-3 .widget-area article a.alignright, .contributing-artists-widget article a.alignright {
+.hover-card a.aligncenter, .front-page-3 .widget-area article a.aligncenter, .participating-artists-widget article a.aligncenter, .hover-card a.alignleft, .front-page-3 .widget-area article a.alignleft, .participating-artists-widget article a.alignleft, .hover-card a.alignnone, .front-page-3 .widget-area article a.alignnone, .participating-artists-widget article a.alignnone, .hover-card a.alignright, .front-page-3 .widget-area article a.alignright, .participating-artists-widget article a.alignright {
   display: block;
   margin: 0;
 }
-.hover-card.entry, .front-page-3 .widget-area article.entry, .contributing-artists-widget article.entry {
+.hover-card.entry, .front-page-3 .widget-area article.entry, .participating-artists-widget article.entry {
   color: #fff;
   padding: 0;
   position: relative;
 }
-.hover-card .entry-header, .front-page-3 .widget-area article .entry-header, .contributing-artists-widget article .entry-header {
+.hover-card .entry-header, .front-page-3 .widget-area article .entry-header, .participating-artists-widget article .entry-header {
   background-color: rgba(0, 0, 0, 0.8);
   height: 100%;
   display: block;
@@ -3209,17 +3209,17 @@ body#tinymce {
   top: 0;
   z-index: 0;
 }
-.hover-card .entry-header:after, .front-page-3 .widget-area article .entry-header:after, .contributing-artists-widget article .entry-header:after {
+.hover-card .entry-header:after, .front-page-3 .widget-area article .entry-header:after, .participating-artists-widget article .entry-header:after {
   border-width: 0;
   padding-bottom: 0;
 }
-.hover-card.entry:hover .entry-header, .front-page-3 .widget-area article.entry:hover .entry-header, .contributing-artists-widget article.entry:hover .entry-header, .hover-card.entry:focus .entry-header, .front-page-3 .widget-area article.entry:focus .entry-header, .contributing-artists-widget article.entry:focus .entry-header, .hover-card.entry.focused .entry-header, .front-page-3 .widget-area article.entry.focused .entry-header, .contributing-artists-widget article.entry.focused .entry-header {
+.hover-card.entry:hover .entry-header, .front-page-3 .widget-area article.entry:hover .entry-header, .participating-artists-widget article.entry:hover .entry-header, .hover-card.entry:focus .entry-header, .front-page-3 .widget-area article.entry:focus .entry-header, .participating-artists-widget article.entry:focus .entry-header, .hover-card.entry.focused .entry-header, .front-page-3 .widget-area article.entry.focused .entry-header, .participating-artists-widget article.entry.focused .entry-header {
   background-color: rgba(0, 0, 0, 0.8);
   opacity: 1;
   -ms-filter: "alpha(Opacity=1)";
   filter: alpha(opacity=1);
 }
-.hover-card .entry-header a, .front-page-3 .widget-area article .entry-header a, .contributing-artists-widget article .entry-header a {
+.hover-card .entry-header a, .front-page-3 .widget-area article .entry-header a, .participating-artists-widget article .entry-header a {
   display: table-cell;
   padding: 20px;
   position: relative;
@@ -3230,18 +3230,18 @@ body#tinymce {
   vertical-align: middle;
   z-index: 3;
 }
-.hover-card .entry-header.position-top a, .front-page-3 .widget-area article .entry-header.position-top a, .contributing-artists-widget article .entry-header.position-top a {
+.hover-card .entry-header.position-top a, .front-page-3 .widget-area article .entry-header.position-top a, .participating-artists-widget article .entry-header.position-top a {
   padding-top: 45px;
   vertical-align: top;
 }
-.hover-card:hover .entry-header a, .front-page-3 .widget-area article:hover .entry-header a, .contributing-artists-widget article:hover .entry-header a, .hover-card:focus .entry-header a, .front-page-3 .widget-area article:focus .entry-header a, .contributing-artists-widget article:focus .entry-header a, .hover-card.focused .entry-header a, .front-page-3 .widget-area article.focused .entry-header a, .contributing-artists-widget article.focused .entry-header a {
+.hover-card:hover .entry-header a, .front-page-3 .widget-area article:hover .entry-header a, .participating-artists-widget article:hover .entry-header a, .hover-card:focus .entry-header a, .front-page-3 .widget-area article:focus .entry-header a, .participating-artists-widget article:focus .entry-header a, .hover-card.focused .entry-header a, .front-page-3 .widget-area article.focused .entry-header a, .participating-artists-widget article.focused .entry-header a {
   -webkit-transform: translateY(1px);
           transform: translateY(1px);
 }
-.hover-card .more-link:hover, .front-page-3 .widget-area article .more-link:hover, .contributing-artists-widget article .more-link:hover, .hover-card .more-link:focus, .front-page-3 .widget-area article .more-link:focus, .contributing-artists-widget article .more-link:focus {
+.hover-card .more-link:hover, .front-page-3 .widget-area article .more-link:hover, .participating-artists-widget article .more-link:hover, .hover-card .more-link:focus, .front-page-3 .widget-area article .more-link:focus, .participating-artists-widget article .more-link:focus {
   color: #fff;
 }
-.hover-card .entry-title, .front-page-3 .widget-area article .entry-title, .contributing-artists-widget article .entry-title {
+.hover-card .entry-title, .front-page-3 .widget-area article .entry-title, .participating-artists-widget article .entry-title {
   display: table;
   font-size: 27px;
   font-size: 2.7rem;
@@ -3252,19 +3252,19 @@ body#tinymce {
   width: 100%;
   text-align: center;
 }
-.hover-card .entry-title a, .front-page-3 .widget-area article .entry-title a, .contributing-artists-widget article .entry-title a {
+.hover-card .entry-title a, .front-page-3 .widget-area article .entry-title a, .participating-artists-widget article .entry-title a {
   color: #fff;
 }
-.hover-card .entry-title a:focus .hover-card, .front-page-3 .widget-area article .entry-title a:focus .hover-card, .contributing-artists-widget article .entry-title a:focus .hover-card, .hover-card .entry-title a:focus .front-page-3 .widget-area article, .front-page-3 .widget-area .hover-card .entry-title a:focus article, .front-page-3 .widget-area article .entry-title a:focus article, .contributing-artists-widget article .entry-title a:focus .front-page-3 .widget-area article, .hover-card .entry-title a:focus .contributing-artists-widget article, .contributing-artists-widget .hover-card .entry-title a:focus article, .contributing-artists-widget article .entry-title a:focus article {
+.hover-card .entry-title a:focus .hover-card, .front-page-3 .widget-area article .entry-title a:focus .hover-card, .participating-artists-widget article .entry-title a:focus .hover-card, .hover-card .entry-title a:focus .front-page-3 .widget-area article, .front-page-3 .widget-area .hover-card .entry-title a:focus article, .front-page-3 .widget-area article .entry-title a:focus article, .participating-artists-widget article .entry-title a:focus .front-page-3 .widget-area article, .hover-card .entry-title a:focus .participating-artists-widget article, .participating-artists-widget .hover-card .entry-title a:focus article, .participating-artists-widget article .entry-title a:focus article {
   border-bottom: 1px #fff dotted;
 }
-.hover-card p, .front-page-3 .widget-area article p, .contributing-artists-widget article p {
+.hover-card p, .front-page-3 .widget-area article p, .participating-artists-widget article p {
   color: #fff;
   font-size: 22px;
   font-size: 2.2rem;
   font-weight: 400;
 }
-.hover-card .entry-title .team-title, .front-page-3 .widget-area article .entry-title .team-title, .contributing-artists-widget article .entry-title .team-title {
+.hover-card .entry-title .team-title, .front-page-3 .widget-area article .entry-title .team-title, .participating-artists-widget article .entry-title .team-title {
   color: #fff;
   font-size: 22px;
   font-size: 2.2rem;
@@ -3309,20 +3309,20 @@ body#tinymce {
   width: 100%;
 }
 
-.front-page-3 .widget-area, .contributing-artists-widget {
+.front-page-3 .widget-area, .participating-artists-widget {
   *zoom: 1;
   margin: 0 -10px 30px;
 }
-.front-page-3 .widget-area:before, .front-page-3 .widget-area:after, .contributing-artists-widget:before, .contributing-artists-widget:after {
+.front-page-3 .widget-area:before, .front-page-3 .widget-area:after, .participating-artists-widget:before, .participating-artists-widget:after {
   content: "\0020";
   display: block;
   height: 0;
   overflow: hidden;
 }
-.front-page-3 .widget-area:after, .contributing-artists-widget:after {
+.front-page-3 .widget-area:after, .participating-artists-widget:after {
   clear: both;
 }
-.front-page-3 .widget-area img, .contributing-artists-widget img {
+.front-page-3 .widget-area img, .participating-artists-widget img {
   display: block;
   width: 100%;
 }

@@ -23,8 +23,8 @@ function fb_custom_footer() {
 
 // Add widget for Contributing Artists
 genesis_register_sidebar( array(
-  'id'    => 'contributing-artists',
-  'name'    => __( 'Contributing Artists', 'made' ),
+  'id'    => 'about-artists',
+  'name'    => __( 'Participating Artists', 'made' ),
   'description' => __( 'A listing of all artists to appear on about page.', 'made' ),
 ) );
 

@@ -140,7 +140,7 @@
 }
 
 // Band-aid in a few styles to contributing artist widget on About page
-.front-page-3 .widget-area, .contributing-artists-widget {
+.front-page-3 .widget-area, .participating-artists-widget {
   @include clearfix();
   margin: 0 -10px 30px;
   article {
