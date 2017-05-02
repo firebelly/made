@@ -39,3 +39,6 @@ bin
 
 # Sass Cache
 .sass-cache
+
+# Fonts
+web/app/themes/made/fbmods/fonts
