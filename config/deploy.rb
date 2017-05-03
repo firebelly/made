@@ -4,6 +4,7 @@ set :theme, 'made'
 set :login, 'firebelly'
 set :repo_url, 'git@github.com:firebelly/made.git'
 set :php, 'php70'
+set :fonts_path, 'web/app/themes/made/fbmods/fonts' # This directory should be gitignored, we will need to symlink it to a corresponding directory in shared/ where we can manually add protected font files
 
 # Hardcodes branch to always be master
 # This could be overridden in a stage config file
@@ -20,7 +21,7 @@ set :log_level, :info
 # it needs to be added to linked_files so it persists across deploys:
 set :linked_files, fetch(:linked_files, []).push('.env', 'web/.htaccess')
 set :linked_dirs, fetch(:linked_dirs, []).push('web/app/uploads')
-set :linked_dirs, fetch(:linked_dirs, []).push('web/app/themes/made/fbmods/fonts')
+set :linked_dirs, fetch(:linked_dirs, []).push(fetch(:fonts_path))
 
 namespace :deploy do
   desc 'Restart application'
