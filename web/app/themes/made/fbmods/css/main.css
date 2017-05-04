@@ -3468,16 +3468,23 @@ p.entry-meta {
 
 .recent-posts-slider-area .widget {
   width: 100%;
-  padding: 0 50px;
+}
+.recent-posts-slider-area .widget:not(.widget_text) {
+  padding: 20px 0;
+}
+@media screen and (min-width: 800px) {
+  .recent-posts-slider-area .widget:not(.widget_text) {
+    padding: 0 50px;
+  }
 }
 .recent-posts-slider-area .slick-slider {
   position: relative;
 }
 .recent-posts-slider-area .slick-slider .next-arrow, .recent-posts-slider-area .slick-slider .previous-arrow {
-  position: absolute;
   top: 50%;
-  transition: translateY(-50%);
   z-index: 1;
+  position: absolute;
+  transition: translateY(-50%);
 }
 .recent-posts-slider-area .slick-slider .next-arrow {
   right: 10px;
@@ -3489,13 +3496,15 @@ p.entry-meta {
 .recent-posts-five .wrap {
   max-width: 1024px;
 }
-.recent-posts-five .widget {
+.recent-posts-five .widget:not(.widget_text) {
   padding: 20px 0;
 }
 @media screen and (min-width: 800px) {
   .recent-posts-five .widget {
     width: 50%;
     float: left;
+  }
+  .recent-posts-five .widget:not(.widget_text) {
     padding: 20px;
   }
   .recent-posts-five .widget:nth-child(1), .recent-posts-five .widget:nth-child(2) {

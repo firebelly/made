@@ -210,15 +210,26 @@ p.entry-meta {
 .recent-posts-slider-area {
   .widget {
     width: 100%;
-    padding: 0 50px;
+
+    &:not(.widget_text) {
+      padding: 20px 0;
+    }
+
+    @include media-md {
+      &:not(.widget_text) {
+        padding: 0 50px;
+      }
+    }
   }
+
   .slick-slider {
     position: relative;
+
     .next-arrow, .previous-arrow {
-      position: absolute;
       top: 50%;
-      transition: translateY(-50%);
       z-index: 1;
+      position: absolute;
+      transition: translateY(-50%);
     }
     .next-arrow {
       right: 10px;
@@ -230,20 +241,29 @@ p.entry-meta {
 }
 
 .recent-posts-five {
+
   .wrap {
     max-width: 1024px;
   }
   .widget{
-    padding: 20px 0;
+
+    &:not(.widget_text) {
+      padding: 20px 0;
+    }
+
     @include media-md {
       width: 50%;
       float: left;
-      padding: 20px;
+
+      &:not(.widget_text) {
+        padding: 20px;
+      }
 
       &:nth-child(1), &:nth-child(2) {
         width: 100%;
         clear: both;
       }
+
       &:nth-child(3), &:nth-child(5) {
         clear: both;
       }
