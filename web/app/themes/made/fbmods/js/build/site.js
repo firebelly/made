@@ -65,10 +65,25 @@ var Main = (function ($) {
       });
     },
     slickSliders: function () {
-      $('.widget-area-front-page-recent-posts > .wrap > section:not(:first-child)').wrapAll('<div class="slick-slider"></div>');
-      $('.slick-slider').slick({
-        nextArrow: '<button type="button" class="next-arrow">&gt;</button>',
-        prevArrow: '<button type="button" class="previous-arrow">&lt;</button>'
+      $('.widget-area-front-page-recent-posts > .wrap > section:not(:first-child)').wrapAll('<div class="slider"></div>');
+      function slickOrDont() {
+        if( $(window).width() <= 800) {
+          if ($('.slick-initialized').length) {
+            $('.slider').slick('unslick');
+          }
+        } else {
+          if (!$('.slick-initialized').length) {
+            $('.slider').slick({
+              nextArrow: '<button type="button" class="next-arrow">&gt;</button>',
+              prevArrow: '<button type="button" class="previous-arrow">&lt;</button>'
+            });
+          }
+        }
+      }
+      slickOrDont();
+
+      $(window).resize(function () {
+        slickOrDont();
       });
     },
     initMain: function () {
