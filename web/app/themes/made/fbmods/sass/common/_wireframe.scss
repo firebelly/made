@@ -94,10 +94,7 @@
 
 // Shrink first section in home page
 .front-page-1 {
-  height: 70vh;
-}
-.front-page-2 {
-  padding-top: 50px;
+  height: 50vh;
 }
 
 // Selectively remove headers that are redundant because the top nav also shows page title
@@ -118,9 +115,9 @@
 
 // Restyle current-project excerpt on front page
 .entry-content, .entry-header {
-    max-width: 1024px;
-    margin: auto;
-    text-align: left;
+  max-width: 1024px;
+  margin: auto;
+  text-align: left;
 }
 
 // Make content images full-width
@@ -133,7 +130,7 @@
 }
 
 // Band-aid in a few styles to contributing artist widget on About page
-.front-page-3 .widget-area, .participating-artists-widget {
+.front-page-4 .widget-area, .participating-artists-widget {
   @include clearfix();
   margin: 0 -10px 30px;
   article {
@@ -156,7 +153,7 @@
 }
 
 // Smaller titles
-.front-page-2 p, .entry-title {
+.front-page-3 p, .entry-title {
   font-size: 2.2rem;
 }
 
@@ -176,21 +173,22 @@ p.entry-meta {
 
   .wireframe-image { // An element placed within the wrapper, and given appropriate height with js
     content: '';
-    position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('../svgs/wire-image.svg');
-    background-size: 100% 100%;
     opacity: 0.5;
+    position: absolute;
+    background-size: 100% 100%;
+    background-image: url('../svgs/wire-image.svg');
   }
 }
 .front-page-1, .front-page-3 {
-    background-image: url('../svgs/wire-image-dark.svg') !important;
-    background-size: 100% 100% !important;
+  background-size: 100% 100% !important;
+  background-image: url('../svgs/wire-image-dark.svg') !important;
 }
 
+// Footer styles
 .footer-widgets {
   .widget-title {
     text-align: left;
@@ -201,5 +199,32 @@ p.entry-meta {
   .social-icon {
     width: 40px;
     margin-right: 10px;
+  }
+}
+
+// Consistent section padding
+.front-page-section {
+  padding: 100px 0;
+}
+
+.widget-area-front-page-recent-posts {
+  .widget {
+    width: 100%;
+    padding: 0 50px;
+  }
+  .slick-slider {
+    position: relative;
+    .next-arrow, .previous-arrow {
+      position: absolute;
+      top: 50%;
+      transition: translateY(-50%);
+      z-index: 1;
+    }
+    .next-arrow {
+      right: 10px;
+    }
+    .previous-arrow {
+      left: 10px;
+    }
   }
 }

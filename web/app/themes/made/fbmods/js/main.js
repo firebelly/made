@@ -41,11 +41,19 @@ var Main = (function ($) {
         }
       });
     },
+    slickSliders: function () {
+      $('.widget-area-front-page-recent-posts > .wrap > section:not(:first-child)').wrapAll('<div class="slick-slider"></div>');
+      $('.slick-slider').slick({
+        nextArrow: '<button type="button" class="next-arrow">&gt;</button>',
+        prevArrow: '<button type="button" class="previous-arrow">&lt;</button>'
+      });
+    },
     initMain: function () {
       $(document).ready(function () {
         Main.smoothScroll();
       });
       $(window).on('load', function () {
+        Main.slickSliders();
         Main.wireframifyImages();
       });
 

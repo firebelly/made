@@ -96,7 +96,7 @@ input[type="search"]{
 .site-footer:before,
 .site-header:before,
 .site-inner:before,
-.widget:before,
+// .widget:before,
 .wrap:before {
   content: " ";
   display: table;
@@ -114,7 +114,7 @@ input[type="search"]{
 .site-footer:after,
 .site-header:after,
 .site-inner:after,
-.widget:after,
+// .widget:after,
 .wrap:after {
   clear: both;
   content: " ";
