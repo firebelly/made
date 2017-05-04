@@ -207,7 +207,7 @@ p.entry-meta {
   padding: 100px 0;
 }
 
-.widget-area-front-page-recent-posts {
+.recent-posts-slider-area {
   .widget {
     width: 100%;
     padding: 0 50px;
@@ -225,6 +225,28 @@ p.entry-meta {
     }
     .previous-arrow {
       left: 10px;
+    }
+  }
+}
+
+.recent-posts-five {
+  .wrap {
+    max-width: 1024px;
+  }
+  .widget{
+    padding: 20px 0;
+    @include media-md {
+      width: 50%;
+      float: left;
+      padding: 20px;
+
+      &:nth-child(1), &:nth-child(2) {
+        width: 100%;
+        clear: both;
+      }
+      &:nth-child(3), &:nth-child(5) {
+        clear: both;
+      }
     }
   }
 }

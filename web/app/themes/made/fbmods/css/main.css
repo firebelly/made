@@ -3466,22 +3466,43 @@ p.entry-meta {
   padding: 100px 0;
 }
 
-.widget-area-front-page-recent-posts .widget {
+.recent-posts-slider-area .widget {
   width: 100%;
   padding: 0 50px;
 }
-.widget-area-front-page-recent-posts .slick-slider {
+.recent-posts-slider-area .slick-slider {
   position: relative;
 }
-.widget-area-front-page-recent-posts .slick-slider .next-arrow, .widget-area-front-page-recent-posts .slick-slider .previous-arrow {
+.recent-posts-slider-area .slick-slider .next-arrow, .recent-posts-slider-area .slick-slider .previous-arrow {
   position: absolute;
   top: 50%;
   transition: translateY(-50%);
   z-index: 1;
 }
-.widget-area-front-page-recent-posts .slick-slider .next-arrow {
+.recent-posts-slider-area .slick-slider .next-arrow {
   right: 10px;
 }
-.widget-area-front-page-recent-posts .slick-slider .previous-arrow {
+.recent-posts-slider-area .slick-slider .previous-arrow {
   left: 10px;
+}
+
+.recent-posts-five .wrap {
+  max-width: 1024px;
+}
+.recent-posts-five .widget {
+  padding: 20px 0;
+}
+@media screen and (min-width: 800px) {
+  .recent-posts-five .widget {
+    width: 50%;
+    float: left;
+    padding: 20px;
+  }
+  .recent-posts-five .widget:nth-child(1), .recent-posts-five .widget:nth-child(2) {
+    width: 100%;
+    clear: both;
+  }
+  .recent-posts-five .widget:nth-child(3), .recent-posts-five .widget:nth-child(5) {
+    clear: both;
+  }
 }

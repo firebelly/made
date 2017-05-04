@@ -73,7 +73,7 @@ function infinity_front_page_widgets() {
 	) );
 
 	genesis_widget_area( 'front-page-3', array(
-		'before' => '<div id="front-page-3" class="front-page-3 front-page-recent-posts front-page-section"><div class="image-section fadeup-effect recent-posts-five"><div class="wrap">',
+		'before' => '<div id="front-page-3" class="front-page-3 front-page-recent-posts front-page-section"><div class="image-section widget-area fadeup-effect recent-posts-slider-area"><div class="wrap">',
 		'after'  => '</div></div></div>',
 	) );
 

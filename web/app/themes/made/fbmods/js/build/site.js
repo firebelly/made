@@ -65,7 +65,7 @@ var Main = (function ($) {
       });
     },
     slickSliders: function () {
-      $('.widget-area-front-page-recent-posts > .wrap > section:not(:first-child)').wrapAll('<div class="slider"></div>');
+      $('.recent-posts-slider-area > .wrap > section:not(:first-child)').wrapAll('<div class="slider"></div>');
       function slickOrDont() {
         if( $(window).width() <= 800) {
           if ($('.slick-initialized').length) {
