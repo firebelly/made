@@ -1,6 +1,12 @@
 set :stage, :staging
+set :application, 'made_staging2'
+set :domain, 'made2.firebelly.co'
+set :theme, 'made'
 set :login, 'firebelly'
-set :domain, 'made.firebelly.co'
+set :repo_url, 'git@github.com:firebelly/made.git'
+set :php, 'php70'
+set :fonts_path, 'web/app/themes/made2/fbmods/fonts' # This directory should be gitignored, we will need to symlink it to a corresponding directory in shared/ where we can manually add protected font files
+
 
 
 # Simple Role Syntax
