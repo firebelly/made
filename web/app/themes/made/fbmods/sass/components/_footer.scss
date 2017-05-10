@@ -1,14 +1,13 @@
 // Footer
-
-.site-footer {
-  .contact {
-    @include media-sm {
-
-    }
+.footer-widgets {
+  .widget-title {
+    text-align: left;
   }
-
-  .secondary-nav {
-    @include media-sm {}
-    @include media-md {}
+  .social-link {
+    display: inline-block;
+  }
+  .social-icon {
+    width: 40px;
+    margin-right: 10px;
   }
 }

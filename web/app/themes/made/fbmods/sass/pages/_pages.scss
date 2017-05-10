@@ -1,0 +1,13 @@
+// Selectively remove headers that are redundant because the top nav also shows page title
+.archive .archive-description, 
+.page-about main > article > .entry-header,
+.page-get-involved main > article > .entry-header
+ {
+  // display: none;
+  @include sr-only;
+}
+
+// Display Featured Image on top of the post 
+.entry-header::after {
+  display: none;
+}

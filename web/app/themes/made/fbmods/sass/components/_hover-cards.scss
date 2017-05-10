@@ -1,0 +1,107 @@
+// A more generalized refactor of inifinities .team-member hover class
+// ...since we want to use this styling in other places than intended.
+.hover-card {
+  a {
+    &.aligncenter, &.alignleft, &.alignnone, &.alignright {
+      display: block;
+      margin: 0;
+    }
+  }
+  &.entry {
+    color: #fff;
+    padding: 0;
+    position: relative;
+  }
+  .entry-header {
+    background-color: rgba(0, 0, 0, 0.8);
+    height: 100%;
+    display: block;
+    left: 0;
+    opacity: 0;
+    -ms-filter: "alpha(Opacity=0)";
+    filter: alpha(opacity = 0);
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 0;
+    &:after {
+      border-width: 0;
+      padding-bottom: 0;
+    }
+  }
+  &.entry {
+    &:hover .entry-header, &:focus .entry-header, &.focused .entry-header {
+      background-color: rgba(0, 0, 0, 0.8);
+      opacity: 1;
+      -ms-filter: "alpha(Opacity=1)";
+      filter: alpha(opacity = 1);
+    }
+  }
+  .entry-header {
+    a {
+      display: table-cell;
+      padding: 20px;
+      position: relative;
+      transform: translateY(10px);
+      transition: transform .4s ease-in-out;
+      vertical-align: middle;
+      z-index: 3;
+    }
+    &.position-top a {
+      padding-top: 45px;
+      vertical-align: top;
+    }
+  }
+  &:hover .entry-header a, &:focus .entry-header a, &.focused .entry-header a {
+    transform: translateY(1px);
+  }
+  .more-link {
+    &:hover, &:focus {
+      color: #fff;
+    }
+  }
+  .entry-title {
+    display: table;
+    font-size: 27px;
+    font-size: 2.7rem;
+    height: 100%;
+    margin-top: 0;
+    margin-bottom: 10px;
+    overflow: hidden;
+    width: 100%;
+    text-align: center;
+     a {
+      color: #fff;
+    }
+    a:focus .hover-card {
+      border-bottom: 1px #fff dotted;
+    }
+  }
+  p {
+    color: #fff;
+    font-size: 22px;
+    font-size: 2.2rem;
+    font-weight: 400;
+  }
+  .entry-title .team-title {
+    color: #fff;
+    font-size: 22px;
+    font-size: 2.2rem;
+    font-weight: 400;
+    display: block;
+    padding-top: 10px;
+  }
+}
+
+// Band-aid in a few styles to contributing artist widget on About page
+.front-page-4 .widget-area, .participating-artists-widget {
+  @include clearfix();
+  margin: 0 -10px 30px;
+  article {
+    @extend .hover-card;
+  }
+  img { 
+    display: block;
+    width: 100%;
+  }
+}

@@ -3181,6 +3181,10 @@ img {
   font-weight: bold;
 }
 
+.page .entry-content img {
+  width: 100%;
+}
+
 .select-wrapper {
   margin: 0;
   padding: 0;
@@ -3211,68 +3215,15 @@ img {
   outline: none;
 }
 
-.single-post article {
-  *zoom: 1;
+.footer-widgets .widget-title {
+  text-align: left;
 }
-.single-post article:before, .single-post article:after {
-  content: "\0020";
-  display: block;
-  height: 0;
-  overflow: hidden;
+.footer-widgets .social-link {
+  display: inline-block;
 }
-.single-post article:after {
-  clear: both;
-}
-.single-post article .user-content ul, .single-post article .user-content ol {
-  padding-left: 0;
-}
-.single-post article .user-content ul li, .single-post article .user-content ol li {
-  font-size: 16px;
-  line-height: 1.5em;
-}
-.single-post article .user-content figure, .single-post article .user-content figure:first-child {
-  margin: 30px 0;
-}
-.single-post article .user-content figure > img,
-.single-post article .user-content figure > img:first-child {
-  margin: 0;
-}
-.single-post article .user-content blockquote {
-  padding: 20px 0;
-}
-.single-post article .user-content blockquote p {
-  font-size: 24px;
-  margin-bottom: 0;
-}
-
-.alignnone {
-  margin-left: 0;
-  margin-right: 0;
-  max-width: 100%;
-  height: auto;
-}
-
-.aligncenter {
-  display: block;
-  height: auto;
-}
-
-.alignleft,
-.alignright {
-  height: auto;
-}
-
-@media screen and (min-width: 480px) {
-  .alignleft {
-    float: left;
-  }
-
-  .alignright {
-    float: right;
-  }
-}
-body#tinymce {
-  margin: 12px !important;
+.footer-widgets .social-icon {
+  width: 40px;
+  margin-right: 10px;
 }
 
 .hover-card a.aligncenter, .front-page-4 .widget-area article a.aligncenter, .participating-artists-widget article a.aligncenter, .hover-card a.alignleft, .front-page-4 .widget-area article a.alignleft, .participating-artists-widget article a.alignleft, .hover-card a.alignnone, .front-page-4 .widget-area article a.alignnone, .participating-artists-widget article a.alignnone, .hover-card a.alignright, .front-page-4 .widget-area article a.alignright, .participating-artists-widget article a.alignright {
@@ -3361,38 +3312,6 @@ body#tinymce {
   padding-top: 10px;
 }
 
-.front-page-1 {
-  height: 50vh;
-}
-
-.archive .archive-description,
-.page-about main > article > .entry-header,
-.page-get-involved main > article > .entry-header {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  border: 0;
-}
-
-.site-container * {
-  font-family: 'Calibre' !important;
-  letter-spacing: 0.02em !important;
-}
-
-.entry-content, .entry-header {
-  max-width: 1024px;
-  margin: auto;
-  text-align: left;
-}
-
-.page .entry-content img {
-  width: 100%;
-}
-
 .front-page-4 .widget-area, .participating-artists-widget {
   *zoom: 1;
   margin: 0 -10px 30px;
@@ -3411,55 +3330,14 @@ body#tinymce {
   width: 100%;
 }
 
-.entry-header::after {
-  display: none;
+.front-page-1 {
+  height: 50vh;
 }
 
-.genesis-nav-menu a {
-  padding: 30px 10px;
-}
-
-.front-page-3 p, .entry-title {
-  font-size: 2.2rem;
-}
-
-p.entry-meta {
-  font-size: 1.5rem;
-}
-
-.front-page-2 p.entry-meta {
-  margin-bottom: 30px !important;
-}
-
-.wireframe-image-wrapper {
-  position: relative;
-}
-.wireframe-image-wrapper .wireframe-image {
-  content: '';
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  opacity: 0.5;
-  position: absolute;
-  background-size: 100% 100%;
-  background-image: url("../svgs/wire-image.svg");
-}
-
-.front-page-1, .front-page-3 {
-  background-size: 100% 100% !important;
-  background-image: url("../svgs/wire-image-dark.svg") !important;
-}
-
-.footer-widgets .widget-title {
+.entry-content, .entry-header {
+  max-width: 1024px;
+  margin: auto;
   text-align: left;
-}
-.footer-widgets .social-link {
-  display: inline-block;
-}
-.footer-widgets .social-icon {
-  width: 40px;
-  margin-right: 10px;
 }
 
 .front-page-section {
@@ -3493,25 +3371,99 @@ p.entry-meta {
   left: 10px;
 }
 
-.recent-posts-five .wrap {
-  max-width: 1024px;
+.single-post article {
+  *zoom: 1;
 }
-.recent-posts-five .widget:not(.widget_text) {
+.single-post article:before, .single-post article:after {
+  content: "\0020";
+  display: block;
+  height: 0;
+  overflow: hidden;
+}
+.single-post article:after {
+  clear: both;
+}
+.single-post article .user-content ul, .single-post article .user-content ol {
+  padding-left: 0;
+}
+.single-post article .user-content ul li, .single-post article .user-content ol li {
+  font-size: 16px;
+  line-height: 1.5em;
+}
+.single-post article .user-content figure, .single-post article .user-content figure:first-child {
+  margin: 30px 0;
+}
+.single-post article .user-content figure > img,
+.single-post article .user-content figure > img:first-child {
+  margin: 0;
+}
+.single-post article .user-content blockquote {
   padding: 20px 0;
 }
-@media screen and (min-width: 800px) {
-  .recent-posts-five .widget {
-    width: 50%;
+.single-post article .user-content blockquote p {
+  font-size: 24px;
+  margin-bottom: 0;
+}
+
+.archive .archive-description,
+.page-about main > article > .entry-header,
+.page-get-involved main > article > .entry-header {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.entry-header::after {
+  display: none;
+}
+
+.alignnone {
+  margin-left: 0;
+  margin-right: 0;
+  max-width: 100%;
+  height: auto;
+}
+
+.aligncenter {
+  display: block;
+  height: auto;
+}
+
+.alignleft,
+.alignright {
+  height: auto;
+}
+
+@media screen and (min-width: 480px) {
+  .alignleft {
     float: left;
   }
-  .recent-posts-five .widget:not(.widget_text) {
-    padding: 20px;
+
+  .alignright {
+    float: right;
   }
-  .recent-posts-five .widget:nth-child(1), .recent-posts-five .widget:nth-child(2) {
-    width: 100%;
-    clear: both;
-  }
-  .recent-posts-five .widget:nth-child(3), .recent-posts-five .widget:nth-child(5) {
-    clear: both;
-  }
+}
+body#tinymce {
+  margin: 12px !important;
+}
+
+.genesis-nav-menu a {
+  padding: 30px 10px;
+}
+
+.front-page-3 p, .entry-title {
+  font-size: 2.2rem;
+}
+
+p.entry-meta {
+  font-size: 1.5rem;
+}
+
+.front-page-2 p.entry-meta {
+  margin-bottom: 30px !important;
 }

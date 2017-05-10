@@ -44,3 +44,12 @@
 
 
 }
+
+// Make content images full-width
+.page {
+  .entry-content {
+    img {
+      width: 100%;
+    }
+  }
+}

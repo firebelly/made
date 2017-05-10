@@ -24,11 +24,13 @@
 @import "components/search";
 @import "components/forms";
 @import "components/footer";
+@import "components/hover-cards";
 
 // Pages
 @import "pages/home";
 @import "pages/single-post";
 @import "pages/search-results";
+@import "pages/pages";
 
 // WP specifics
 @import 'helpers/wp-classes';

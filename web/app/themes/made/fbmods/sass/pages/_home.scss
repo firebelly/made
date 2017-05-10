@@ -1,4 +1,53 @@
 // Home page
 
-.home.page {
+// Shrink first section in home page
+.front-page-1 {
+  height: 50vh;
+}
+
+// Restyle current-project excerpt on front page
+.entry-content, .entry-header {
+  max-width: 1024px;
+  margin: auto;
+  text-align: left;
+}
+
+// Consistent section padding
+.front-page-section {
+  padding: 100px 0;
+}
+
+
+// Front page recent post slider
+.recent-posts-slider-area {
+  .widget {
+    width: 100%;
+
+    &:not(.widget_text) {
+      padding: 20px 0;
+    }
+
+    @include media-md {
+      &:not(.widget_text) {
+        padding: 0 50px;
+      }
+    }
+  }
+
+  .slick-slider {
+    position: relative;
+
+    .next-arrow, .previous-arrow {
+      top: 50%;
+      z-index: 1;
+      position: absolute;
+      transition: translateY(-50%);
+    }
+    .next-arrow {
+      right: 10px;
+    }
+    .previous-arrow {
+      left: 10px;
+    }
+  }
 }
