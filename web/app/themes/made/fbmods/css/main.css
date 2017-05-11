@@ -56,6 +56,7 @@
 /* Baseline Normalize
 --------------------------------------------- */
 /* normalize.css v4.1.1 | MIT License | http://necolas.github.io/normalize.css/ */
+@import url("https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,800,900");
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -299,24 +300,10 @@ input[type="search"] {
 ---------------------------------------------------------------------------------------------------- */
 /* Typographical Elements
 --------------------------------------------- */
-html {
-  font-size: 62.5%;
-  /* 10px browser default */
-}
-
 /* Chrome fix */
-body > div {
-  font-size: 2.2rem;
-}
-
 body {
   background-color: #fff;
   color: #000;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 22px;
-  font-size: 2.2rem;
-  font-weight: 400;
-  line-height: 1.75;
   margin: 0;
 }
 
@@ -373,11 +360,6 @@ hr {
   margin-bottom: 40px;
 }
 
-b,
-strong {
-  font-weight: 700;
-}
-
 blockquote,
 cite,
 em,
@@ -397,8 +379,6 @@ blockquote {
 blockquote::before {
   content: "\201C";
   display: block;
-  font-size: 30px;
-  font-size: 3rem;
   height: 0;
   left: -20px;
   position: relative;
@@ -413,36 +393,13 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Cormorant Garamond', serif;
-  font-weight: 700;
-  line-height: 1.2;
   margin: 0 0 20px;
-}
-
-h1 {
-  font-size: 48px;
-  font-size: 4.8rem;
-}
-
-h2 {
-  font-size: 42px;
-  font-size: 4.2rem;
-}
-
-h3 {
-  font-size: 36px;
-  font-size: 3.6rem;
 }
 
 .comment-respond h3,
 .entry-comments h3,
 .entry-pings h3 {
   margin-bottom: 10px;
-}
-
-h4 {
-  font-size: 27px;
-  font-size: 2.7rem;
 }
 
 .entry-content h4 {
@@ -454,16 +411,6 @@ h4 {
   margin-bottom: 40px;
   margin-top: 60px;
   text-align: center;
-}
-
-h5 {
-  font-size: 24px;
-  font-size: 2.4rem;
-}
-
-h6 {
-  font-size: 20px;
-  font-size: 2rem;
 }
 
 /* Objects
@@ -568,12 +515,7 @@ textarea {
   border: 1px solid #eee;
   border-radius: 0;
   color: #000;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 20px;
-  font-size: 2rem;
   -webkit-font-smoothing: antialiased;
-  font-weight: 400;
-  line-height: 1.5;
   padding: 20px;
   width: 100%;
 }
@@ -619,23 +561,14 @@ input[type="submit"],
   border-radius: 0;
   color: #fff;
   cursor: pointer;
-  font-family: 'Raleway', sans-serif;
-  font-size: 10px;
-  font-size: 1rem;
   -webkit-font-smoothing: antialiased;
-  font-weight: 700;
-  letter-spacing: 2px;
-  line-height: 1;
   padding: 12px 20px;
   text-decoration: none;
-  text-transform: uppercase;
   white-space: normal;
   width: auto;
 }
 
 .button.large {
-  font-size: 12px;
-  font-size: 1.2rem;
   padding: 20px 30px;
 }
 
@@ -701,7 +634,6 @@ input[type="search"]::-webkit-search-results-button {
 table {
   border-collapse: collapse;
   border-spacing: 0;
-  line-height: 2;
   margin-bottom: 40px;
   width: 100%;
   word-break: break-all;
@@ -722,7 +654,6 @@ td {
 }
 
 th {
-  font-weight: 400;
   padding: 0 6px;
 }
 
@@ -751,7 +682,6 @@ th:first-child {
 .widget_search input[type="submit"]:focus {
   clip: auto !important;
   display: block;
-  font-weight: bold;
   height: auto;
   padding: 20px 20px;
   text-decoration: none;
@@ -914,13 +844,10 @@ th:first-child {
 }
 
 .author-box {
-  line-height: 1.5;
   padding-bottom: 20px;
 }
 
 .breadcrumb {
-  font-size: 18px;
-  font-size: 1.8rem;
   padding-bottom: 10px;
 }
 
@@ -942,8 +869,6 @@ th:first-child {
 .search-form:before {
   color: #999;
   content: "\f4a5";
-  font-family: "ionicons";
-  font-size: 20px;
   left: 15px;
   position: absolute;
   top: 6px;
@@ -955,8 +880,6 @@ th:first-child {
 }
 
 .search-form input[type="search"] {
-  font-size: 16px;
-  font-size: 1.6rem;
   padding-bottom: 10px;
   padding-left: 40px;
   padding-top: 12px;
@@ -984,14 +907,7 @@ th:first-child {
 .archive-description .entry-title,
 .archive-title,
 .author-box-title {
-  font-size: 24px;
-  font-size: 2.4rem;
   margin-bottom: 10px;
-}
-
-.entry-title {
-  font-size: 48px;
-  font-size: 4.8rem;
 }
 
 .entry-title a,
@@ -1006,13 +922,8 @@ th:first-child {
 }
 
 .widget-title {
-  font-family: 'Raleway', sans-serif;
-  font-size: 12px;
-  font-size: 1.2rem;
-  letter-spacing: 2px;
   margin-bottom: 20px;
   text-align: center;
-  text-transform: uppercase;
 }
 
 /* WordPress
@@ -1067,9 +978,6 @@ img.alignright,
 
 .gallery-caption,
 .wp-caption-text {
-  font-size: 18px;
-  font-size: 1.8rem;
-  font-weight: 700;
   margin-bottom: 40px;
   margin-left: 0;
   text-align: center;
@@ -1153,19 +1061,8 @@ img.alignright,
 
 .footer-widgets .featured-content .entry-title,
 .sidebar .featured-content .entry-title {
-  font-size: 18px;
-  font-size: 1.8rem;
-  line-height: 1.25;
   margin-bottom: 10px;
   margin-top: 10px;
-}
-
-.footer-widgets .featured-content .entry-meta,
-.sidebar .featured-content .entry-meta {
-  font-size: 12px;
-  font-size: 1.2rem;
-  letter-spacing: 1px;
-  text-transform: uppercase;
 }
 
 .footer-widgets .featured-content .entry-meta a,
@@ -1252,8 +1149,6 @@ img.alignright,
 }
 
 .enews-widget input {
-  font-size: 16px;
-  font-size: 1.6rem;
   margin-bottom: 15px;
   padding-bottom: 10px;
   padding-top: 10px;
@@ -1268,8 +1163,6 @@ img.alignright,
 .enews-widget input[type="submit"] {
   background-color: #000;
   color: #fff;
-  font-size: 10px;
-  font-size: 1rem;
   margin: 0;
   width: auto !important;
 }
@@ -1335,16 +1228,6 @@ img.alignright,
   width: 200px;
 }
 
-.site-title {
-  font-family: 'Raleway', sans-serif;
-  font-size: 18px;
-  font-size: 1.8rem;
-  font-weight: 700;
-  letter-spacing: 1px;
-  line-height: 1;
-  text-transform: uppercase;
-}
-
 .site-title a,
 .site-title a:hover,
 .site-title a:focus {
@@ -1375,7 +1258,6 @@ img.alignright,
 ---------------------------------------------------------------------------------------------------- */
 .genesis-nav-menu {
   clear: both;
-  line-height: 1;
   width: 100%;
 }
 
@@ -1389,14 +1271,8 @@ img.alignright,
 .genesis-nav-menu a {
   color: #000;
   display: block;
-  font-family: 'Raleway', sans-serif;
-  font-size: 10px;
-  font-size: 1rem;
-  font-weight: 700;
-  letter-spacing: 2px;
   padding: 30px 20px;
   text-decoration: none;
-  text-transform: uppercase;
 }
 
 .genesis-nav-menu a:hover,
@@ -1537,8 +1413,6 @@ img.alignright,
 }
 
 .intro {
-  font-size: 24px;
-  font-size: 2.4rem;
   font-style: italic;
   margin-bottom: 40px;
   text-align: center;
@@ -1557,11 +1431,6 @@ img.alignright,
   margin: 0 auto 40px;
   padding-bottom: 10px;
   width: 2.5%;
-}
-
-p.entry-meta {
-  font-size: 20px;
-  font-size: 2rem;
 }
 
 .entry-categories,
@@ -1587,9 +1456,6 @@ p.entry-meta {
 
 .archive-pagination a {
   color: #000;
-  font-size: 18px;
-  font-size: 1.8rem;
-  font-weight: 700;
 }
 
 .archive-pagination a:hover,
@@ -1606,14 +1472,8 @@ p.entry-meta {
   color: #000;
   cursor: pointer;
   display: inline-block;
-  font-family: 'Raleway', sans-serif;
-  font-size: 10px;
-  font-size: 1rem;
-  font-weight: 700;
-  letter-spacing: 2px;
   padding: 8px 12px;
   text-decoration: none;
-  text-transform: uppercase;
 }
 
 .archive-pagination li a:hover,
@@ -1629,8 +1489,6 @@ p.entry-meta {
 .entry-comments,
 .entry-pings {
   background-color: #fff;
-  font-size: 20px;
-  font-size: 2rem;
   margin-bottom: 40px;
 }
 
@@ -1643,7 +1501,6 @@ p.entry-meta {
 }
 
 .comment-header {
-  line-height: 1.5;
   margin-bottom: 30px;
 }
 
@@ -1685,8 +1542,6 @@ p.entry-meta {
 }
 
 .team-page h2.entry-title {
-  font-size: 24px;
-  font-size: 2.4rem;
   margin-bottom: 0;
   margin-top: 20px;
 }
@@ -1706,11 +1561,6 @@ p.entry-meta {
 
 /* Sidebar
 ---------------------------------------------------------------------------------------------------- */
-.sidebar {
-  font-size: 20px;
-  font-size: 2rem;
-}
-
 .sidebar .widget {
   border-bottom: 1px solid #eee;
   padding: 50px 60px 60px;
@@ -1760,12 +1610,6 @@ p.entry-meta {
 
 /* Offscreen Content Icon
 --------------------------------------------- */
-.ion-ios-close-empty,
-.ion-ios-more {
-  font-size: 36px;
-  font-size: 3.6rem;
-}
-
 .ion-ios-close-empty {
   margin-right: 10px;
 }
@@ -1787,8 +1631,6 @@ p.entry-meta {
 .offscreen-content-icon button {
   background-color: #fff;
   color: #000;
-  font-size: 20px;
-  font-size: 2rem;
   padding: 2px 10px 2px 12px;
 }
 
@@ -1801,8 +1643,6 @@ p.entry-meta {
 ---------------------------------------------------------------------------------------------------- */
 .footer-widgets {
   border-top: 1px solid #eee;
-  font-size: 20px;
-  font-size: 2rem;
   clear: both;
 }
 
@@ -1852,7 +1692,6 @@ p.entry-meta {
 ---------------------------------------------------------------------------------------------------- */
 .site-footer {
   border-top: 1px solid #eee;
-  line-height: 1;
   padding: 60px 0;
   text-align: center;
 }
@@ -1865,8 +1704,6 @@ p.entry-meta {
 }
 
 .site-footer p {
-  font-size: 18px;
-  font-size: 1.8rem;
   margin-bottom: 0;
 }
 
@@ -1994,14 +1831,12 @@ p.entry-meta {
   }
 
   .menu-toggle {
-    line-height: 20px;
     position: relative;
     z-index: 1000;
     width: 100%;
   }
 
   .menu-toggle::before {
-    font-size: 2em;
     margin-right: 10px;
     text-rendering: auto;
     vertical-align: middle;
@@ -2169,10 +2004,6 @@ p.entry-meta {
   .offscreen-content .enews-widget {
     padding: 20px;
   }
-
-  .offscreen-content p {
-    line-height: 1.5;
-  }
 }
 /* Infinity Pro Front Page
 Loaded on the front page */
@@ -2292,20 +2123,6 @@ Loaded on the front page */
   padding-right: 20px;
 }
 
-.front-page-2 .widget-title,
-.front-page-3 .widget-title,
-.front-page-4 .widget-title,
-.front-page-5 .widget-title,
-.front-page-6 .widget-title,
-.front-page-7 .widget-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 48px;
-  font-size: 4.8rem;
-  font-weight: 400;
-  letter-spacing: 0;
-  text-transform: none;
-}
-
 /* Front Page 1
 ---------------------------------------------------------------------------------------------------- */
 .front-page-1 {
@@ -2363,20 +2180,7 @@ Loaded on the front page */
 }
 
 .front-page-1 .widget-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 96px;
-  font-size: 9.6rem;
-  font-weight: 400;
-  letter-spacing: -2px;
   margin-bottom: -10px;
-  text-transform: none;
-}
-
-.front-page-1 p {
-  font-size: 22px;
-  font-size: 2.2rem;
-  letter-spacing: 2px;
-  text-transform: uppercase;
 }
 
 .front-page-1 p:last-child {
@@ -2411,8 +2215,6 @@ Loaded on the front page */
 }
 
 .front-page-2 p {
-  font-size: 30px;
-  font-size: 3rem;
   line-height: 1.75;
 }
 
@@ -2481,8 +2283,6 @@ Loaded on the front page */
 }
 
 .front-page-3 p {
-  font-size: 30px;
-  font-size: 3rem;
   line-height: 1.75;
 }
 
@@ -2518,8 +2318,6 @@ Loaded on the front page */
 }
 
 .front-page-4 p {
-  font-size: 30px;
-  font-size: 3rem;
   line-height: 1.75;
 }
 
@@ -2588,8 +2386,6 @@ Loaded on the front page */
 }
 
 .front-page-5 p {
-  font-size: 30px;
-  font-size: 3rem;
   line-height: 1.75;
 }
 
@@ -2625,8 +2421,6 @@ Loaded on the front page */
 }
 
 .front-page-6 p {
-  font-size: 30px;
-  font-size: 3rem;
   line-height: 1.75;
 }
 
@@ -2695,8 +2489,6 @@ Loaded on the front page */
 }
 
 .front-page-7 p {
-  font-size: 30px;
-  font-size: 3rem;
   line-height: 1.75;
 }
 
@@ -2771,23 +2563,9 @@ Loaded on the front page */
   background-color: #f5f5f5;
 }
 
-.front-page .content-box h4 {
-  font-family: 'Raleway', sans-serif;
-  font-size: 14px;
-  font-size: 1.4rem;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
-
 .front-page .content-box p {
-  font-size: 18px;
-  font-size: 1.8rem;
   line-height: 1.625;
   margin-bottom: 0;
-}
-
-.content-box .icon {
-  font-size: 30px;
 }
 
 /* Team Overlay
@@ -2934,35 +2712,45 @@ Loaded on the front page */
   .front-page-5 p,
   .front-page-6 p,
   .front-page-7 p {
-    font-size: 24px;
-    font-size: 2.4rem;
     line-height: 1.75;
   }
 
   .front-page-1 .widget-title {
-    font-size: 60px;
-    font-size: 6rem;
     margin-bottom: 20px;
   }
 }
-.wf-loading {
-  visibility: hidden;
+.h1 {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 45/40;
+  text-transform: none;
 }
 
-@font-face {
-  font-family: "Calibre";
-  src: url("../fonts/Calibre-Regular.otf");
+.h2 {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 40px;
+  font-weight: 300;
+  line-height: 45/40;
+  text-transform: none;
 }
-@font-face {
-  font-family: "Calibre";
-  src: url("../fonts/Calibre-Bold.otf");
-  font-weight: bold;
+
+.h3 {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 900;
+  font-size: 20px;
+  line-height: 15/20;
+  text-transform: uppercase;
 }
-@font-face {
-  font-family: "Calibre";
-  src: url("../fonts/Calibre-RegularItalic.otf");
-  font-style: italic;
+
+.copy {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 500;
+  font-size: 12;
+  line-height: 14/12;
+  text-transform: none;
 }
+
 .hidden {
   display: none;
   visibility: hidden;
@@ -3093,11 +2881,12 @@ html {
 }
 
 body {
-  color: #202020;
-  font-size: 16px;
   overflow-x: hidden;
-  font-family: Helvetica, sans-serif;
-  background: #fff;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 500;
+  font-size: 12;
+  line-height: 14/12;
+  text-transform: none;
 }
 
 p em {
@@ -3118,10 +2907,10 @@ img {
   left: 0;
   right: 0;
   z-index: 200;
-  color: #202020;
+  color: #000;
   padding: 50px;
   text-align: center;
-  background: #202020;
+  background: #000;
 }
 
 .alert {
@@ -3185,6 +2974,29 @@ img {
   width: 100%;
 }
 
+.site-header .title-area {
+  padding: 0;
+}
+.site-header .site-title {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+.site-header .nav-primary {
+  width: 100%;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 40px;
+  font-weight: 300;
+  line-height: 45/40;
+  text-transform: none;
+  font-size: 1em;
+}
+
 .select-wrapper {
   margin: 0;
   padding: 0;
@@ -3217,6 +3029,11 @@ img {
 
 .footer-widgets .widget-title {
   text-align: left;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 40px;
+  font-weight: 300;
+  line-height: 45/40;
+  text-transform: none;
 }
 .footer-widgets .social-link {
   display: inline-block;
@@ -3281,9 +3098,12 @@ img {
   color: #fff;
 }
 .hover-card .entry-title, .front-page-4 .widget-area article .entry-title, .participating-artists-widget article .entry-title {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 40px;
+  font-weight: 300;
+  line-height: 45/40;
+  text-transform: none;
   display: table;
-  font-size: 27px;
-  font-size: 2.7rem;
   height: 100%;
   margin-top: 0;
   margin-bottom: 10px;
@@ -3294,20 +3114,11 @@ img {
 .hover-card .entry-title a, .front-page-4 .widget-area article .entry-title a, .participating-artists-widget article .entry-title a {
   color: #fff;
 }
-.hover-card .entry-title a:focus .hover-card, .front-page-4 .widget-area article .entry-title a:focus .hover-card, .participating-artists-widget article .entry-title a:focus .hover-card, .hover-card .entry-title a:focus .front-page-4 .widget-area article, .front-page-4 .widget-area .hover-card .entry-title a:focus article, .front-page-4 .widget-area article .entry-title a:focus article, .participating-artists-widget article .entry-title a:focus .front-page-4 .widget-area article, .hover-card .entry-title a:focus .participating-artists-widget article, .participating-artists-widget .hover-card .entry-title a:focus article, .participating-artists-widget article .entry-title a:focus article {
-  border-bottom: 1px #fff dotted;
-}
 .hover-card p, .front-page-4 .widget-area article p, .participating-artists-widget article p {
   color: #fff;
-  font-size: 22px;
-  font-size: 2.2rem;
-  font-weight: 400;
 }
 .hover-card .entry-title .team-title, .front-page-4 .widget-area article .entry-title .team-title, .participating-artists-widget article .entry-title .team-title {
   color: #fff;
-  font-size: 22px;
-  font-size: 2.2rem;
-  font-weight: 400;
   display: block;
   padding-top: 10px;
 }
@@ -3330,18 +3141,58 @@ img {
   width: 100%;
 }
 
-.front-page-1 {
+.front-page-section {
+  padding: 60px 0;
+  margin-top: 0;
+  border-top: none;
+}
+.front-page-section .widget-title {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 40px;
+  font-weight: 300;
+  line-height: 45/40;
+  text-transform: none;
+}
+.front-page-section:nth-of-type(odd) {
+  background: #000;
+}
+
+.front-page-banner {
   height: 50vh;
 }
 
-.entry-content, .entry-header {
-  max-width: 1024px;
-  margin: auto;
-  text-align: left;
+.front-page-description .widget-title {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 45/40;
+  text-transform: none;
+  color: #fdbb30;
+}
+.front-page-description .textwidget, .front-page-description p {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30/20;
+  text-transform: none;
 }
 
-.front-page-section {
-  padding: 100px 0;
+.front-page-recent-posts article {
+  max-width: 1024px;
+  margin: auto;
+}
+.front-page-recent-posts .entry-content, .front-page-recent-posts .entry-header {
+  text-align: left;
+}
+.front-page-recent-posts .entry-header .entry-title {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 900;
+  font-size: 20px;
+  line-height: 15/20;
+  text-transform: uppercase;
+}
+.front-page-recent-posts .entry-header a {
+  border-bottom: none;
 }
 
 .recent-posts-slider-area .widget {
@@ -3450,18 +3301,6 @@ img {
 }
 body#tinymce {
   margin: 12px !important;
-}
-
-.genesis-nav-menu a {
-  padding: 30px 10px;
-}
-
-.front-page-3 p, .entry-title {
-  font-size: 2.2rem;
-}
-
-p.entry-meta {
-  font-size: 1.5rem;
 }
 
 .front-page-2 p.entry-meta {

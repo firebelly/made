@@ -61,9 +61,8 @@
     }
   }
   .entry-title {
+    @include h2;
     display: table;
-    font-size: 27px;
-    font-size: 2.7rem;
     height: 100%;
     margin-top: 0;
     margin-bottom: 10px;
@@ -73,21 +72,12 @@
      a {
       color: #fff;
     }
-    a:focus .hover-card {
-      border-bottom: 1px #fff dotted;
-    }
   }
   p {
     color: #fff;
-    font-size: 22px;
-    font-size: 2.2rem;
-    font-weight: 400;
   }
   .entry-title .team-title {
     color: #fff;
-    font-size: 22px;
-    font-size: 2.2rem;
-    font-weight: 400;
     display: block;
     padding-top: 10px;
   }

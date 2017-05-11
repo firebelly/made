@@ -1,21 +1,63 @@
 // Home page
 
+// Consistent section padding
+.front-page-section {
+  padding: 60px 0;
+
+  // The theme has an enormous border top on all sections and an equal negative margin to offset.
+  // I ain't havin that
+  margin-top: 0;
+  border-top: none;
+
+  .widget-title {
+    @include h2;
+  }
+  &:nth-of-type(odd) {
+    background: $black;
+  }
+}
+
+
 // Shrink first section in home page
-.front-page-1 {
+.front-page-banner {
   height: 50vh;
 }
 
-// Restyle current-project excerpt on front page
-.entry-content, .entry-header {
-  max-width: 1024px;
-  margin: auto;
-  text-align: left;
+.front-page-description {
+  // Desciption header
+  .widget-title {
+    @include h1;
+    color: $gold;
+  }
+  // Subheader
+  .textwidget, p {
+    @include h4;
+  }
 }
 
-// Consistent section padding
-.front-page-section {
-  padding: 100px 0;
+
+// Restyle current-project excerpt on front page
+
+.front-page-recent-posts {
+  article {
+    max-width: 1024px;
+    margin: auto;
+  }
+  .entry-content, .entry-header {
+    text-align: left;
+  }
+  .entry-header {
+    .entry-title {
+      @include h3;
+    }
+    a {
+      border-bottom: none;
+    }
+  }
 }
+
+
+
 
 
 // Front page recent post slider

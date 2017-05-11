@@ -2,6 +2,7 @@
 .footer-widgets {
   .widget-title {
     text-align: left;
+    @include h2;
   }
   .social-link {
     display: inline-block;
