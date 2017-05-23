@@ -1818,10 +1818,9 @@ p.entry-meta {
     padding-left: 10px;
     padding-right: 10px;
   }
-
 }
 
-@media only screen and (max-width: $breakpoint-medium - 1px) {
+@media only screen and (max-width: $breakpoint-nav - 1px) {
 
   .content,
   .footer-widgets-1,

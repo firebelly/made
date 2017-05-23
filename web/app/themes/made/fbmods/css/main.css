@@ -2033,7 +2033,7 @@ Loaded on the front page */
   color: #fff;
 }
 
-@media only screen and (min-width: 850px) {
+@media only screen and (min-width: 700px) {
   .front-page .nav-primary .genesis-nav-menu a {
     color: #fff;
   }
@@ -2210,10 +2210,6 @@ Loaded on the front page */
   text-align: center;
 }
 
-.front-page-2 .widget-full .wrap {
-  max-width: 960px;
-}
-
 .front-page-2 p {
   line-height: 1.75;
 }
@@ -2245,10 +2241,6 @@ Loaded on the front page */
   padding-bottom: 180px;
   padding-top: 170px;
   text-align: center;
-}
-
-.front-page-3 .widget-full .wrap {
-  max-width: 960px;
 }
 
 .front-page-3,
@@ -2313,10 +2305,6 @@ Loaded on the front page */
   text-align: center;
 }
 
-.front-page-4 .widget-full .wrap {
-  max-width: 960px;
-}
-
 .front-page-4 p {
   line-height: 1.75;
 }
@@ -2348,10 +2336,6 @@ Loaded on the front page */
   padding-bottom: 180px;
   padding-top: 170px;
   text-align: center;
-}
-
-.front-page-5 .widget-full .wrap {
-  max-width: 960px;
 }
 
 .front-page-5,
@@ -2416,10 +2400,6 @@ Loaded on the front page */
   text-align: center;
 }
 
-.front-page-6 .widget-full .wrap {
-  max-width: 960px;
-}
-
 .front-page-6 p {
   line-height: 1.75;
 }
@@ -2451,10 +2431,6 @@ Loaded on the front page */
   padding-bottom: 180px;
   padding-top: 170px;
   text-align: center;
-}
-
-.front-page-7 .widget-full .wrap {
-  max-width: 960px;
 }
 
 .front-page-7,
@@ -2906,6 +2882,10 @@ img {
   clear: both;
 }
 
+.site-inner .wrap {
+  max-width: 800px;
+}
+
 .user-content {
   *zoom: 1;
 }
@@ -3110,7 +3090,7 @@ img {
   text-transform: none;
   font-family: 'Work Sans', sans-serif;
 }
-@media screen and (min-width: 850px) {
+@media screen and (min-width: 700px) {
   .footer-widgets .widget-title {
     font-size: 40px;
     line-height: 1.25;
@@ -3193,7 +3173,7 @@ img {
   width: 100%;
   text-align: center;
 }
-@media screen and (min-width: 850px) {
+@media screen and (min-width: 700px) {
   .hover-card .entry-title, .front-page-4 .widget-area article .entry-title, .participating-artists-widget article .entry-title {
     font-size: 40px;
     line-height: 1.25;
@@ -3241,7 +3221,7 @@ img {
 .front-page-banner {
   height: 160px;
 }
-@media screen and (min-width: 850px) {
+@media screen and (min-width: 700px) {
   .front-page-banner {
     height: 50vh;
   }
@@ -3250,7 +3230,7 @@ img {
   width: auto;
   height: 60px;
 }
-@media screen and (min-width: 850px) {
+@media screen and (min-width: 700px) {
   .front-page-banner .made-logo {
     width: 390px;
     height: auto;
@@ -3258,7 +3238,39 @@ img {
 }
 
 .front-page-description .widget-title {
-  color: #fdbb30;
+  font-size: 20px;
+  font-weight: 900;
+  letter-spacing: 0;
+  line-height: 1.25;
+  text-transform: none;
+  font-family: 'Work Sans', sans-serif;
+  color: #02bed6;
+}
+@media screen and (min-width: 700px) {
+  .front-page-description .widget-title {
+    font-size: 55px;
+    line-height: 1.1818;
+  }
+}
+@media screen and (min-width: 850px) {
+  .front-page-description .widget-title {
+    margin-left: -1ch;
+    margin-right: -1ch;
+  }
+}
+.front-page-description .textwidget, .front-page-description p {
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.5;
+  text-transform: none;
+  font-family: 'Work Sans', sans-serif;
+}
+@media screen and (min-width: 700px) {
+  .front-page-description .textwidget, .front-page-description p {
+    font-size: 20px;
+    line-height: 1.5;
+  }
 }
 
 .front-page-recent-posts article {
@@ -3278,7 +3290,7 @@ img {
 .recent-posts-slider-area .widget:not(.widget_text) {
   padding: 20px 0;
 }
-@media screen and (min-width: 850px) {
+@media screen and (min-width: 700px) {
   .recent-posts-slider-area .widget:not(.widget_text) {
     padding: 0 50px;
   }

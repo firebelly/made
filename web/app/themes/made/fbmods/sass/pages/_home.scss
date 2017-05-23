@@ -37,12 +37,16 @@
 .front-page-description {
   // Desciption header
   .widget-title {
-    // @include h1;
-    color: $gold;
+    @include h1;
+    color: $blue;
+    @include min-screen(850px) {
+      margin-left: -1ch;
+      margin-right: -1ch
+    };
   }
   // Subheader
   .textwidget, p {
-    // @include h4;
+    @include para-big;
   }
 }
 

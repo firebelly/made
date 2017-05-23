@@ -13,7 +13,7 @@
 }
 
 // Dekstop
-@include media-md {
+@include min-screen($breakpoint-nav) {
 
   // Home Logo For Mobile
   .menu-item-home-mobile {
@@ -94,7 +94,7 @@
 }
 
 // Mobile
-@include max-screen($breakpoint-medium - 1px) {
+@include max-screen($breakpoint-nav - 1px) {
 
   .menu-item-home-mobile {
     position: absolute;

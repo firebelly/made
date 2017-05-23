@@ -243,9 +243,9 @@ Loaded on the front page */
   text-align: center;
 }
 
-.front-page-2 .widget-full .wrap {
-  max-width: 960px;
-}
+// .front-page-2 .widget-full .wrap {
+//   max-width: 960px;
+// }
 
 .front-page-2 p {
   // font-size: 30px;
@@ -284,9 +284,9 @@ Loaded on the front page */
   text-align: center;
 }
 
-.front-page-3 .widget-full .wrap {
-  max-width: 960px;
-}
+// .front-page-3 .widget-full .wrap {
+//   max-width: 960px;
+// }
 
 .front-page-3,
 .front-page-3 a,
@@ -354,9 +354,9 @@ Loaded on the front page */
   text-align: center;
 }
 
-.front-page-4 .widget-full .wrap {
-  max-width: 960px;
-}
+// .front-page-4 .widget-full .wrap {
+//   max-width: 960px;
+// }
 
 .front-page-4 p {
   // font-size: 30px;
@@ -395,9 +395,9 @@ Loaded on the front page */
   text-align: center;
 }
 
-.front-page-5 .widget-full .wrap {
-  max-width: 960px;
-}
+// .front-page-5 .widget-full .wrap {
+//   max-width: 960px;
+// }
 
 .front-page-5,
 .front-page-5 a,
@@ -465,9 +465,9 @@ Loaded on the front page */
   text-align: center;
 }
 
-.front-page-6 .widget-full .wrap {
-  max-width: 960px;
-}
+// .front-page-6 .widget-full .wrap {
+//   max-width: 960px;
+// }
 
 .front-page-6 p {
   // font-size: 30px;
@@ -506,9 +506,9 @@ Loaded on the front page */
   text-align: center;
 }
 
-.front-page-7 .widget-full .wrap {
-  max-width: 960px;
-}
+// .front-page-7 .widget-full .wrap {
+//   max-width: 960px;
+// }
 
 .front-page-7,
 .front-page-7 a,
@@ -789,7 +789,7 @@ Loaded on the front page */
 /* Media Queries
 ---------------------------------------------------------------------------------------------------- */
 
-@media only screen and (max-width: $breakpoint-medium - 1px) {
+@media only screen and (max-width: $breakpoint-nav - 1px) {
 
   .front-page .site-inner {
     margin-top: 0;
