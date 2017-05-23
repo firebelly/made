@@ -28,7 +28,7 @@ Loaded on the front page */
   color: #fff;
 }
 
-@media only screen and (min-width:800px) {
+@media only screen and (min-width:$breakpoint-medium) {
   .front-page .nav-primary .genesis-nav-menu a {
     color: #fff;
   }
@@ -60,7 +60,7 @@ Loaded on the front page */
 .front-page .offscreen-content-icon button:focus,
 .front-page .white .genesis-nav-menu a:hover,
 .front-page .white .genesis-nav-menu a:focus {
-  color: #d43c67;
+  color: $gold;
 }
 
 .front-page.full-width-content .content {
@@ -789,7 +789,7 @@ Loaded on the front page */
 /* Media Queries
 ---------------------------------------------------------------------------------------------------- */
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: $breakpoint-medium - 1px) {
 
   .front-page .site-inner {
     margin-top: 0;

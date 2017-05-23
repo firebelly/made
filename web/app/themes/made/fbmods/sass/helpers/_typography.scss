@@ -2,58 +2,111 @@
 
 // Import Work Sans from Google
 @import url('https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,800,900');
+// Weights for Reference:
+// thin 100
+// extra-light 200
+// light 300
+// regular 400
+// medium 500
+// semi-bold 600
+// bold 700
+// extra-bold 800
+// black 900
 
-// Create paragraph styles
+// Recreate paragraph styles from InDesign Document
+
+// Name in ID file: H1 MADE
 @mixin h1 {
-  font-family: 'Work Sans', sans-serif;
-  font-weight: 800;
-  font-size: 40px;
-  line-height: 45/40;
+  font-size: 20px;
+  font-weight: 900; // Black
+  letter-spacing: 0;
+  line-height: 1.25; //25/20;
   text-transform: none;
+  font-family: 'Work Sans', sans-serif;
+  @include media-md { 
+    font-size: 55px;
+    line-height: 1.1818;  //65/55;
+  }
 }
 
+// Name in ID file: H2 MADE
 @mixin h2 {
-  font-family: 'Work Sans', sans-serif;
-  font-size: 40px;
-  font-weight: 300;
-  line-height: 45/40;
+  font-size: 20px;
+  font-weight: 800; // ExtraBold
+  letter-spacing: 0;
+  line-height: 1.25; //25/20;
   text-transform: none;
+  font-family: 'Work Sans', sans-serif;
+  @include media-md {
+    font-size: 40px;
+    line-height: 1.25; //50/40;
+  }
 }
 
+// Name in ID file: H3 MADE
 @mixin h3 {
+  font-size: 16px;
+  font-weight: 700; // Bold
+  letter-spacing: 0;
+  line-height: 1.5; //24/16; 
+  text-transform: none;
   font-family: 'Work Sans', sans-serif;
-  font-weight: 900;
-  font-size: 20px;
-  line-height: 15/20; // This may not be an intentional line-height--but is what was in design file
-  text-transform: uppercase;
+  @include media-md {
+    font-size: 20px;
+    line-height: 1.25; //25/20; 
+  }
 }
 
+// Name in ID file: H4 MADE NAV
 @mixin h4 {
+  font-size: 16px;
+  font-weight: 900; // Black
+  letter-spacing: 0;
+  line-height: 1.2; //19.2/16;
+  text-transform: uppercase;
   font-family: 'Work Sans', sans-serif;
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 30/20;
-  text-transform: none;
 }
 
-@mixin copy {
+// Name in ID file: H4 MADE NAV (smaller version)
+@mixin h5 {
+  font-size: 12px;
+  font-weight: 900; // Black
+  letter-spacing: 0;
+  line-height: 1.2; //14.4/12;
+  text-transform: uppercase;
   font-family: 'Work Sans', sans-serif;
+}
+
+// Name in ID file: H5 MADE
+@mixin fine-print {
+  font-size: 12px;
+  font-weight: 500; // Medium
+  letter-spacing: 0;
+  line-height: 1.5; //18/12;
+  text-transform: none;
+  font-family: 'Work Sans', sans-serif;
+}
+
+// Name in ID file: PARA BIG
+@mixin para-big {
+  font-size: 16px;
+  font-weight: 400; // Regular
+  letter-spacing: 0;
+  line-height: 1.5; //24/16;
+  text-transform: none;
+  font-family: 'Work Sans', sans-serif;
+  @include media-md {
+    font-size: 20px;
+    line-height: 1.5; //30/20;
+  }
+}
+
+// Name in ID file: PARA SMALL
+@mixin para-small {
+  font-size: 16px;
   font-weight: 500;
-  font-size: 12;
-  line-height: 14/12;
+  letter-spacing: 0;
+  line-height: 1.5; //24/16;
   text-transform: none;
-}
-
-// Convenience classes
-.h1{
-  @include h1;
-}
-.h2{
-  @include h2;
-}
-.h3{
-  @include h3;
-}
-.copy{
-  @include copy;
+  font-family: 'Work Sans', sans-serif;
 }

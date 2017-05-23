@@ -43,54 +43,54 @@ function infinity_css() {
 
 	}
 
-	$css .= ( infinity_customizer_get_default_accent_color() !== $color_accent ) ? sprintf( '
+	// $css .= ( infinity_customizer_get_default_accent_color() !== $color_accent ) ? sprintf( '
 
-		a,
-		.entry-title a:focus,
-		.entry-title a:hover,
-		.featured-content .entry-meta a:focus,
-		.featured-content .entry-meta a:hover,
-		.front-page .genesis-nav-menu a:focus,
-		.front-page .genesis-nav-menu a:hover,
-		.front-page .offscreen-content-icon button:focus,
-		.front-page .offscreen-content-icon button:hover,
-		.front-page .white .genesis-nav-menu a:focus,
-		.front-page .white .genesis-nav-menu a:hover,
-		.genesis-nav-menu a:focus,
-		.genesis-nav-menu a:hover,
-		.genesis-nav-menu .current-menu-item > a,
-		.genesis-nav-menu .sub-menu .current-menu-item > a:focus,
-		.genesis-nav-menu .sub-menu .current-menu-item > a:hover,
-		.genesis-responsive-menu .genesis-nav-menu a:focus,
-		.genesis-responsive-menu .genesis-nav-menu a:hover,
-		.menu-toggle:focus,
-		.menu-toggle:hover,
-		.offscreen-content button:hover,
-		.offscreen-content-icon button:hover,
-		.site-footer a:focus,
-		.site-footer a:hover,
-		.sub-menu-toggle:focus,
-		.sub-menu-toggle:hover {
-			color: %1$s;
-		}
+	// 	a,
+	// 	.entry-title a:focus,
+	// 	.entry-title a:hover,
+	// 	.featured-content .entry-meta a:focus,
+	// 	.featured-content .entry-meta a:hover,
+	// 	.front-page .genesis-nav-menu a:focus,
+	// 	.front-page .genesis-nav-menu a:hover,
+	// 	.front-page .offscreen-content-icon button:focus,
+	// 	.front-page .offscreen-content-icon button:hover,
+	// 	.front-page .white .genesis-nav-menu a:focus,
+	// 	.front-page .white .genesis-nav-menu a:hover,
+	// 	.genesis-nav-menu a:focus,
+	// 	.genesis-nav-menu a:hover,
+	// 	.genesis-nav-menu .current-menu-item > a,
+	// 	.genesis-nav-menu .sub-menu .current-menu-item > a:focus,
+	// 	.genesis-nav-menu .sub-menu .current-menu-item > a:hover,
+	// 	.genesis-responsive-menu .genesis-nav-menu a:focus,
+	// 	.genesis-responsive-menu .genesis-nav-menu a:hover,
+	// 	.menu-toggle:focus,
+	// 	.menu-toggle:hover,
+	// 	.offscreen-content button:hover,
+	// 	.offscreen-content-icon button:hover,
+	// 	.site-footer a:focus,
+	// 	.site-footer a:hover,
+	// 	.sub-menu-toggle:focus,
+	// 	.sub-menu-toggle:hover {
+	// 		color: %1$s;
+	// 	}
 
-		button,
-		input[type="button"],
-		input[type="reset"],
-		input[type="select"],
-		input[type="submit"],
-		.button,
-		.enews-widget input:hover[type="submit"],
-		.front-page-1 a.button,
-		.front-page-3 a.button,
-		.front-page-5 a.button,
-		.front-page-7 a.button,
-		.footer-widgets .button:hover {
-			background-color: %1$s;
-			color: %2$s;
-		}
+	// 	button,
+	// 	input[type="button"],
+	// 	input[type="reset"],
+	// 	input[type="select"],
+	// 	input[type="submit"],
+	// 	.button,
+	// 	.enews-widget input:hover[type="submit"],
+	// 	.front-page-1 a.button,
+	// 	.front-page-3 a.button,
+	// 	.front-page-5 a.button,
+	// 	.front-page-7 a.button,
+	// 	.footer-widgets .button:hover {
+	// 		background-color: %1$s;
+	// 		color: %2$s;
+	// 	}
 
-		', $color_accent, infinity_color_contrast( $color_accent ) ) : '';
+	// 	', $color_accent, infinity_color_contrast( $color_accent ) ) : '';
 
 	if ( $css ) {
 		wp_add_inline_style( $handle, $css );

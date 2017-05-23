@@ -1,12 +1,14 @@
 @charset "UTF-8";
 
+// Variables
+@import "helpers/variables";
+
 // Partials created from all styling in original Infinity Pro style.css
 // (There is already a normalizer in here) 
 @import "helpers/infinity-pro-defaults";
 @import "helpers/infinity-pro-style-front";
 
-// Helpers and Variables
-@import "helpers/variables";
+// Helpers
 @import "helpers/mixins";
 @import "helpers/typography";
 @import "helpers/animations";

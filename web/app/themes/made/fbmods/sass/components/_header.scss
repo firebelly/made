@@ -7,9 +7,4 @@
   .site-title {
     @include sr-only;
   }
-  .nav-primary {
-    width: 100%;
-    @include h2;
-    font-size: 1em;
-  }
 }

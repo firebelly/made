@@ -40,7 +40,6 @@ var Main = (function ($) {
         } else {
           wpOffset = 0;
         }
-        console.log('scrolling!');
         element.velocity("scroll", {
           duration: duration,
           delay: delay,
@@ -70,14 +69,36 @@ var Main = (function ($) {
         slickOrDont();
       });
     },
+    onScroll: function () {
+
+      // Add scrolled class to site header after 50px.
+      if ( $(document).scrollTop() > 50 ) {
+        $( '.site-header' ).addClass( 'scrolled' );
+      } else {
+        $( '.site-header' ).removeClass( 'scrolled' );
+      }
+
+    },
     initMain: function () {
+
+      // On ready
       $(document).ready(function () {
+
+        // Enable smooth scrolling
         Main.smoothScroll();
+
+        // Enable scroll functionality
+        $(document).on( 'scroll', function() {
+          Main.onScroll();
+        });
+        // Do scroll functions once at the beginning
+        Main.onScroll();
       });
+
+      // On load
       $(window).on('load', function () {
         Main.slickSliders();
       });
-
     }
   };
 // Pass in jQuery.

@@ -63,7 +63,7 @@ function infinity_front_page_widgets() {
 	echo '<h2 class="screen-reader-text">' . __( 'Main Content', 'infinity-pro' ) . '</h2>';
 
 	genesis_widget_area( 'front-page-1', array(
-		'before' => '<div id="front-page-1" class="front-page-1 front-page-banner front-page-section"><div class="image-section widget-area fadeup-effect' . infinity_widget_area_class( 'front-page-1' ) . '"><div class="wrap">',
+		'before' => '<div id="front-page-1" class="front-page-1 front-page-banner front-page-section"><div class="image-section widget-area fadeup-effect' . infinity_widget_area_class( 'front-page-1' ) . '"><div class="wrap"><img class="made-logo" src="'.get_stylesheet_directory_uri() . '/fbmods/images/made-logo.png">',
 		'after'  => '</div></div></div>',
 	) );
 

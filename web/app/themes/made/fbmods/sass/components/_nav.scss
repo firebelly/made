@@ -3,9 +3,120 @@
 // wp admin bar push
 .admin-bar {}
 
-#menu-main-nav {
+.nav-primary {
+  width: 100%;
 }
 
-// mobile menu toggle
+
+.site-header {
+  border: 0;
+}
+
+// Dekstop
+@include media-md {
+
+  // Home Logo For Mobile
+  .menu-item-home-mobile {
+    display: none;
+  }
+
+  // Default Nav Style
+  .front-page .site-header, .site-header {
+    // height: 50px;
+    background-color: $black;
+
+    .menu-item {
+      vertical-align: top;
+    }
+
+    .made-logo {
+      width: 100px;
+      height: auto;
+      opacity: 1;
+      transform: none;
+      transition: width 0.2s ease-in-out, opacity 0.2s 0.2s ease-in-out, transform 0.2s 0.2s ease-in-out;
+    }
+
+    .genesis-nav-menu .menu-item-home a {
+      padding: 10px 30px 10px 10px;
+    }
+
+    .genesis-nav-menu a {
+      @include h5;
+      color: $gold;
+      padding-top: 16px;
+      padding-bottom: 16px;
+    }
+  }
+
+  // Homepage Nav Before Scroll
+  .front-page .site-header:not(.scrolled)  {
+    background-color: transparent;
+
+    .genesis-nav-menu .menu-item-home a {
+      padding: 0;
+    }
+
+    .made-logo {
+      width: 0px;
+      height: auto;
+      opacity: 0;
+      // transform: translateX(-50%);
+      transition: width 0.2s ease-in-out, opacity 0s ease-in-out, transform 0.2s 0s ease-in-out, margin 0.2s 0s ease-in-out;
+    }
+    .genesis-nav-menu a {
+      color: $black;
+      padding: 16px 15px;
+      @include h4;
+    }
+  }
+}
+
+// Menu Toggle Button
+// This needs to be out of media query because this theme has transitions on every property for the site-header, so these properties need to be set in advance to avoid janky animation
 .menu-toggle {
+  width: auto;
+  float: right;
+  @include h5;
+  color: $gold;
+  padding: 23px 0 23px 40px;
+  text-align: right;
+  background-color: transparent;
+  outline: none !important;
+  &::before {
+    top: -1px; // Just pop that guy up a bit to fit baseline
+    width: 16px;
+    height: 9px;
+    position: relative;
+    content: '' !important; // Get rid of that pesky glyph
+    background: url(/app/themes/made/fbmods/svgs/mobile-nav.svg);
+  }
+}
+
+// Mobile
+@include max-screen($breakpoint-medium - 1px) {
+
+  .menu-item-home-mobile {
+    position: absolute;
+    width: 100px;
+    height: auto;
+    top: 18px;
+    left: 25px;
+  }
+
+  .menu-item-home {
+    display: none !important;
+  }
+
+  .front-page .site-header, .site-header {
+  background-color: $black;
+
+    .genesis-nav-menu {
+      padding-bottom: 30px;
+      a {
+        color: $gold;
+        @include h5;
+      }
+    }
+  }
 }

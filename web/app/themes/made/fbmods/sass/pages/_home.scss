@@ -10,28 +10,39 @@
   border-top: none;
 
   .widget-title {
-    @include h2;
+    // @include h2;
   }
   &:nth-of-type(odd) {
-    background: $black;
+    background-color: $black;
   }
 }
 
 
 // Shrink first section in home page
 .front-page-banner {
-  height: 50vh;
+  height: 160px;
+  @include media-md {
+    height: 50vh;
+  }
+  .made-logo {
+    width: auto;
+    height: 60px;
+    @include media-md {
+      width: 390px;
+      height: auto;
+    }
+  }
 }
 
 .front-page-description {
   // Desciption header
   .widget-title {
-    @include h1;
+    // @include h1;
     color: $gold;
   }
   // Subheader
   .textwidget, p {
-    @include h4;
+    // @include h4;
   }
 }
 
@@ -48,7 +59,7 @@
   }
   .entry-header {
     .entry-title {
-      @include h3;
+      // @include h3;
     }
     a {
       border-bottom: none;

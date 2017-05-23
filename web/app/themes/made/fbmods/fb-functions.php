@@ -99,3 +99,20 @@ function fb_child_shortcode() {
   return get_bloginfo('stylesheet_directory');
 }
 add_shortcode('child', 'fb_child_shortcode');
+
+
+
+add_filter( 'genesis_nav_items', 'fb_add_logo_to_nav', 10, 2 );
+add_filter( 'wp_nav_menu_items', 'fb_add_logo_to_nav', 10, 2 );
+function fb_add_logo_to_nav($menu, $args) {
+  return '<li class="menu-item menu-item-home"><a href="'.get_home_url().'" itemprop="url"><h1 class="sr-only">Made Collaborative</h1><img alt="Made Logo" class="made-logo" src="'.get_stylesheet_directory_uri() . '/fbmods/images/made-logo-header.png"></a></li>'.$menu;
+}
+
+
+add_action( 'genesis_header', 'fb_add_logo_to_header', 5 );
+//New Header functions
+function fb_add_logo_to_header() {
+
+ // Added in content
+ echo '<a href="'.get_home_url().'" itemprop="url" class="menu-item-home-mobile"><h1 class="sr-only">Made Collaborative</h1><img alt="Made Logo" class="made-logo" src="'.get_stylesheet_directory_uri() . '/fbmods/images/made-logo-header.png"></a>';
+}

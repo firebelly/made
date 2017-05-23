@@ -173,7 +173,7 @@ textarea:focus,
 }
 
 a {
-  color: #d43c67;
+  color: $gold;
   text-decoration: none;
 }
 
@@ -452,7 +452,7 @@ input[type="reset"],
 input[type="select"],
 input[type="submit"],
 .button {
-  background-color: #d43c67;
+  background-color: $gold;
   border: 0;
   border-radius: 0;
   color: #fff;
@@ -855,7 +855,7 @@ th:first-child {
 
 .entry-title a:hover,
 .entry-title a:focus {
-  color: #d43c67;
+  color: $gold;
 }
 
 .widget-title {
@@ -1035,7 +1035,7 @@ img.alignright,
 .footer-widgets .featured-content .entry-meta a:focus,
 .sidebar .featured-content .entry-meta a:hover,
 .sidebar .featured-content .entry-meta a:focus {
-  color: #d43c67;
+  color: $gold;
 }
 
 .footer-widgets .featured-content .entry-image,
@@ -1135,7 +1135,7 @@ img.alignright,
 }
 
 .enews-widget input:hover[type="submit"] {
-  background-color: #d43c67;
+  background-color: $gold;
 }
 
 /* Jetpack
@@ -1272,7 +1272,7 @@ img.alignright,
 .genesis-nav-menu .current-menu-item > a,
 .genesis-nav-menu .sub-menu .current-menu-item > a:hover,
 .genesis-nav-menu .sub-menu .current-menu-item > a:focus {
-  color: #d43c67;
+  color: $gold;
   text-decoration: none;
 }
 
@@ -1475,7 +1475,7 @@ p.entry-meta {
 
 .archive-pagination a:hover,
 .archive-pagination a:focus {
-  color: #d43c67;
+  color: $gold;
 }
 
 .archive-pagination li {
@@ -1683,7 +1683,7 @@ p.entry-meta {
 
 .offscreen-content button:hover,
 .offscreen-content-icon button:hover {
-  color: #d43c67;
+  color: $gold;
 }
 
 
@@ -1736,7 +1736,7 @@ p.entry-meta {
 }
 
 .footer-widgets .button:hover {
-  background-color: #d43c67;
+  background-color: $gold;
 }
 
 /* Site Footer
@@ -1768,7 +1768,7 @@ p.entry-meta {
 
 .site-footer a:hover,
 .site-footer a:focus {
-  color: #d43c67;
+  color: $gold;
 }
 
 
@@ -1821,7 +1821,7 @@ p.entry-meta {
 
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: $breakpoint-medium - 1px) {
 
   .content,
   .footer-widgets-1,
@@ -1895,7 +1895,7 @@ p.entry-meta {
   .sub-menu-toggle:focus,
   .sub-menu-toggle:hover {
     background: transparent;
-    color: #d43c67;
+    color: $gold;
     border-width: 0;
   }
 
@@ -1959,11 +1959,11 @@ p.entry-meta {
 
   .genesis-responsive-menu .genesis-nav-menu a:focus,
   .genesis-responsive-menu .genesis-nav-menu a:hover {
-    color: #d43c67;
+    color: $gold;
   }
 
   .genesis-responsive-menu .genesis-nav-menu a:focus {
-    color: #d43c67;
+    color: $gold;
     outline: thin solid #ccc;
     outline-offset: -1px;
   }

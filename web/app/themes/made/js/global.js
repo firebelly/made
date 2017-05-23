@@ -35,17 +35,17 @@
 
 	});
 
-	// Add white class to site container after 50px.
-	$(document).on( 'scroll', function() {
+	// // Add white class to site container after 50px.
+	// $(document).on( 'scroll', function() {
 
-		if ( $(document).scrollTop() > 50 ) {
-			$( '.site-container' ).addClass( 'white' );
+	// 	if ( $(document).scrollTop() > 50 ) {
+	// 		$( '.site-container' ).addClass( 'white' );
 
-		} else {
-			$( '.site-container' ).removeClass( 'white' );
-		}
+	// 	} else {
+	// 		$( '.site-container' ).removeClass( 'white' );
+	// 	}
 
-	});
+	// });
 
 	// Push the .site-inner down dependant on the header height.
 	if ( ! $body.hasClass( 'front-page' ) ) {
