@@ -47,25 +47,25 @@ function infinity_customizer_register() {
 
 	}
 
-	$wp_customize->add_setting(
-		'infinity_accent_color',
-		array(
-			'default'           => infinity_customizer_get_default_accent_color(),
-			'sanitize_callback' => 'sanitize_hex_color',
-		)
-	);
+	// $wp_customize->add_setting(
+	// 	'infinity_accent_color',
+	// 	array(
+	// 		'default'           => infinity_customizer_get_default_accent_color(),
+	// 		'sanitize_callback' => 'sanitize_hex_color',
+	// 	)
+	// );
 
-	$wp_customize->add_control(
-		new WP_Customize_Color_Control(
-			$wp_customize,
-			'infinity_accent_color',
-			array(
-				'description' => __( 'Change the default color for some links, link hovers, buttons, and button hovers.', 'infinity-pro' ),
-				'label'       => __( 'Accent Color', 'infinity-pro' ),
-				'section'     => 'colors',
-				'settings'    => 'infinity_accent_color',
-			)
-		)
-	);
+	// $wp_customize->add_control(
+	// 	new WP_Customize_Color_Control(
+	// 		$wp_customize,
+	// 		'infinity_accent_color',
+	// 		array(
+	// 			'description' => __( 'Change the default color for some links, link hovers, buttons, and button hovers.', 'infinity-pro' ),
+	// 			'label'       => __( 'Accent Color', 'infinity-pro' ),
+	// 			'section'     => 'colors',
+	// 			'settings'    => 'infinity_accent_color',
+	// 		)
+	// 	)
+	// );
 
 }

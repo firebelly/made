@@ -73,12 +73,12 @@ function infinity_front_page_widgets() {
 	) );
 
 	genesis_widget_area( 'front-page-3', array(
-		'before' => '<div id="front-page-3" class="front-page-3 front-page-recent-posts front-page-section"><div class="image-section widget-area fadeup-effect recent-posts-slider-area"><div class="wrap">',
+		'before' => '<div id="front-page-3" class="front-page-3 front-page-project-news front-page-section"><div class="image-section widget-area fadeup-effect project-news-slider-area"><div class="wrap">',
 		'after'  => '</div></div></div>',
 	) );
 
 	genesis_widget_area( 'front-page-4', array(
-		'before' => '<div id="front-page-4" class="front-page-4 front-page-featured-art front-page-section"><div class="solid-section flexible-widgets widget-area fadeup-effect' . infinity_widget_area_class( 'front-page-4' ) . '"><div class="wrap">',
+		'before' => '<div id="front-page-4" class="front-page-4 front-page-comic-updates front-page-section"><div class="solid-section flexible-widgets widget-area fadeup-effect' . infinity_widget_area_class( 'front-page-4' ) . '"><div class="wrap">',
 		'after'  => '</div></div></div>',
 	) );
 

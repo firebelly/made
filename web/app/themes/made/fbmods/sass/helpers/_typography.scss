@@ -110,3 +110,30 @@
   text-transform: none;
   font-family: 'Work Sans', sans-serif;
 }
+
+// Convenience Classes 
+
+.h1 {
+  @include h1;
+}
+.h2 {
+  @include h2;
+}
+.h3 {
+  @include h3;
+}
+.h4 {
+  @include h4;
+}
+.h5 {
+  @include h5;
+}
+.fine-print {
+  @include fine-print;
+}
+.para-big {
+  @include para-big;
+}
+.para-small {
+  @include para-small;
+}

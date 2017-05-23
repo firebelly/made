@@ -48,7 +48,7 @@ var Main = (function ($) {
       }
     },
     slickSliders: function () {
-      $('.recent-posts-slider-area > .wrap > section:not(:first-child)').wrapAll('<div class="slider"></div>');
+      $('.project-news-slider-area > .wrap > section:not(:first-child)').wrapAll('<div class="slider"></div>');
       function slickOrDont() {
         if( $(window).width() <= 700) {
           if ($('.slick-initialized').length) {

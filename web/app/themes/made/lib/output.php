@@ -35,7 +35,7 @@ function infinity_css() {
 
 	foreach ( $settings as $section => $value ) {
 
-		$background = $value['image'] ? sprintf( 'background-image: url(%s);', $value['image'] ) : '';
+		$background = $value['image'] ? sprintf( 'background-image: url(%s);', $value['image'] ) : 'background-image: url(/app/themes/made/fbmods/images/grunge.gif);';
 
 		if ( is_front_page() ) {
 			$css .= ( ! empty( $section ) && ! empty( $background ) ) ? sprintf( '.front-page-%s { %s }', $section, $background ) : '';

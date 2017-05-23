@@ -31,10 +31,8 @@
   }
   &.entry {
     &:hover .entry-header, &:focus .entry-header, &.focused .entry-header {
-      background-color: rgba(0, 0, 0, 0.8);
+      background-color: $gold;
       opacity: 1;
-      -ms-filter: "alpha(Opacity=1)";
-      filter: alpha(opacity = 1);
     }
   }
   .entry-header {
@@ -61,7 +59,7 @@
     }
   }
   .entry-title {
-    @include h2;
+    @include h3;
     display: table;
     height: 100%;
     margin-top: 0;
@@ -70,7 +68,7 @@
     width: 100%;
     text-align: center;
      a {
-      color: #fff;
+      color: $black;
     }
   }
   p {
@@ -83,12 +81,14 @@
   }
 }
 
-// Band-aid in a few styles to contributing artist widget on About page
-.front-page-4 .widget-area, .participating-artists-widget {
+.front-page-comic-updates .widget-area, .participating-artists-widget {
   @include clearfix();
   margin: 0 -10px 30px;
   article {
     @extend .hover-card;
+    .entry-title {
+      color: $black;
+    }
   }
   img { 
     display: block;

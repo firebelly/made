@@ -1,8 +1,15 @@
 // Home page
 
-// Consistent section padding
+// Global Front Page Section Styling
 .front-page-section {
-  padding: 60px 0;
+  padding: 20px 0 28px 0;
+  @include media-md {
+    padding: 50px 0 68px 0;
+  }
+
+  .wrap {
+    padding: 0 35px;
+  }
 
   // The theme has an enormous border top on all sections and an equal negative margin to offset.
   // I ain't havin that
@@ -10,15 +17,19 @@
   border-top: none;
 
   .widget-title {
-    // @include h2;
+    @include h2;
+    color: $gold;
   }
+  // Fallback background color if no image
   &:nth-of-type(odd) {
     background-color: $black;
+    // output.php will add this as fallback if no image is selected:
+    // background-image: url(/app/themes/made/fbmods/images/grunge.gif);
   }
 }
 
 
-// Shrink first section in home page
+// Heading Banner
 .front-page-banner {
   height: 160px;
   @include media-md {
@@ -34,17 +45,37 @@
   }
 }
 
+// Main headline/description under banner
 .front-page-description {
-  // Desciption header
+  .wrap {
+    max-width: 800px;
+  }
+  // Header/
   .widget-title {
     @include h1;
     color: $blue;
     @include min-screen(850px) {
       margin-left: -1ch;
-      margin-right: -1ch
+      margin-right: -1ch;
     };
   }
   // Subheader
+  .textwidget {
+    // Sketchy Double-Lin HR
+    &::before {
+      content: '';
+      width: 210px;
+      height: 20px;
+      display: block;
+      margin: 0 auto;
+      background-size: 210px 9px;
+      background-repeat: no-repeat;
+      background-image: url(/app/themes/made/fbmods/images/hr.png);
+      @include media-md {
+        margin: 45px auto 40px auto;
+      }
+    }
+  }
   .textwidget, p {
     @include para-big;
   }
@@ -52,11 +83,9 @@
 
 
 // Restyle current-project excerpt on front page
-
-.front-page-recent-posts {
-  article {
-    max-width: 1024px;
-    margin: auto;
+.front-page-project-news {
+  .wrap {
+    max-width: 1020px;
   }
   .entry-content, .entry-header {
     text-align: left;
@@ -72,11 +101,8 @@
 }
 
 
-
-
-
 // Front page recent post slider
-.recent-posts-slider-area {
+.project-news-slider-area {
   .widget {
     width: 100%;
 
@@ -108,3 +134,29 @@
     }
   }
 }
+
+.front-page-comic-updates {
+  // padding: 0 0 10px 0;
+
+  .wrap {
+    // padding: 0 40px;
+    @include media-md{
+      max-width: 85%;    
+      // padding: 0 35px;
+    }
+  }
+  .featured-content {
+    margin-bottom: 15px;
+    @include media-md {
+      margin-bottom: 20px;
+    }
+  }
+  .widget_text .widget-title {
+
+    margin-bottom: 10px;
+    @include media-md{
+      margin-bottom: 30px;
+    }
+  }
+}
+

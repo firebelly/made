@@ -9,7 +9,7 @@ html {
 
 body {
   overflow-x: hidden;
-  // @include copy;
+  @include para-small;
 }
 
 p {
@@ -64,5 +64,5 @@ img {
 }
 
 .site-inner .wrap {
-  max-width: 800px;
+  max-width: 720px;
 }

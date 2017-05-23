@@ -1,8 +1,13 @@
 // Footer
-.footer-widgets {
+.site-footer {
+  text-align: left;
+  color: $white;
+  background-image: url(/app/themes/made/fbmods/images/grunge.gif);
+  @include para-small;
   .widget-title {
     text-align: left;
-    @include h2;
+    @include h5;
+    color: $gold;
   }
   .social-link {
     display: inline-block;
@@ -11,4 +16,14 @@
     width: 40px;
     margin-right: 10px;
   }
+
+  .copyright {
+    text-align: center;
+    @include fine-print; 
+    color: $gray;
+  }
+}
+
+.footer-widgets {
+  border: 0;
 }

@@ -12,12 +12,20 @@ function fb_enqueue_scripts() {
   wp_enqueue_script( 'site-js', get_stylesheet_directory_uri() . '/fbmods/js/build/site.min.js?'.time(),  array(), CHILD_THEME_VERSION  );
 }
 
-// Override site footer text
+// Remove footer widgets, we're gonna stick em somewhere else
+remove_action( 'genesis_before_footer', 'genesis_footer_widget_areas' );
+
+// Remove footer text, we're gonna use our own
 remove_action( 'genesis_footer', 'genesis_do_footer' );
+
+// Do the footer OUR way!
+add_action( 'genesis_footer', 'genesis_footer_widget_areas');
 add_action( 'genesis_footer', 'fb_custom_footer' );
 function fb_custom_footer() {
   ?>
-  <p>&copy; Copyright <?= date('Y'); ?>  &middot; <a href="<?= get_bloginfo('url'); ?>">Made Collaborative</a></p>
+  <div class="copyright">
+  Terms &amp; Privacy  |  Copyright © <?= date('Y'); ?>  |  Made Collaborative, LLC  |  All rights reserved
+  </div>
   <?php
 }
 
@@ -116,3 +124,4 @@ function fb_add_logo_to_header() {
  // Added in content
  echo '<a href="'.get_home_url().'" itemprop="url" class="menu-item-home-mobile"><h1 class="sr-only">Made Collaborative</h1><img alt="Made Logo" class="made-logo" src="'.get_stylesheet_directory_uri() . '/fbmods/images/made-logo-header.png"></a>';
 }
+
