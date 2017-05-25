@@ -24,7 +24,7 @@
     display: block;
     position: absolute;
     background-color: $gold;
-    border: 2px solid $gray-dark;
+    border: $border-width solid $gray-dark;
     filter: alpha(opacity = 0);
     -ms-filter: "alpha(Opacity=0)";
     &:after {
