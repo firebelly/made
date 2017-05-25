@@ -91,8 +91,8 @@ main.content {
     color: $blue;
   }
   .archive-description {
-    margin-bottom: 15px;
     border-bottom: 0;
+    margin-bottom: 15px;
   }
   .post {
     border-bottom: 0;
@@ -126,6 +126,9 @@ main.content {
       display: block;
     }
   }
+  .thumbnail-wrap {
+    padding-bottom: 100%;
+  }
   .thumbnail {
     background-size: contain;
     background-color: $white;
@@ -138,15 +141,15 @@ main.content {
   width: 100%;
   position: relative;
   padding-bottom: 67%;
-  .thumbnail {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-size: cover;
-    background-position: center center;
-    background-color: $gray;
-    background-repeat: no-repeat;
-  }
+}
+.thumbnail {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+  background-position: center center;
+  background-color: $gray;
+  background-repeat: no-repeat;
 }

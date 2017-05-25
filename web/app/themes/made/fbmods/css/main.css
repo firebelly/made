@@ -2943,9 +2943,9 @@ img {
     vertical-align: top;
   }
   .front-page .site-header .made-logo, .site-header .made-logo {
+    opacity: 1;
     width: 100px;
     height: auto;
-    opacity: 1;
     -webkit-transform: none;
             transform: none;
     transition: width 0.2s ease-in-out, opacity 0.2s 0.2s ease-in-out, -webkit-transform 0.2s 0.2s ease-in-out;
@@ -2954,8 +2954,10 @@ img {
   .front-page .site-header .genesis-nav-menu .menu-item-home a, .site-header .genesis-nav-menu .menu-item-home a {
     padding: 10px 30px 10px 10px;
   }
+  .front-page .site-header .genesis-nav-menu .current-menu-item a, .front-page .site-header .genesis-nav-menu .current-menu-parent a, .site-header .genesis-nav-menu .current-menu-item a, .site-header .genesis-nav-menu .current-menu-parent a {
+    color: #fff;
+  }
   .front-page .site-header .genesis-nav-menu a, .site-header .genesis-nav-menu a {
-    transition: opacity 0s;
     font-size: 12px;
     font-weight: 900;
     letter-spacing: 0;
@@ -2965,6 +2967,7 @@ img {
     color: #fdbb30;
     padding-top: 16px;
     padding-bottom: 16px;
+    transition: opacity 0s;
   }
   .front-page .site-header .genesis-nav-menu a:hover, .site-header .genesis-nav-menu a:hover {
     opacity: 0.8;
@@ -2977,21 +2980,21 @@ img {
     padding: 0;
   }
   .front-page .site-header:not(.scrolled) .made-logo {
+    opacity: 0;
     width: 0px;
     height: auto;
-    opacity: 0;
     transition: width 0.2s ease-in-out, opacity 0s ease-in-out, -webkit-transform 0.2s 0s ease-in-out, margin 0.2s 0s ease-in-out;
     transition: width 0.2s ease-in-out, opacity 0s ease-in-out, transform 0.2s 0s ease-in-out, margin 0.2s 0s ease-in-out;
   }
   .front-page .site-header:not(.scrolled) .genesis-nav-menu a {
-    color: #000;
-    padding: 16px 15px;
     font-size: 16px;
     font-weight: 900;
     letter-spacing: 0;
     line-height: 1.2;
     text-transform: uppercase;
     font-family: 'Work Sans', sans-serif;
+    color: #000;
+    padding: 16px 15px;
   }
 }
 .menu-toggle {
@@ -3004,10 +3007,10 @@ img {
   text-transform: uppercase;
   font-family: 'Work Sans', sans-serif;
   color: #fdbb30;
-  padding: 23px 0 23px 40px;
   text-align: right;
-  background-color: transparent;
   outline: none !important;
+  padding: 23px 0 23px 40px;
+  background-color: transparent;
 }
 .menu-toggle::before {
   top: -1px;
@@ -3020,11 +3023,11 @@ img {
 
 @media screen and (max-width: 799px) {
   .menu-item-home-mobile {
-    position: absolute;
-    width: 100px;
-    height: auto;
     top: 18px;
     left: 25px;
+    width: 100px;
+    height: auto;
+    position: absolute;
   }
 
   .menu-item-home {
@@ -3740,8 +3743,8 @@ img {
   }
 }
 .archive .archive-description, .single .archive-description {
-  margin-bottom: 15px;
   border-bottom: 0;
+  margin-bottom: 15px;
 }
 .archive .post, .single .post {
   border-bottom: 0;
@@ -3775,6 +3778,9 @@ img {
   content: 'Participating Artist: ';
   display: block;
 }
+.parent-about .thumbnail-wrap {
+  padding-bottom: 100%;
+}
 .parent-about .thumbnail {
   background-size: contain;
   background-color: #fff;
@@ -3785,7 +3791,8 @@ img {
   position: relative;
   padding-bottom: 67%;
 }
-.thumbnail-wrap .thumbnail {
+
+.thumbnail {
   position: absolute;
   top: 0;
   left: 0;

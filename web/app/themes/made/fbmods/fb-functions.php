@@ -142,7 +142,7 @@ function fb_add_logo_to_header() {
 
 
 
-// define the post_thumbnail_html callback 
+// Replace post thumbnail with background-image divs
 function fb_post_thumbnail_html( $html, $post_id, $post_thumbnail_id, $size, $attr ) { 
 
     // See if we are a child of about
@@ -157,6 +157,4 @@ function fb_post_thumbnail_html( $html, $post_id, $post_thumbnail_id, $size, $at
 
     return $html;
 }; 
-         
-// add the filter 
 add_filter( 'post_thumbnail_html', 'fb_post_thumbnail_html', 10, 5 ); 
