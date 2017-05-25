@@ -42,6 +42,7 @@
     }
 
     .genesis-nav-menu a {
+      @include opacity-hover;
       @include h5;
       color: $gold;
       padding-top: 16px;

@@ -11,3 +11,57 @@
 .entry-header::after {
   display: none;
 }
+
+
+.page.entry {
+  // .entry-content {
+    h1 {
+      @include h2;
+    }
+    h2 {
+      @include h2;
+      &:not(:first-of-type) {
+        @include double-line-hr;
+        &:before {
+          @include max-screen($breakpoint-medium - 1px) {
+            margin-bottom: 20px;
+          }
+        }
+      }
+    }
+    h3 {
+      @include h3;
+    }
+    h1,h2, h3 {
+      color: $blue;
+      text-align: left;
+    }
+  // }
+}
+
+
+
+.parent-about {
+  .entry-title {
+    &:before {
+      content: 'Participating Artist: ';
+      display: block;
+    }
+  }
+  .thumbnail-wrap {
+    width: 100%;
+    position: relative;
+    padding-bottom: 100%;
+    .thumbnail {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-size: contain;
+      background-position: center center;
+      background-color: $white;
+      background-repeat: no-repeat;
+    }
+  }
+}

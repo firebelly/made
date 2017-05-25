@@ -24,7 +24,8 @@ add_action( 'genesis_footer', 'fb_custom_footer' );
 function fb_custom_footer() {
   ?>
   <div class="copyright">
-  Terms &amp; Privacy  |  Copyright © <?= date('Y'); ?>  |  Made Collaborative, LLC  |  All rights reserved
+  <span class="line">Terms &amp; Privacy  |  Copyright © <?= date('Y'); ?></span>
+  <span class="line">Made Collaborative, LLC  |  All rights reserved</span>
   </div>
   <?php
 }
@@ -49,8 +50,22 @@ function fb_body_class_for_pages( $classes ) {
 
   if ( is_singular( 'page' ) ) {
     global $post;
-    $classes[] = 'page-' . $post->post_name;
+
+    // Add class for this post's name
+    $classes[] = 'page-' . $post->post_name;   
+
+    //Add class for this parent's post name
+    $parents = get_post_ancestors( $post->ID );
+    $id = ($parents) ? $parents[count($parents)-1]: $post->ID;
+    $id = ($parents) ? $parents[count($parents)-1] : false;
+    if($id) {
+      $parent = get_post( $id );
+      $classes[] = 'parent-' . $parent->post_name;
+    }
   }
+
+
+
 
   return $classes;
 
@@ -74,39 +89,39 @@ function fb_post_info_filter( $post_info ) {
 remove_action( 'genesis_entry_footer', 'genesis_post_meta' );
 
 
-// Shortcodes in Widgets --source: https://www.billerickson.net/wordpress-shortcode-sidebar-widget/
-add_filter('widget_text', 'do_shortcode');
-/**
- * URL Shortcode
- * @author Bill Erickson
- * @link http://www.billerickson.net/wordpress-shortcode-sidebar-widget/
- * @return Site URL.
- */
-function fb_url_shortcode() {
-  return get_bloginfo('url');
-}
-add_shortcode('url','fb_url_shortcode');
-/**
- * WordPress URL
- * WordPress isn't always installed in same directory as Site URL.
- * @author Bill Erickson
- * @link http://www.billerickson.net/wordpress-shortcode-sidebar-widget/
- * @return WordPress URL
- */
-function fb_wpurl_shortcode() {
-  return get_bloginfo('wpurl');
-}
-add_shortcode('wpurl', 'fb_wpurl_shortcode');
-/**
- * Child Theme URL
- * @author Bill Erickson
- * @link http://www.billerickson.net/wordpress-shortcode-sidebar-widget/
- * @return child theme directory URL
- */
-function fb_child_shortcode() {
-  return get_bloginfo('stylesheet_directory');
-}
-add_shortcode('child', 'fb_child_shortcode');
+// // Shortcodes in Widgets --source: https://www.billerickson.net/wordpress-shortcode-sidebar-widget/
+// add_filter('widget_text', 'do_shortcode');
+// /**
+//  * URL Shortcode
+//  * @author Bill Erickson
+//  * @link http://www.billerickson.net/wordpress-shortcode-sidebar-widget/
+//  * @return Site URL.
+//  */
+// function fb_url_shortcode() {
+//   return get_bloginfo('url');
+// }
+// add_shortcode('url','fb_url_shortcode');
+// *
+//  * WordPress URL
+//  * WordPress isn't always installed in same directory as Site URL.
+//  * @author Bill Erickson
+//  * @link http://www.billerickson.net/wordpress-shortcode-sidebar-widget/
+//  * @return WordPress URL
+ 
+// function fb_wpurl_shortcode() {
+//   return get_bloginfo('wpurl');
+// }
+// add_shortcode('wpurl', 'fb_wpurl_shortcode');
+// /**
+//  * Child Theme URL
+//  * @author Bill Erickson
+//  * @link http://www.billerickson.net/wordpress-shortcode-sidebar-widget/
+//  * @return child theme directory URL
+//  */
+// function fb_child_shortcode() {
+//   return get_bloginfo('stylesheet_directory');
+// }
+// add_shortcode('style_dir', 'fb_child_shortcode');
 
 
 
@@ -125,3 +140,23 @@ function fb_add_logo_to_header() {
  echo '<a href="'.get_home_url().'" itemprop="url" class="menu-item-home-mobile"><h1 class="sr-only">Made Collaborative</h1><img alt="Made Logo" class="made-logo" src="'.get_stylesheet_directory_uri() . '/fbmods/images/made-logo-header.png"></a>';
 }
 
+
+
+// define the post_thumbnail_html callback 
+function filter_post_thumbnail_html( $html, $post_id, $post_thumbnail_id, $size, $attr ) { 
+    // make filter magic happen here...
+    $parents = get_post_ancestors( $post_id );
+    $id = ($parents) ? $parents[count($parents)-1] : false;
+    if($id) {
+      $parent = get_post( $id );
+      $parent_slug = $parent->post_name;
+      if($parent_slug === 'about') { 
+        return ' <div class="thumbnail-wrap"><div class="thumbnail" style="background-image: url('.get_the_post_thumbnail_url($post_id).');"></div></div>'; 
+      }
+    }
+
+    return $html;
+}; 
+         
+// add the filter 
+add_filter( 'post_thumbnail_html', 'filter_post_thumbnail_html', 10, 5 ); 

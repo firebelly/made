@@ -1166,7 +1166,7 @@ img.alignright,
 /* Display outline on focus */
 :focus {
   color: #000;
-  outline: #ccc solid 1px;
+  // outline: #ccc solid 1px;
 }
 
 
@@ -2006,6 +2006,12 @@ p.entry-meta {
     margin: 0;
   }
 
+
+}
+
+@media only screen and (max-width: $breakpoint-medium - 1px) {
+
+
   .site-inner {
     margin-top: 0;
     padding-left: 5%;
@@ -2051,9 +2057,6 @@ p.entry-meta {
     padding-right: 10px;
   }
 
-}
-
-@media only screen and (max-width: 600px) {
 
   .after-entry .enews-widget,
   .landing-page .enews-widget,

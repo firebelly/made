@@ -12,13 +12,13 @@ Loaded on the front page */
 
 .front-page .site-header {
   background-color: transparent;
-  border-bottom: 1px solid transparent;
+  // border-bottom: 1px solid transparent;
 }
 
 .front-page .white .site-header,
 .header-image.front-page .site-header {
   background-color: #fff;
-  border-bottom: 1px solid #eee;
+  // border-bottom: 1px solid #eee;
 }
 
 .front-page .offscreen-content-icon button,
@@ -64,7 +64,7 @@ Loaded on the front page */
 }
 
 .front-page.full-width-content .content {
-  border-right: none;
+  // border-right: none;
   max-width: 100%;
   padding: 0;
 }
@@ -102,7 +102,7 @@ Loaded on the front page */
 .front-page-5,
 .front-page-6,
 .front-page-7 {
-  border-top: 73px solid transparent;
+  // border-top: 73px solid transparent;
   margin-top: -73px;
   -webkit-background-clip: padding-box;
   -moz-background-clip:    padding;
@@ -176,7 +176,7 @@ Loaded on the front page */
 }
 
 .front-page-1 a {
-  border-bottom: 1px solid #fff;
+  // border-bottom: 1px solid #fff;
 }
 
 .front-page-1 a:hover,
@@ -190,11 +190,11 @@ Loaded on the front page */
 
 .front-page-1 a:hover,
 .front-page-1 a:focus {
-  border-bottom: 1px solid #ccc;
+  // border-bottom: 1px solid #ccc;
 }
 
 .front-page-1 a.button {
-  border-bottom: none;
+  // border-bottom: none;
 }
 
 .front-page-1 .widget-title {
@@ -229,7 +229,7 @@ Loaded on the front page */
 .front-page-1 .textwidget a.button:focus,
 .front-page-1 .textwidget a.button:hover {
   background-color: #fff;
-  border: none;
+  // border: none;
   color: #000;
 }
 
@@ -268,7 +268,7 @@ Loaded on the front page */
 .front-page-2 .textwidget a.button:focus,
 .front-page-2 .textwidget a.button:hover {
   background-color: #000;
-  border: none;
+  // border: none;
   color: #fff;
 }
 
@@ -276,73 +276,73 @@ Loaded on the front page */
 /* Front Page 3
 ---------------------------------------------------------------------------------------------------- */
 
-.front-page-3 {
-  background-color: #666;
-  color: #fff;
-  padding-bottom: 180px;
-  padding-top: 170px;
-  text-align: center;
-}
+// .front-page-3 {
+//   background-color: #666;
+//   color: #fff;
+//   padding-bottom: 180px;
+//   padding-top: 170px;
+//   text-align: center;
+// }
 
 // .front-page-3 .widget-full .wrap {
 //   max-width: 960px;
 // }
 
-.front-page-3,
-.front-page-3 a,
-.front-page-3 p,
-.front-page-3 .featured-content .entry-title a,
-.front-page-3 .widget-title {
-  color: #fff;
-}
+// .front-page-3,
+// .front-page-3 a,
+// .front-page-3 p,
+// .front-page-3 .featured-content .entry-title a,
+// .front-page-3 .widget-title {
+//   color: #fff;
+// }
 
-.front-page-3 a {
-  border-bottom: 1px solid #fff;
-}
+// .front-page-3 a {
+  // border-bottom: 1px solid #fff;
+// }
 
-.front-page-3 a:hover,
-.front-page-3 a:focus,
-.front-page-3 .featured-content .entry-meta a:hover,
-.front-page-3 .featured-content .entry-meta a:focus,
-.front-page-3 .featured-content .entry-title a:hover,
-.front-page-3 .featured-content .entry-title a:focus {
-  color: #ccc;
-}
+// .front-page-3 a:hover,
+// .front-page-3 a:focus,
+// .front-page-3 .featured-content .entry-meta a:hover,
+// .front-page-3 .featured-content .entry-meta a:focus,
+// .front-page-3 .featured-content .entry-title a:hover,
+// .front-page-3 .featured-content .entry-title a:focus {
+//   color: #ccc;
+// }
 
-.front-page-3 a:hover,
-.front-page-3 a:focus {
-  border-bottom: 1px solid #ccc;
-}
+// .front-page-3 a:hover,
+// .front-page-3 a:focus {
+  // border-bottom: 1px solid #ccc;
+// }
 
-.front-page-3 a.button,
-.front-page-3 .featured-content .entry-header::after {
-  border-bottom: none;
-}
+// .front-page-3 a.button,
+// .front-page-3 .featured-content .entry-header::after {
+  // border-bottom: none;
+// }
 
-.front-page-3 p {
-  // font-size: 30px;
-  // font-size: 3rem;
-  line-height: 1.75;
-}
+// .front-page-3 p {
+//   // font-size: 30px;
+//   // font-size: 3rem;
+//   line-height: 1.75;
+// }
 
-.front-page-3 p:last-child {
-  margin-bottom: 0;
-}
+// .front-page-3 p:last-child {
+//   margin-bottom: 0;
+// }
 
-.front-page-3 button:focus,
-.front-page-3 button:hover,
-.front-page-3 input:focus[type="button"],
-.front-page-3 input:hover[type="button"],
-.front-page-3 input:focus[type="reset"],
-.front-page-3 input:hover[type="reset"],
-.front-page-3 input:focus[type="submit"],
-.front-page-3 input:hover[type="submit"],
-.front-page-3 .textwidget a.button:focus,
-.front-page-3 .textwidget a.button:hover {
-  background-color: #fff;
-  border: none;
-  color: #000;
-}
+// .front-page-3 button:focus,
+// .front-page-3 button:hover,
+// .front-page-3 input:focus[type="button"],
+// .front-page-3 input:hover[type="button"],
+// .front-page-3 input:focus[type="reset"],
+// .front-page-3 input:hover[type="reset"],
+// .front-page-3 input:focus[type="submit"],
+// .front-page-3 input:hover[type="submit"],
+// .front-page-3 .textwidget a.button:focus,
+// .front-page-3 .textwidget a.button:hover {
+//   background-color: #fff;
+  // border: none;
+//   color: #000;
+// }
 
 
 /* Front Page 4
@@ -379,7 +379,7 @@ Loaded on the front page */
 .front-page-4 .textwidget a.button:focus,
 .front-page-4 .textwidget a.button:hover {
   background-color: #000;
-  border: none;
+  // border: none;
   color: #fff;
 }
 
@@ -408,7 +408,7 @@ Loaded on the front page */
 }
 
 .front-page-5 a {
-  border-bottom: 1px solid #fff;
+  // border-bottom: 1px solid #fff;
 }
 
 .front-page-5 a:hover,
@@ -422,12 +422,12 @@ Loaded on the front page */
 
 .front-page-5 a:hover,
 .front-page-5 a:focus {
-  border-bottom: 1px solid #ccc;
+  // border-bottom: 1px solid #ccc;
 }
 
 .front-page-5 a.button,
 .front-page-5 .featured-content .entry-header::after {
-  border-bottom: none;
+  // border-bottom: none;
 }
 
 .front-page-5 p {
@@ -451,7 +451,7 @@ Loaded on the front page */
 .front-page-5 .textwidget a.button:focus,
 .front-page-5 .textwidget a.button:hover {
   background-color: #fff;
-  border: none;
+  // border: none;
   color: #000;
 }
 
@@ -490,7 +490,7 @@ Loaded on the front page */
 .front-page-6 .textwidget a.button:focus,
 .front-page-6 .textwidget a.button:hover {
   background-color: #000;
-  border: none;
+  // border: none;
   color: #fff;
 }
 
@@ -519,7 +519,7 @@ Loaded on the front page */
 }
 
 .front-page-7 a {
-  border-bottom: 1px solid #fff;
+  // border-bottom: 1px solid #fff;
 }
 
 .front-page-7 a:hover,
@@ -533,12 +533,12 @@ Loaded on the front page */
 
 .front-page-7 a:hover,
 .front-page-7 a:focus {
-  border-bottom: 1px solid #ccc;
+  // border-bottom: 1px solid #ccc;
 }
 
 .front-page-7 a.button,
 .front-page-7 .featured-content .entry-header::after {
-  border-bottom: none;
+  // border-bottom: none;
 }
 
 .front-page-7 p {
@@ -562,7 +562,7 @@ Loaded on the front page */
 .front-page-7 .textwidget a.button:focus,
 .front-page-7 .textwidget a.button:hover {
   background-color: #fff;
-  border: none;
+  // border: none;
   color: #000;
 }
 
@@ -682,7 +682,7 @@ Loaded on the front page */
 // }
 
 // .featuredpage .team-member .entry-header:after {
-//   border-width: 0;
+  // border-width: 0;
 //   padding-bottom: 0;
 // }
 
@@ -733,7 +733,7 @@ Loaded on the front page */
 // }
 
 // .featuredpage .team-member .entry-title a:focus .team-name {
-//   border-bottom: 1px #fff dotted;
+  // border-bottom: 1px #fff dotted;
 // }
 
 // .featuredpage .team-member p,

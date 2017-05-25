@@ -1,26 +1,65 @@
 // Footer
 .site-footer {
   text-align: left;
-  color: $white;
-  background-image: url(/app/themes/made/fbmods/images/grunge.gif);
   @include para-small;
+  background-image: url(/app/themes/made/fbmods/images/grunge.gif);
+  background-size: cover;
+  padding: 17px 0 50px 0;
+  @include media-md {
+    padding: 37px 0 50px 0;
+  }
+  &, a {
+    color: $blue;
+  }
   .widget-title {
-    text-align: left;
     @include h5;
     color: $gold;
+    text-align: left;
+    margin-bottom: 5px;
+    @include media-md {
+      margin-bottom: 15px;
+    }
   }
   .social-link {
     display: inline-block;
+    padding: 0;
+    margin: 0;
   }
   .social-icon {
-    width: 40px;
+    width: 46px;
+    margin-top: 5px;
     margin-right: 10px;
+    @include opacity-hover;
   }
 
   .copyright {
+    color: $gray;
+    margin-top: 20px;
     text-align: center;
     @include fine-print; 
-    color: $gray;
+    @include media-md {
+      margin-top: 55px;
+    }
+    .line {
+      display: block;
+      @include media-md {
+        display: inline;
+        &:first-of-type::after {
+          content: ' | '
+        }
+      }
+    }
+  }
+  .made-logo {
+    width: 166px;
+    transition: filter 0.2s ease-in-out;
+    @include opacity-hover;
+  }
+  .widget-area {
+    padding: 20px 0;
+    @include media-md {
+      width: 33.3%;
+    }
   }
 }
 

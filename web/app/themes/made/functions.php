@@ -242,50 +242,53 @@ add_theme_support( 'genesis-footer-widgets', 3 );
 // Register widget areas.
 genesis_register_sidebar( array(
 	'id'          => 'front-page-1',
-	'name'        => __( 'Front Page 1', 'infinity-pro' ),
+	'name'        => __( 'Front Page Banner', 'infinity-pro' ),
 	'description' => __( 'This is the front page 1 section.', 'infinity-pro' ),
 ) );
 genesis_register_sidebar( array(
 	'id'          => 'front-page-2',
-	'name'        => __( 'Front Page 2', 'infinity-pro' ),
+	'name'        => __( 'Front Page Description', 'infinity-pro' ),
 	'description' => __( 'This is the front page 2 section.', 'infinity-pro' ),
 ) );
 genesis_register_sidebar( array(
 	'id'          => 'front-page-3',
-	'name'        => __( 'Front Page 3', 'infinity-pro' ),
+	'name'        => __( 'Front Page Project News', 'infinity-pro' ),
 	'description' => __( 'This is the front page 3 section.', 'infinity-pro' ),
 ) );
 genesis_register_sidebar( array(
 	'id'          => 'front-page-4',
-	'name'        => __( 'Front Page 4', 'infinity-pro' ),
+	'name'        => __( 'Front Page Comic Updates', 'infinity-pro' ),
 	'description' => __( 'This is the front page 4 section.', 'infinity-pro' ),
 ) );
-genesis_register_sidebar( array(
-	'id'          => 'front-page-5',
-	'name'        => __( 'Front Page 5', 'infinity-pro' ),
-	'description' => __( 'This is the front page 5 section.', 'infinity-pro' ),
-) );
-genesis_register_sidebar( array(
-	'id'          => 'front-page-6',
-	'name'        => __( 'Front Page 6', 'infinity-pro' ),
-	'description' => __( 'This is the front page 6 section.', 'infinity-pro' ),
-) );
-genesis_register_sidebar( array(
-	'id'          => 'front-page-7',
-	'name'        => __( 'Front Page 7', 'infinity-pro' ),
-	'description' => __( 'This is the front page 7 section.', 'infinity-pro' ),
-) );
-genesis_register_sidebar( array(
-	'id'          => 'lead-capture',
-	'name'        => __( 'Lead Capture', 'infinity-pro' ),
-	'description' => __( 'This is the lead capture section.', 'infinity-pro' ),
-) );
-genesis_register_sidebar( array(
-	'id'          => 'offscreen-content',
-	'name'        => __( 'Offscreen Content', 'infinity-pro' ),
-	'description' => __( 'This is the offscreen content section.', 'infinity-pro' ),
-) );
+// genesis_register_sidebar( array(
+// 	'id'          => 'front-page-5',
+// 	'name'        => __( 'Front Page 5', 'infinity-pro' ),
+// 	'description' => __( 'This is the front page 5 section.', 'infinity-pro' ),
+// ) );
+// genesis_register_sidebar( array(
+// 	'id'          => 'front-page-6',
+// 	'name'        => __( 'Front Page 6', 'infinity-pro' ),
+// 	'description' => __( 'This is the front page 6 section.', 'infinity-pro' ),
+// ) );
+// genesis_register_sidebar( array(
+// 	'id'          => 'front-page-7',
+// 	'name'        => __( 'Front Page 7', 'infinity-pro' ),
+// 	'description' => __( 'This is the front page 7 section.', 'infinity-pro' ),
+// ) );
+// genesis_register_sidebar( array(
+// 	'id'          => 'lead-capture',
+// 	'name'        => __( 'Lead Capture', 'infinity-pro' ),
+// 	'description' => __( 'This is the lead capture section.', 'infinity-pro' ),
+// ) );
+// genesis_register_sidebar( array(
+// 	'id'          => 'offscreen-content',
+// 	'name'        => __( 'Offscreen Content', 'infinity-pro' ),
+// 	'description' => __( 'This is the offscreen content section.', 'infinity-pro' ),
+// ) );
 
 
 // Add Firebelly's custom functions
 include_once( get_stylesheet_directory()  . '/fbmods/fb-functions.php' );
+
+// Add Firebelly's custom widgets
+include_once( get_stylesheet_directory()  . '/fbmods/fb-widgets.php' );

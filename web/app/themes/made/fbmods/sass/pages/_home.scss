@@ -47,10 +47,13 @@
 
 // Main headline/description under banner
 .front-page-description {
+
+  // Wrap
   .wrap {
     max-width: 800px;
   }
-  // Header/
+
+  // Header
   .widget-title {
     @include h1;
     color: $blue;
@@ -59,64 +62,99 @@
       margin-right: -1ch;
     };
   }
+
   // Subheader
   .textwidget {
-    // Sketchy Double-Lin HR
-    &::before {
-      content: '';
-      width: 210px;
-      height: 20px;
-      display: block;
-      margin: 0 auto;
-      background-size: 210px 9px;
-      background-repeat: no-repeat;
-      background-image: url(/app/themes/made/fbmods/images/hr.png);
-      @include media-md {
-        margin: 45px auto 40px auto;
-      }
+    &, p {
+      @include para-big;
     }
-  }
-  .textwidget, p {
-    @include para-big;
-  }
-}
 
-
-// Restyle current-project excerpt on front page
-.front-page-project-news {
-  .wrap {
-    max-width: 1020px;
-  }
-  .entry-content, .entry-header {
-    text-align: left;
-  }
-  .entry-header {
-    .entry-title {
-      // @include h3;
-    }
-    a {
-      border-bottom: none;
-    }
+    @include double-line-hr;
   }
 }
 
 
 // Front page recent post slider
-.project-news-slider-area {
-  .widget {
-    width: 100%;
+.front-page-project-news {
 
-    &:not(.widget_text) {
-      padding: 20px 0;
+  // Wrap
+  .wrap {
+    max-width: 1020px;
+  }
+
+    // Section Title
+  .widget-area .widget_text { // Specificity necessary to override theme style
+    margin-bottom: 20px;
+    @include media-md{
+      margin-bottom: 50px;
     }
-
-    @include media-md {
-      &:not(.widget_text) {
-        padding: 0 50px;
-      }
+    .widget-title {
+      margin: 0;
     }
   }
 
+  // Slide Content
+  .entry-content, .entry-header {
+    text-align: left;
+  }
+  .entry-title {
+    margin-bottom: 5px;
+      a {
+      @include h3;
+      color: $gold;
+      text-decoration: underline;
+    }
+  }
+  .entry-meta {
+    color: $white;
+    @include fine-print;
+  }
+  .entry-time {
+    display: block;
+    margin-bottom: 20px;
+  }
+  .entry-content {
+    color: $white;
+    @include para-big;
+    a.more-link {
+      display: none;
+    }
+  }
+  .thumbnail-wrap {
+    width: 100%;
+    position: relative;
+    padding-bottom: 67%;
+    margin-bottom: 30px;
+    .thumbnail {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-size: cover;
+      background-position: center center;
+      background-color: $gray;
+    }
+  }
+
+
+  // Article sliders
+  .slider .widget {
+    width: 100%;
+    padding: 20px 0;
+
+    @include max-screen( $breakpoint-medium - 1px) {
+      &:first-of-type {
+        padding-top: 0;
+      }
+    }
+
+    @include media-md {
+      padding: 0 50px;
+    }
+  }
+
+  // Arrows
   .slick-slider {
     position: relative;
 
@@ -124,39 +162,63 @@
       top: 50%;
       z-index: 1;
       position: absolute;
+      @include opacity-hover;
+      background: transparent;
       transition: translateY(-50%);
+      &:hover {
+        background: transparent;
+      }
+    }
+    .arrow-icon {
+      width: 36px;
+      height: 36px;
     }
     .next-arrow {
-      right: 10px;
+      right: -30px;
     }
     .previous-arrow {
-      left: 10px;
+      left: -30px;
+      .arrow-icon {
+        transform: rotate(180deg);
+      }
     }
   }
 }
 
+// Comic Update Hover Cards
 .front-page-comic-updates {
-  // padding: 0 0 10px 0;
 
+  // Wrap
   .wrap {
-    // padding: 0 40px;
     @include media-md{
       max-width: 85%;    
-      // padding: 0 35px;
     }
   }
-  .featured-content {
-    margin-bottom: 15px;
-    @include media-md {
-      margin-bottom: 20px;
-    }
-  }
-  .widget_text .widget-title {
 
-    margin-bottom: 10px;
+  // Section Title
+  .widget_text {
+    margin-bottom: 20px;
     @include media-md{
-      margin-bottom: 30px;
+      margin-bottom: 50px;
+    }
+    .widget-title {
+      margin: 0;
+    }
+  }
+
+  .thumbnail-wrap {
+    width: 100%;
+    position: relative;
+    padding-bottom: 100%;
+    .thumbnail {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-size: cover;
+      background-position: center center;
+      background-color: $gray;
     }
   }
 }
-

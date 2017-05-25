@@ -74,24 +74,42 @@
   p {
     color: #fff;
   }
-  .entry-title .team-title {
-    color: #fff;
-    display: block;
-    padding-top: 10px;
+}
+
+.hover-card-area {
+  @include clearfix();
+  margin: 0 -10px 30px;  
+  article {
+    @extend .hover-card;
   }
 }
 
-.front-page-comic-updates .widget-area, .participating-artists-widget {
-  @include clearfix();
-  margin: 0 -10px 30px;
-  article {
-    @extend .hover-card;
-    .entry-title {
-      color: $black;
+
+.participating-artists {
+  .thumbnail-wrap {
+    width: 100%;
+    position: relative;
+    padding-bottom: 100%;
+    background-color: $gold;
+    .thumbnail {
+      position: absolute;
+      top: 5%;
+      left: 5%;
+      right: 5%;
+      bottom: 5%;
+      background-size: contain;
+      background-position: center center;
+      background-color: $white;
+      mix-blend-mode: multiply;
+      background-repeat: no-repeat;
     }
   }
-  img { 
-    display: block;
-    width: 100%;
+  article {
+    &.entry {
+      &:hover .entry-header, &:focus .entry-header, &.focused .entry-header {
+        background-color: $blue;
+        opacity: 1;
+      }
+    }
   }
 }

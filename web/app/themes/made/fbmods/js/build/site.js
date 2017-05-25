@@ -57,8 +57,8 @@ var Main = (function ($) {
         } else {
           if (!$('.slick-initialized').length) {
             $('.slider').slick({
-              nextArrow: '<button type="button" class="next-arrow">&gt;</button>',
-              prevArrow: '<button type="button" class="previous-arrow">&lt;</button>'
+              nextArrow: '<button class="next-arrow"><img src="/app/themes/made/fbmods/svgs/arrow.svg" class="arrow-icon"></button>',
+              prevArrow: '<button class="previous-arrow"><img src="/app/themes/made/fbmods/svgs/arrow.svg" class="arrow-icon"></button>'
             });
           }
         }

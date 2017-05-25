@@ -22,7 +22,7 @@ function infinity_customizer_register() {
 
 	global $wp_customize;
 
-	$images = apply_filters( 'infinity_images', array( '1', '3', '5', '7' ) );
+	$images = apply_filters( 'infinity_images', array( '1' )); //, '3', '5', '7' ) );  // Removing all but one of these
 
 	$wp_customize->add_section( 'infinity-settings', array(
 		'description' => __( 'Use the included default images or personalize your site by uploading your own images.<br /><br />The default images are <strong>1600 pixels wide and 1000 pixels tall</strong>.', 'infinity-pro' ),
@@ -39,7 +39,7 @@ function infinity_customizer_register() {
 		) );
 
 		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, $image .'-infinity-image', array(
-			'label'    => sprintf( __( 'Featured Section %s Image:', 'infinity-pro' ), $image ),
+			'label'    => sprintf( __( 'Front Page Banner Image', 'infinity-pro' ), $image ), // Changed the title
 			'section'  => 'infinity-settings',
 			'settings' => $image .'-infinity-image',
 			'priority' => $image+1,
