@@ -88,43 +88,7 @@ function fb_post_info_filter( $post_info ) {
 // Remove entry-footer with "Filed Under" category on posts
 remove_action( 'genesis_entry_footer', 'genesis_post_meta' );
 
-
-// // Shortcodes in Widgets --source: https://www.billerickson.net/wordpress-shortcode-sidebar-widget/
-// add_filter('widget_text', 'do_shortcode');
-// /**
-//  * URL Shortcode
-//  * @author Bill Erickson
-//  * @link http://www.billerickson.net/wordpress-shortcode-sidebar-widget/
-//  * @return Site URL.
-//  */
-// function fb_url_shortcode() {
-//   return get_bloginfo('url');
-// }
-// add_shortcode('url','fb_url_shortcode');
-// *
-//  * WordPress URL
-//  * WordPress isn't always installed in same directory as Site URL.
-//  * @author Bill Erickson
-//  * @link http://www.billerickson.net/wordpress-shortcode-sidebar-widget/
-//  * @return WordPress URL
- 
-// function fb_wpurl_shortcode() {
-//   return get_bloginfo('wpurl');
-// }
-// add_shortcode('wpurl', 'fb_wpurl_shortcode');
-// /**
-//  * Child Theme URL
-//  * @author Bill Erickson
-//  * @link http://www.billerickson.net/wordpress-shortcode-sidebar-widget/
-//  * @return child theme directory URL
-//  */
-// function fb_child_shortcode() {
-//   return get_bloginfo('stylesheet_directory');
-// }
-// add_shortcode('style_dir', 'fb_child_shortcode');
-
-
-
+// Add Logo to nav in various places
 add_filter( 'genesis_nav_items', 'fb_add_logo_to_nav', 10, 2 );
 add_filter( 'wp_nav_menu_items', 'fb_add_logo_to_nav', 10, 2 );
 function fb_add_logo_to_nav($menu, $args) {
@@ -158,3 +122,10 @@ function fb_post_thumbnail_html( $html, $post_id, $post_thumbnail_id, $size, $at
     return $html;
 }; 
 add_filter( 'post_thumbnail_html', 'fb_post_thumbnail_html', 10, 5 ); 
+
+
+// Set the favicon
+function fb_favicon_url($favicon) {
+  return get_stylesheet_directory_uri() . '/fbmods/images/favicon.png';
+}
+add_filter('genesis_favicon_url', 'fb_favicon_url');
