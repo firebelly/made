@@ -143,20 +143,20 @@ function fb_add_logo_to_header() {
 
 
 // define the post_thumbnail_html callback 
-function filter_post_thumbnail_html( $html, $post_id, $post_thumbnail_id, $size, $attr ) { 
-    // make filter magic happen here...
+function fb_post_thumbnail_html( $html, $post_id, $post_thumbnail_id, $size, $attr ) { 
+
+    // See if we are a child of about
     $parents = get_post_ancestors( $post_id );
     $id = ($parents) ? $parents[count($parents)-1] : false;
-    if($id) {
-      $parent = get_post( $id );
-      $parent_slug = $parent->post_name;
-      if($parent_slug === 'about') { 
-        return ' <div class="thumbnail-wrap"><div class="thumbnail" style="background-image: url('.get_the_post_thumbnail_url($post_id).');"></div></div>'; 
-      }
+    $parent_slug = $id ? get_post( $id )->post_name : '';
+
+    if($parent_slug === 'about' || is_archive()) { 
+      return ' <div class="thumbnail-wrap"><div class="thumbnail" style="background-image: url('.get_the_post_thumbnail_url($post_id).');"></div></div>'; 
     }
+
 
     return $html;
 }; 
          
 // add the filter 
-add_filter( 'post_thumbnail_html', 'filter_post_thumbnail_html', 10, 5 ); 
+add_filter( 'post_thumbnail_html', 'fb_post_thumbnail_html', 10, 5 ); 

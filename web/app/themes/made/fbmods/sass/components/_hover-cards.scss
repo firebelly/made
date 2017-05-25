@@ -1,29 +1,31 @@
 // A more generalized refactor of inifinities .team-member hover class
 // ...since we want to use this styling in other places than intended.
 .hover-card {
+  &:hover {
+    cursor: pointer;
+  }
   a {
     &.aligncenter, &.alignleft, &.alignnone, &.alignright {
-      display: block;
       margin: 0;
+      display: block;
     }
   }
   &.entry {
     color: #fff;
-    padding: 0;
     position: relative;
   }
   .entry-header {
-    background-color: rgba(0, 0, 0, 0.8);
+    top: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    z-index: 0;
     height: 100%;
     display: block;
-    left: 0;
-    opacity: 0;
-    -ms-filter: "alpha(Opacity=0)";
-    filter: alpha(opacity = 0);
     position: absolute;
-    right: 0;
-    top: 0;
-    z-index: 0;
+    background-color: $gold;
+    filter: alpha(opacity = 0);
+    -ms-filter: "alpha(Opacity=0)";
     &:after {
       border-width: 0;
       padding-bottom: 0;
@@ -31,19 +33,19 @@
   }
   &.entry {
     &:hover .entry-header, &:focus .entry-header, &.focused .entry-header {
-      background-color: $gold;
       opacity: 1;
     }
   }
   .entry-header {
+    transition: opacity 0s ease-in-out;
     a {
-      display: table-cell;
+      z-index: 3;
       padding: 20px;
       position: relative;
-      transform: translateY(10px);
-      transition: transform .4s ease-in-out;
+      display: table-cell;
       vertical-align: middle;
-      z-index: 3;
+      transform: translateY(10px);
+      transition: transform 0.4s ease-in-out;
     }
     &.position-top a {
       padding-top: 45px;
@@ -59,15 +61,15 @@
     }
   }
   .entry-title {
+    width: 100%; 
     @include h3;
-    display: table;
     height: 100%;
     margin-top: 0;
-    margin-bottom: 10px;
+    display: table;
     overflow: hidden;
-    width: 100%;
     text-align: center;
-     a {
+    margin-bottom: 10px;
+    a {
       color: $black;
     }
   }
@@ -76,12 +78,37 @@
   }
 }
 
+
+
+
+@include max-screen ($breakpoint-medium - 1px) {
+  .hover-card {
+    .entry-header {
+      opacity: 0.9;
+      top: auto;
+      height: auto;
+      bottom: 0;
+      a {
+        transform: none;
+      }
+    }
+    &:hover .entry-header a, &:focus .entry-header a, &.focused .entry-header a {
+      transform: none;
+    }
+    &.entry {
+      &:hover .entry-header, &:focus .entry-header, &.focused .entry-header {
+        opacity: 0.9;
+      }
+    }
+  }
+}
+
+
+
+
 .hover-card-area {
   @include clearfix();
   margin: 0 -10px 30px;  
-  article {
-    @extend .hover-card;
-  }
 }
 
 
@@ -92,24 +119,21 @@
     padding-bottom: 100%;
     background-color: $gold;
     .thumbnail {
-      position: absolute;
       top: 5%;
       left: 5%;
       right: 5%;
       bottom: 5%;
+      position: absolute;
       background-size: contain;
-      background-position: center center;
       background-color: $white;
       mix-blend-mode: multiply;
       background-repeat: no-repeat;
+      background-position: center center;
     }
   }
   article {
-    &.entry {
-      &:hover .entry-header, &:focus .entry-header, &.focused .entry-header {
-        background-color: $blue;
-        opacity: 1;
-      }
+    .entry-header {
+      background-color: $blue;
     }
   }
 }

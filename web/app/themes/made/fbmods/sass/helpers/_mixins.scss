@@ -74,8 +74,25 @@
 }
 
 // Sketchy Double-Line HR
-@mixin double-line-hr {
+@mixin double-line-hr-before {
   &::before {
+    content: '';
+    width: 210px;
+    height: 20px;
+    display: block;
+    margin: 0 auto;
+    background-size: 210px 9px;
+    background-repeat: no-repeat;
+    background-image: url(/app/themes/made/fbmods/images/hr.png);
+    @include media-md {
+      margin: 45px auto 40px auto;
+    }
+  }
+}
+
+// Sketchy Double-Line HR
+@mixin double-line-hr-after {
+  &::after {
     content: '';
     width: 210px;
     height: 20px;

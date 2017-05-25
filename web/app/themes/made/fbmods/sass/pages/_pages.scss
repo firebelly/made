@@ -1,5 +1,5 @@
 // Selectively remove headers that are redundant because the top nav also shows page title
-.archive .archive-description, 
+// .archive .archive-description, 
 .page-about main > article > .entry-header,
 .page-get-involved main > article > .entry-header
  {
@@ -7,21 +7,70 @@
   @include sr-only;
 }
 
-// Display Featured Image on top of the post 
+// Global page padding
+.site-inner {
+  padding-top: 30px;
+  @include media-md {
+    padding-top: 0;
+  }
+}
+main.content {
+  @include media-md {
+    padding-top: 55px;
+  }
+}
+
+// Remove this annoying decoration
 .entry-header::after {
   display: none;
 }
 
 
-.page.entry {
-  // .entry-content {
+// Styling of post content
+.archive, .front-page-project-news, .single {
+  .entry-content, .entry-header {
+    text-align: left;
+  }
+  .entry-title {
+    @include h3;
+    margin-bottom: 5px;
+      a {
+      @include h3; // Duplicated for specificity
+      text-decoration: underline;
+    }
+  }
+  .entry-meta {
+    @include fine-print;
+  }
+  .entry-time {
+    display: block;
+    margin-bottom: 20px;
+  }
+  .entry-content {
+    a.more-link {
+      display: none;
+    }
+  }
+  .thumbnail-wrap, img {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+}
+
+// Global styling of pages/archive/posts
+.page, .archive, .single {
+  h1,h2, h3 {
+    color: $blue;
+    text-align: left;
+  }
+  .entry-content {
     h1 {
       @include h2;
     }
     h2 {
       @include h2;
       &:not(:first-of-type) {
-        @include double-line-hr;
+        @include double-line-hr-before;
         &:before {
           @include max-screen($breakpoint-medium - 1px) {
             margin-bottom: 20px;
@@ -32,15 +81,44 @@
     h3 {
       @include h3;
     }
-    h1,h2, h3 {
-      color: $blue;
-      text-align: left;
-    }
-  // }
+  }
 }
 
+// Archive/Single pages
+.archive, .single {
+  .archive-title {
+    @include h2;
+    color: $blue;
+  }
+  .archive-description {
+    margin-bottom: 15px;
+    border-bottom: 0;
+  }
+  .post {
+    border-bottom: 0;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    &:not(:last-of-type) {
+      @include double-line-hr-after;
+    }
+  }
+  .entry-title {
+    a {
+      color: $blue;
+    }
+  }
+}
 
+// Arvhice only
+.archive {
+  .entry-content {
+    p {
+      margin: 0;
+    }
+  }
+}
 
+// Artist Page
 .parent-about {
   .entry-title {
     &:before {
@@ -48,20 +126,27 @@
       display: block;
     }
   }
-  .thumbnail-wrap {
-    width: 100%;
-    position: relative;
-    padding-bottom: 100%;
-    .thumbnail {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-size: contain;
-      background-position: center center;
-      background-color: $white;
-      background-repeat: no-repeat;
-    }
+  .thumbnail {
+    background-size: contain;
+    background-color: $white;
+  }
+}
+
+
+// Thumbnail Images
+.thumbnail-wrap {
+  width: 100%;
+  position: relative;
+  padding-bottom: 67%;
+  .thumbnail {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: center center;
+    background-color: $gray;
+    background-repeat: no-repeat;
   }
 }

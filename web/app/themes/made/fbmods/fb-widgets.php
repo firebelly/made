@@ -135,7 +135,7 @@ class fb_project_news_slider_widget extends WP_Widget {
         ?>
         <section class="widget featured-content featuredpost">
           <div class="widget-wrap">
-            <article class="post type-post status-publish format-standard category-project-news entry">
+            <article class="post type-post status-publish format-standard category-project-news entry bigclicky">
               <a href="<?= get_permalink($recent_post->ID) ?>" aria-hidden="true">
                 <div class="thumbnail-wrap">
                   <div class="thumbnail" style="background-image: url(<?= get_the_post_thumbnail_url($recent_post->ID) ?>);"></div>
@@ -192,7 +192,7 @@ class fb_comic_updates_widget extends WP_Widget {
         ?>
         <section class="widget featured-content featuredpost">
           <div class="widget-wrap">
-            <article class="post type-post status-publish category-comic-updates entry hover-card">
+            <article class="post type-post status-publish category-comic-updates entry hover-card bigclicky">
               <div class="thumbnail-wrap">
                 <div class="thumbnail" style="background-image: url(<?= get_the_post_thumbnail_url($recent_post->ID) ?>);"></div>
               </div>
@@ -227,20 +227,9 @@ class fb_artists_widget extends WP_Widget {
   // Creating widget front-end
   public function widget( $args, $instance ) {
 
-    // $query_args = [
-    //   'post_type'   => 'page',
-    //   'numberposts' => -1,
-    //   // 'category_name'   => 'comic-updates',
-    //   // 'orderby'     => 'date',
-    //   'child_of' => get_page_by_path( 'about' )->ID,
-    // ];
-    // $artist_pages = get_posts($query_args);
-
     $args = array(
       'post_parent' => 2, //get_page_by_path( 'about' )->ID,
-      // 'post_type'   => 'any', 
       'numberposts' => -1,
-      // 'post_status' => 'any' 
     );
     $artist_pages = get_children( $args );
 

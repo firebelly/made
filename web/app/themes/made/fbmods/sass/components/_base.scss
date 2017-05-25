@@ -66,3 +66,7 @@ img {
 .site-inner .wrap {
   max-width: 720px;
 }
+
+:focus {
+  outline: none !important;
+}

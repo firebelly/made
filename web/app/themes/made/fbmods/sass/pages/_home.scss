@@ -69,7 +69,7 @@
       @include para-big;
     }
 
-    @include double-line-hr;
+    @include double-line-hr-before;
   }
 }
 
@@ -93,50 +93,18 @@
     }
   }
 
-  // Slide Content
-  .entry-content, .entry-header {
-    text-align: left;
-  }
-  .entry-title {
-    margin-bottom: 5px;
+   // Slide Content  
+   .entry-title {
       a {
-      @include h3;
       color: $gold;
-      text-decoration: underline;
     }
   }
-  .entry-meta {
+  .entry-meta, .entry-content {
     color: $white;
-    @include fine-print;
-  }
-  .entry-time {
-    display: block;
-    margin-bottom: 20px;
   }
   .entry-content {
-    color: $white;
     @include para-big;
-    a.more-link {
-      display: none;
-    }
   }
-  .thumbnail-wrap {
-    width: 100%;
-    position: relative;
-    padding-bottom: 67%;
-    margin-bottom: 30px;
-    .thumbnail {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-size: cover;
-      background-position: center center;
-      background-color: $gray;
-    }
-  }
-
 
   // Article sliders
   .slider .widget {
@@ -159,27 +127,35 @@
     position: relative;
 
     .next-arrow, .previous-arrow {
-      top: 50%;
+      top: 0;
+      height: 0;
+      padding: 0;
       z-index: 1;
+      width: 30px;
       position: absolute;
-      @include opacity-hover;
+      padding-bottom: 60%;
       background: transparent;
-      transition: translateY(-50%);
+      transition: transform 0.2s;
       &:hover {
+        transform: scale(1.3);
         background: transparent;
       }
     }
     .arrow-icon {
+      top: 50%;
+      left: 50%;
       width: 36px;
       height: 36px;
+      position: absolute;
+      transform: translate(-50%,-50%);
     }
     .next-arrow {
-      right: -30px;
+      right: -15px;
     }
     .previous-arrow {
-      left: -30px;
+      left: -15px;
       .arrow-icon {
-        transform: rotate(180deg);
+        transform: translate(-50%,-50%) rotate(180deg);
       }
     }
   }

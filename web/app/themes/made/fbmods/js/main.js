@@ -25,9 +25,13 @@ var Main = (function ($) {
       }
     },
     slickSliders: function () {
+
+      // Markup for Slick
       $('.project-news-slider-area > .wrap > section:not(:first-child)').wrapAll('<div class="slider"></div>');
+      
+      // Slides will be unslicked below md
       function slickOrDont() {
-        if( $(window).width() <= 700) {
+        if( $(window).width() < 800) {
           if ($('.slick-initialized').length) {
             $('.slider').slick('unslick');
           }
@@ -46,6 +50,24 @@ var Main = (function ($) {
         slickOrDont();
       });
     },
+    bigClicky: function () {
+
+      // Bigclicky™
+      $(document).on('click', '.bigclicky', function(e) {
+        if (!$(e.target).is('a')) {
+          e.preventDefault();
+          var link = $(this).find('a:first');
+          var href = link.attr('href');
+          if (href) {
+            if (e.metaKey || link.attr('target')) {
+              window.open(href);
+            } else {
+              location.href = href;
+            }
+          }
+        }
+      });
+    },
     onScroll: function () {
 
       // Add scrolled class to site header after 50px.
@@ -60,6 +82,9 @@ var Main = (function ($) {
 
       // On ready
       $(document).ready(function () {
+
+        // Enable smooth scrolling
+        Main.bigClicky();
 
         // Enable smooth scrolling
         Main.smoothScroll();

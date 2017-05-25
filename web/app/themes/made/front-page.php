@@ -65,7 +65,7 @@ function infinity_front_page_widgets() {
 	// Banner
 
 	genesis_widget_area( 'front-page-1', array(
-		'before' => '<div id="front-page-1" class="front-page-1 front-page-banner front-page-section"><div class="image-section widget-area fadeup-effect' . infinity_widget_area_class( 'front-page-1' ) . '"><div class="wrap">',
+		'before' => '<div id="front-page-1" class="front-page-1 front-page-banner front-page-section"><div class="image-section widget-area ' . infinity_widget_area_class( 'front-page-1' ) . '"><div class="wrap">',
 		'after'  => '</div></div></div>',
 	) );
 
