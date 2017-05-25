@@ -228,7 +228,7 @@ class fb_artists_widget extends WP_Widget {
   public function widget( $args, $instance ) {
 
     $args = array(
-      'post_parent' => 2, //get_page_by_path( 'about' )->ID,
+      'post_parent' => get_page_by_path( 'about' )->ID,
       'numberposts' => -1,
     );
     $artist_pages = get_children( $args );

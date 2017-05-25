@@ -3774,12 +3774,19 @@ img {
   margin: 0;
 }
 
+@media screen and (min-width: 800px) {
+  .parent-about .content {
+    padding-top: 30px;
+  }
+}
 .parent-about .entry-title:before {
   content: 'Participating Artist: ';
   display: block;
 }
 .parent-about .thumbnail-wrap {
   padding-bottom: 100%;
+  border: 0;
+  margin-bottom: 20px;
 }
 .parent-about .thumbnail {
   background-size: contain;
@@ -3802,6 +3809,10 @@ img {
   background-position: center center;
   background-color: #878787;
   background-repeat: no-repeat;
+}
+
+.thumbnail-wrap, .single .content img {
+  border: 2px solid #707070;
 }
 
 .alignnone {

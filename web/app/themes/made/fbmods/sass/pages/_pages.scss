@@ -120,6 +120,14 @@ main.content {
 
 // Artist Page
 .parent-about {
+  .content {
+    @include media-md {
+      padding-top: 30px;
+    }
+  }
+  .site-innter {
+    
+  }
   .entry-title {
     &:before {
       content: 'Participating Artist: ';
@@ -128,6 +136,10 @@ main.content {
   }
   .thumbnail-wrap {
     padding-bottom: 100%;
+    border: 0;
+    // @include media-md {
+      margin-bottom: 20px;
+    // }
   }
   .thumbnail {
     background-size: contain;
@@ -152,4 +164,8 @@ main.content {
   background-position: center center;
   background-color: $gray;
   background-repeat: no-repeat;
+}
+
+.thumbnail-wrap, .single .content img {
+  border: 2px solid $gray-dark;
 }
