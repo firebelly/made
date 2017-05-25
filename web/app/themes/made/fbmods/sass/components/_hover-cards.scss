@@ -24,6 +24,7 @@
     display: block;
     position: absolute;
     background-color: $gold;
+    border: 2px solid $gray-dark;
     filter: alpha(opacity = 0);
     -ms-filter: "alpha(Opacity=0)";
     &:after {
@@ -84,10 +85,11 @@
 @include max-screen ($breakpoint-medium - 1px) {
   .hover-card {
     .entry-header {
-      opacity: 0.9;
       top: auto;
-      height: auto;
       bottom: 0;
+      opacity: 0.9;
+      height: auto;
+      border-top: 0;
       a {
         transform: none;
       }
