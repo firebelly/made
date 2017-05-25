@@ -24,7 +24,7 @@ add_action( 'genesis_footer', 'fb_custom_footer' );
 function fb_custom_footer() {
   ?>
   <div class="copyright">
-  <span class="line">Terms &amp; Privacy  |  Copyright © <?= date('Y'); ?></span>
+  <span class="line">Copyright © <?= date('Y'); ?></span>
   <span class="line">Made Collaborative, LLC  |  All rights reserved</span>
   </div>
   <?php

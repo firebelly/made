@@ -2,9 +2,10 @@
 .site-footer {
   text-align: left;
   @include para-small;
-  background-image: url(/app/themes/made/fbmods/images/grunge.gif);
   background-size: cover;
   padding: 17px 0 50px 0;
+  border-top: 0;
+  background-image: url(/app/themes/made/fbmods/images/grunge.gif);
   @include media-md {
     padding: 37px 0 50px 0;
   }
