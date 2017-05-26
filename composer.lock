@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "363c8e6943392da5a437be414a219103",
-    "content-hash": "9799db50fa8456d00c3b878140835d01",
+    "hash": "8d93a65feb7ced2ea7ec7d3babdf080e",
+    "content-hash": "8dd1f5b94e8a95f5ae60d57bebba3412",
     "packages": [
         {
             "name": "composer/installers",
@@ -399,6 +399,26 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/duplicate-post/"
+        },
+        {
+            "name": "wpackagist-plugin/intuitive-custom-post-order",
+            "version": "3.0.8",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/intuitive-custom-post-order/",
+                "reference": "tags/3.0.8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/intuitive-custom-post-order.3.0.8.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/intuitive-custom-post-order/"
         },
         {
             "name": "wpackagist-plugin/regenerate-thumbnails",

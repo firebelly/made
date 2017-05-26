@@ -230,6 +230,8 @@ class fb_artists_widget extends WP_Widget {
     $args = array(
       'post_parent' => get_page_by_path( 'about' )->ID,
       'numberposts' => -1,
+      'orderby'     => 'menu_order',
+      'order'       => 'ASC',
     );
     $artist_pages = get_children( $args );
 

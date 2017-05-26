@@ -3142,6 +3142,11 @@ img {
   -webkit-filter: brightness(0.7);
           filter: brightness(0.7);
 }
+@media screen and (min-width: 800px) and (max-width: 1000px) {
+  .site-footer > .wrap {
+    padding: 0;
+  }
+}
 .site-footer .widget-title {
   font-size: 12px;
   font-weight: 900;

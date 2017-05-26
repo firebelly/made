@@ -15,6 +15,11 @@
   a {
     @include darken-hover;
   }
+  & > .wrap {
+    @include screen(800px,1000px) {
+      padding: 0;
+    }
+  }
   .widget-title {
     @include h5;
     color: $gold;
