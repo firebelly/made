@@ -2995,9 +2995,16 @@ img {
     text-transform: uppercase;
     font-family: 'Work Sans', sans-serif;
     color: #000;
-    padding: 16px 15px;
+    padding: 16px 8px;
     transition: opacity 0s;
   }
+}
+@media screen and (min-width: 800px) and (min-width: 850px) {
+  .front-page .site-header:not(.scrolled) .genesis-nav-menu a {
+    padding: 16px 15px;
+  }
+}
+@media screen and (min-width: 800px) {
   .front-page .site-header:not(.scrolled) .genesis-nav-menu a:hover {
     opacity: 0.7;
   }

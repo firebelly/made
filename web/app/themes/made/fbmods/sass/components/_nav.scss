@@ -73,11 +73,15 @@
     .genesis-nav-menu a {
       @include h4;
       color: $black;
-      padding: 16px 15px;
+      padding: 16px 8px;
+      @include min-screen(850px){
+        padding: 16px 15px;
+      }
       @include opacity-hover;
       &:hover {
         filter: none;
       }
+
     }
   }
 }
