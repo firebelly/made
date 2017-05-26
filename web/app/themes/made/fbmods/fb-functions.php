@@ -113,8 +113,18 @@ function fb_favicon_url($favicon) {
 }
 add_filter('genesis_favicon_url', 'fb_favicon_url');
 
-// Add image size
-
+// Image settings
 add_image_size( 'featured_image', 1200, 0, false );
-// add_image_size( 'artist', 600, 600, true );
 add_filter('jpeg_quality', function($arg){ return 70; } );
+
+
+// Change Title -- be rid of dash on home page
+add_filter('wp_title', 'fb_custom_title');
+function fb_custom_title($title) {
+
+    if(is_front_page()){
+      return 'MADE Collaborative';
+    }
+
+    return $title;
+}
