@@ -51,7 +51,7 @@
         color: $gold;
         padding-top: 16px;
         padding-bottom: 16px;
-        @include opacity-hover;
+        @include darken-hover;
       }
     }
   }
@@ -74,6 +74,10 @@
       @include h4;
       color: $black;
       padding: 16px 15px;
+      @include opacity-hover;
+      &:hover {
+        filter: none;
+      }
     }
   }
 }

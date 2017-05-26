@@ -10,6 +10,9 @@
       display: block;
     }
   }
+  a:hover {
+    filter: none;
+  }
   &.entry {
     color: #fff;
     position: relative;

@@ -9,8 +9,11 @@
   @include media-md {
     padding: 37px 0 50px 0;
   }
-  &, a {
+  &, a, a:hover {
     color: $blue;
+  }
+  a {
+    @include darken-hover;
   }
   .widget-title {
     @include h5;
@@ -30,7 +33,7 @@
     width: 46px;
     margin-top: 5px;
     margin-right: 10px;
-    @include opacity-hover;
+    @include darken-hover;
   }
 
   .copyright {
@@ -53,8 +56,7 @@
   }
   .made-logo {
     width: 166px;
-    transition: filter 0.2s ease-in-out;
-    @include opacity-hover;
+    @include darken-hover;
   }
   .widget-area {
     padding: 20px 0;

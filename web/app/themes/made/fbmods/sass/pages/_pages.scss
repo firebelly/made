@@ -51,11 +51,12 @@ main.content {
       display: none;
     }
   }
-  .thumbnail-wrap, img {
+  .thumbnail-wrap, .attachment-post-image {
     width: 100%;
     margin-bottom: 30px;
   }
 }
+
 
 // Global styling of pages/archive/posts
 .page, .archive, .single {
@@ -161,11 +162,16 @@ main.content {
   right: 0;
   bottom: 0;
   background-size: cover;
-  background-position: center center;
   background-color: $gray;
   background-repeat: no-repeat;
+  background-position: center center;
 }
 
 .thumbnail-wrap, .single .content img {
   border: $border-width solid $gray-dark;
+}
+
+
+a {
+  @include darken-hover;
 }
