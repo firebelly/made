@@ -44,6 +44,7 @@
     "wpackagist-plugin/regenerate-thumbnails": "^2.2.6",
     "wpackagist-plugin/wp-widgets-shortcode": "^1.0.3",
     "wpackagist-plugin/widget-clone": "^1.1",
+    "wpackagist-plugin/cmb2": ">=2.2.4",
     "wpackagist-plugin/intuitive-custom-post-order": "3.0.8"
   },
   "require-dev": {
