@@ -113,8 +113,15 @@
 
   .site-header {
     position: fixed;
-    top: 0 !important;
+    top: 0 ;
     bottom: inherit;
+  }
+
+  #wpadminbar {
+    position: fixed;
+  }
+  .admin-bar .site-header {
+    top: 46px;
   }
 
   .front-page .site-inner, .site-inner { //Specificity

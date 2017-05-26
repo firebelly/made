@@ -56,7 +56,11 @@
   }
   .made-logo {
     width: 166px;
-    @include darken-hover;
+  }
+  .widget_made_logo_footer a, .made-logo {
+    &:hover {
+      filter: none;
+    }
   }
   .widget-area {
     padding: 20px 0;

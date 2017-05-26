@@ -37,15 +37,8 @@ genesis_register_sidebar( array(
   'description' => __( 'A listing of all artists to appear on about page.', 'made' ),
 ) );
 
+// Add page and parent slug body class
 
-// Add page slug body class
-add_filter( 'body_class', 'fb_body_class_for_pages' );
-/**
- * Adds a css class to the body element
- *
- * @param  array $classes the current body classes
- * @return array $classes modified classes
- */
 function fb_body_class_for_pages( $classes ) {
 
   if ( is_singular( 'page' ) ) {
@@ -64,12 +57,9 @@ function fb_body_class_for_pages( $classes ) {
     }
   }
 
-
-
-
   return $classes;
-
 }
+add_filter( 'body_class', 'fb_body_class_for_pages' );
 
 // Display Featured Image on top of the post 
 add_action( 'genesis_before_entry', 'fb_featured_post_image', 8 );
@@ -84,26 +74,20 @@ function fb_post_info_filter( $post_info ) {
  return $post_info;
 }
 
-
 // Remove entry-footer with "Filed Under" category on posts
 remove_action( 'genesis_entry_footer', 'genesis_post_meta' );
 
-// Add Logo to nav in various places
-add_filter( 'genesis_nav_items', 'fb_add_logo_to_nav', 10, 2 );
-add_filter( 'wp_nav_menu_items', 'fb_add_logo_to_nav', 10, 2 );
+// Add Logo to header/nav in various places
 function fb_add_logo_to_nav($menu, $args) {
   return '<li class="menu-item menu-item-home"><a href="'.get_home_url().'" itemprop="url"><h1 class="sr-only">Made Collaborative</h1><img alt="Made Logo" class="made-logo" src="'.get_stylesheet_directory_uri() . '/fbmods/images/made-logo-header.png"></a></li>'.$menu;
 }
+add_filter( 'genesis_nav_items', 'fb_add_logo_to_nav', 10, 2 );
+add_filter( 'wp_nav_menu_items', 'fb_add_logo_to_nav', 10, 2 );
 
-
-add_action( 'genesis_header', 'fb_add_logo_to_header', 5 );
-//New Header functions
 function fb_add_logo_to_header() {
-
- // Added in content
  echo '<a href="'.get_home_url().'" itemprop="url" class="menu-item-home-mobile"><h1 class="sr-only">Made Collaborative</h1><img alt="Made Logo" class="made-logo" src="'.get_stylesheet_directory_uri() . '/fbmods/images/made-logo-header.png"></a>';
 }
-
+add_action( 'genesis_header', 'fb_add_logo_to_header', 5 );
 
 
 // Replace post thumbnail with background-image divs
@@ -118,7 +102,6 @@ function fb_post_thumbnail_html( $html, $post_id, $post_thumbnail_id, $size, $at
       return ' <div class="thumbnail-wrap"><div class="thumbnail" style="background-image: url('.get_the_post_thumbnail_url($post_id).');"></div></div>'; 
     }
 
-
     return $html;
 }; 
 add_filter( 'post_thumbnail_html', 'fb_post_thumbnail_html', 10, 5 ); 
@@ -129,3 +112,9 @@ function fb_favicon_url($favicon) {
   return get_stylesheet_directory_uri() . '/fbmods/images/favicon.png';
 }
 add_filter('genesis_favicon_url', 'fb_favicon_url');
+
+// Add image size
+
+add_image_size( 'featured_image', 1200, 0, false );
+// add_image_size( 'artist', 600, 600, true );
+add_filter('jpeg_quality', function($arg){ return 70; } );

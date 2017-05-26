@@ -2968,7 +2968,6 @@ img {
     color: #fdbb30;
     padding-top: 16px;
     padding-bottom: 16px;
-    transition: -webkit-filter 0s, filter 0s;
   }
   .front-page .site-header .genesis-nav-menu a:hover, .site-header .genesis-nav-menu a:hover {
     -webkit-filter: brightness(0.7);
@@ -2997,7 +2996,6 @@ img {
     font-family: 'Work Sans', sans-serif;
     color: #000;
     padding: 16px 8px;
-    transition: opacity 0s;
   }
 }
 @media screen and (min-width: 800px) and (min-width: 850px) {
@@ -3025,7 +3023,6 @@ img {
   font-family: 'Work Sans', sans-serif;
   color: #fdbb30;
   text-align: right;
-  transition: -webkit-filter 0s, filter 0s;
   outline: none !important;
   padding: 23px 0 23px 40px;
   background-color: transparent;
@@ -3046,8 +3043,16 @@ img {
 @media screen and (max-width: 799px) {
   .site-header {
     position: fixed;
-    top: 0 !important;
+    top: 0;
     bottom: inherit;
+  }
+
+  #wpadminbar {
+    position: fixed;
+  }
+
+  .admin-bar .site-header {
+    top: 46px;
   }
 
   .front-page .site-inner, .site-inner {
@@ -3133,9 +3138,6 @@ img {
 .site-footer, .site-footer a, .site-footer a:hover {
   color: #02bed6;
 }
-.site-footer a {
-  transition: -webkit-filter 0s, filter 0s;
-}
 .site-footer a:hover {
   -webkit-filter: brightness(0.7);
           filter: brightness(0.7);
@@ -3165,7 +3167,6 @@ img {
   width: 46px;
   margin-top: 5px;
   margin-right: 10px;
-  transition: -webkit-filter 0s, filter 0s;
 }
 .site-footer .social-icon:hover {
   -webkit-filter: brightness(0.7);
@@ -3200,11 +3201,10 @@ img {
 }
 .site-footer .made-logo {
   width: 166px;
-  transition: -webkit-filter 0s, filter 0s;
 }
-.site-footer .made-logo:hover {
-  -webkit-filter: brightness(0.7);
-          filter: brightness(0.7);
+.site-footer .widget_made_logo_footer a:hover, .site-footer .made-logo:hover {
+  -webkit-filter: none;
+          filter: none;
 }
 .site-footer .widget-area {
   padding: 20px 0;
@@ -3869,9 +3869,6 @@ img {
   border: 1px solid #707070;
 }
 
-a {
-  transition: -webkit-filter 0s, filter 0s;
-}
 a:hover {
   -webkit-filter: brightness(0.7);
           filter: brightness(0.7);
