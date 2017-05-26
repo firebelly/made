@@ -3024,9 +3024,14 @@ img {
   font-family: 'Work Sans', sans-serif;
   color: #fdbb30;
   text-align: right;
+  transition: -webkit-filter 0s, filter 0s;
   outline: none !important;
   padding: 23px 0 23px 40px;
   background-color: transparent;
+}
+.menu-toggle:hover {
+  -webkit-filter: brightness(0.7);
+          filter: brightness(0.7);
 }
 .menu-toggle::before {
   top: -1px;
@@ -3038,6 +3043,14 @@ img {
 }
 
 @media screen and (max-width: 799px) {
+  .site-header {
+    position: fixed;
+  }
+
+  .front-page .site-inner, .site-inner {
+    margin-top: 60px;
+  }
+
   .menu-item-home-mobile {
     top: 18px;
     left: 25px;

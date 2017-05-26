@@ -94,6 +94,7 @@
   @include h5;
   color: $gold;
   text-align: right;
+  @include darken-hover;
   outline: none !important;
   padding: 23px 0 23px 40px;
   background-color: transparent;
@@ -109,6 +110,14 @@
 
 // Mobile
 @include max-screen($breakpoint-nav - 1px) {
+
+  .site-header {
+    position: fixed;
+  }
+
+  .front-page .site-inner, .site-inner { //Specificity
+    margin-top: 60px ;
+  }
 
   .menu-item-home-mobile {
     top: 18px;
