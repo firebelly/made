@@ -90,11 +90,11 @@
 	// Function to position the site header.
 	function __repositionSiteHeader( headerHeight, $siteInner ) {
 
-		if ( 'fixed' == __getPositionValue( '.site-header' ) ) {
-			$siteInner.css( 'margin-top', headerHeight + 'px' );
-		} else {
-			$siteInner.removeAttr( 'style' );
-		}
+		// if ( 'fixed' == __getPositionValue( '.site-header' ) ) {
+		// 	$siteInner.css( 'margin-top', headerHeight + 'px' );
+		// } else {
+		// 	$siteInner.removeAttr( 'style' );
+		// }
 
 	}
 

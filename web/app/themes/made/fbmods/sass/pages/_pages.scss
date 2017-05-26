@@ -102,6 +102,9 @@ main.content {
     &:not(:last-of-type) {
       @include double-line-hr-after;
     }
+    &:last-of-type {
+      margin-bottom: 50px;
+    }
   }
   .entry-title {
     a {

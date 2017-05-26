@@ -113,6 +113,8 @@
 
   .site-header {
     position: fixed;
+    top: 0 !important;
+    bottom: inherit;
   }
 
   .front-page .site-inner, .site-inner { //Specificity

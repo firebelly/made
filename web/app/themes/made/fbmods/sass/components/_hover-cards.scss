@@ -113,7 +113,9 @@
 
 .hover-card-area {
   @include clearfix();
-  margin: 0 -10px 30px;  
+  @include media-md{
+    margin: 0 -10px 30px;  
+  }
 }
 
 

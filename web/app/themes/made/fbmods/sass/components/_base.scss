@@ -5,12 +5,14 @@
 
 html {
   box-sizing: border-box;
+  width: 100%;
 }
 
 body {
-  overflow-x: hidden;
+  overflow-x: hidden !important;
   @include para-small;
 }
+
 
 p {
   em {

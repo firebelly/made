@@ -2804,10 +2804,11 @@ body:hover .visually-hidden a, body:hover .screen-reader-text a, body:hover .vis
 
 html {
   box-sizing: border-box;
+  width: 100%;
 }
 
 body {
-  overflow-x: hidden;
+  overflow-x: hidden !important;
   font-size: 16px;
   font-weight: 500;
   letter-spacing: 0;
@@ -3045,6 +3046,8 @@ img {
 @media screen and (max-width: 799px) {
   .site-header {
     position: fixed;
+    top: 0 !important;
+    bottom: inherit;
   }
 
   .front-page .site-inner, .site-inner {
@@ -3327,7 +3330,6 @@ img {
 }
 .hover-card-area {
   *zoom: 1;
-  margin: 0 -10px 30px;
 }
 .hover-card-area:before, .hover-card-area:after {
   content: "\0020";
@@ -3337,6 +3339,11 @@ img {
 }
 .hover-card-area:after {
   clear: both;
+}
+@media screen and (min-width: 800px) {
+  .hover-card-area {
+    margin: 0 -10px 30px;
+  }
 }
 
 .participating-artists .thumbnail-wrap {
@@ -3800,7 +3807,7 @@ img {
   width: 210px;
   height: 20px;
   display: block;
-  margin: 0 auto;
+  margin: 30px auto 20px;
   background-size: 210px 9px;
   background-repeat: no-repeat;
   background-image: url(/app/themes/made/fbmods/images/hr.png);
@@ -3809,6 +3816,9 @@ img {
   .archive .post:not(:last-of-type)::after, .single .post:not(:last-of-type)::after {
     margin: 45px auto 40px auto;
   }
+}
+.archive .post:last-of-type, .single .post:last-of-type {
+  margin-bottom: 50px;
 }
 .archive .entry-title a, .single .entry-title a {
   color: #02bed6;
