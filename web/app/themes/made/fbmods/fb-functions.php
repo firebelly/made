@@ -30,13 +30,6 @@ function fb_custom_footer() {
   <?php
 }
 
-// Add widget for Contributing Artists
-genesis_register_sidebar( array(
-  'id'    => 'about-artists',
-  'name'    => __( 'Participating Artists', 'made' ),
-  'description' => __( 'A listing of all artists to appear on about page.', 'made' ),
-) );
-
 // Add page and parent slug body class
 
 function fb_body_class_for_pages( $classes ) {
@@ -128,3 +121,53 @@ function fb_custom_title($title) {
 
     return $title;
 }
+
+
+
+
+function fb_participating_artists_shortcode() {
+
+  $output = '';
+
+  $output .= '<div class="widget-area flexible-widgets fadeup-effect widget-thirds fadeInUp hover-card-area participating-artists">';
+
+  $output .= '<section class="widget widget_text"><div class="widget-wrap">      <div class="textwidget"></div>
+    </div></section>'; //sigh... this shouldnt be here, but its a remnant from when there was one and is necessary for styling because of deadline.
+
+  $args = array(
+    'post_parent' => get_page_by_path( 'about' )->ID,
+    'numberposts' => -1,
+    'orderby'     => 'menu_order',
+    'order'       => 'ASC',
+  );
+  $artist_pages = get_children( $args );
+
+  if (!empty($artist_pages)) { 
+    foreach ($artist_pages as $artist_page) {
+      $title = get_the_title($artist_page->ID) ? get_the_title($artist_page->ID) : __( '(no title)', 'genesis' );
+      ob_start(); 
+        ?>
+        <section class="widget featured-content featuredpage">
+          <div class="widget-wrap">
+            <article class="page type-page status-publish entry hover-card">
+              <div class="thumbnail-wrap">
+                <div class="thumbnail" style="background-image: url(<?= wp_get_attachment_image_url(get_post_thumbnail_id($artist_page->ID),'featured_image') ?>);"></div>
+              </div>
+              <header class="entry-header">
+                <h4 class="entry-title" itemprop="headline"><a href="<?= get_permalink($artist_page->ID) ?>"><?= $title ?></a></h4>
+              </header>
+            </article>
+          </div>
+        </section>
+        <?php  
+      $output .= ob_get_contents(); 
+      ob_end_clean();
+    }
+  }
+
+  $output .= '</div>';
+
+
+  return $output;
+}
+add_shortcode('participating-artist-cards', 'fb_participating_artists_shortcode');
