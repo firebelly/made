@@ -5,7 +5,7 @@ function fb_load_widgets() {
   register_widget( 'fb_banner_made_logo_widget' );
   register_widget( 'fb_footer_made_logo_widget' );
   register_widget( 'fb_footer_connect_widget' );
-  register_widget( 'fb_project_news_slider_widget' );
+  register_widget( 'fb_project_blog_slider_widget' );
   register_widget( 'fb_comic_updates_widget' );
 }
 add_action( 'widgets_init', 'fb_load_widgets' );
@@ -93,15 +93,15 @@ class fb_footer_connect_widget extends WP_Widget {
 }
 
 // Project Mews Slider
-class fb_project_news_slider_widget extends WP_Widget {
+class fb_project_blog_slider_widget extends WP_Widget {
 
   function __construct() {
     parent::__construct(
       // Base ID of your widget
-      'fb_project_news_slider_widget', 
+      'fb_project_blog_slider_widget', 
 
       // Widget name will appear in UI
-      __('Project News Slider', 'fb_widgets'), 
+      __('Project Blog Slider', 'fb_widgets'), 
 
       // Widget description
       array( 'description' => __( 'Project News slider for Front Page', 'fb_widgets' ), ) 
