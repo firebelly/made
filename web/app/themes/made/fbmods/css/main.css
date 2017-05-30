@@ -3871,6 +3871,7 @@ blockquote::before {
 }
 
 .thumbnail-wrap, .single .content img {
+  width: 100%;
   border: 1px solid #707070;
 }
 
