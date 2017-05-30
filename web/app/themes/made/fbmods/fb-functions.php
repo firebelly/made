@@ -139,6 +139,7 @@ function fb_participating_artists_shortcode() {
     'numberposts' => -1,
     'orderby'     => 'menu_order',
     'order'       => 'ASC',
+    'post_status' => 'publish',
   );
   $artist_pages = get_children( $args );
 
