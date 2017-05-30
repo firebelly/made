@@ -7,12 +7,8 @@ function fb_load_widgets() {
   register_widget( 'fb_footer_connect_widget' );
   register_widget( 'fb_project_news_slider_widget' );
   register_widget( 'fb_comic_updates_widget' );
-  register_widget( 'fb_artists_widget' );
 }
 add_action( 'widgets_init', 'fb_load_widgets' );
-
-
-
 
 // Banner MADE logo
 class fb_banner_made_logo_widget extends WP_Widget {
@@ -62,7 +58,6 @@ class fb_footer_made_logo_widget extends WP_Widget {
   }
 }
 
-
 // Footer Connect Section
 class fb_footer_connect_widget extends WP_Widget {
 
@@ -97,7 +92,6 @@ class fb_footer_connect_widget extends WP_Widget {
   }
 }
 
-
 // Project Mews Slider
 class fb_project_news_slider_widget extends WP_Widget {
 
@@ -119,7 +113,7 @@ class fb_project_news_slider_widget extends WP_Widget {
 
     $query_args = [
       'post_type'   => 'post',
-      'category_name'   => 'project-news',
+      'category_name'   => 'project-blog',
       'orderby'     => 'date',
       'numberposts' => 5,
     ];
@@ -198,55 +192,6 @@ class fb_comic_updates_widget extends WP_Widget {
               </div>
               <header class="entry-header">
                 <h4 class="entry-title" itemprop="headline"><a href="<?= get_permalink($recent_post->ID) ?>"><?= $title ?></a></h4>
-              </header>
-            </article>
-          </div>
-        </section>
-        <?php
-      }
-    }
-  }
-}
-
-// Comic Updates
-class fb_artists_widget extends WP_Widget {
-
-  function __construct() {
-    parent::__construct(
-      // Base ID of your widget
-      'fb_artists_widget', 
-
-      // Widget name will appear in UI
-      __('Participating Artists List', 'fb_widgets'), 
-
-      // Widget description
-      array( 'description' => __( 'Artist List for About Page', 'fb_widgets' ), ) 
-    );
-  }
-
-  // Creating widget front-end
-  public function widget( $args, $instance ) {
-
-    $args = array(
-      'post_parent' => get_page_by_path( 'about' )->ID,
-      'numberposts' => -1,
-      'orderby'     => 'menu_order',
-      'order'       => 'ASC',
-    );
-    $artist_pages = get_children( $args );
-
-    if (!empty($artist_pages)) { 
-      foreach ($artist_pages as $artist_page) {
-        $title = get_the_title($artist_page->ID) ? get_the_title($artist_page->ID) : __( '(no title)', 'genesis' );
-        ?>
-        <section class="widget featured-content featuredpage">
-          <div class="widget-wrap">
-            <article class="page type-page status-publish entry hover-card">
-              <div class="thumbnail-wrap">
-                <div class="thumbnail" style="background-image: url(<?= wp_get_attachment_image_url(get_post_thumbnail_id($artist_page->ID),'featured_image') ?>);"></div>
-              </div>
-              <header class="entry-header">
-                <h4 class="entry-title" itemprop="headline"><a href="<?= get_permalink($artist_page->ID) ?>"><?= $title ?></a></h4>
               </header>
             </article>
           </div>
