@@ -252,7 +252,7 @@ genesis_register_sidebar( array(
 ) );
 genesis_register_sidebar( array(
 	'id'          => 'front-page-3',
-	'name'        => __( 'Front Page Project News', 'infinity-pro' ),
+	'name'        => __( 'Front Page Project Blog', 'infinity-pro' ),
 	'description' => __( 'This is the front page 3 section.', 'infinity-pro' ),
 ) );
 genesis_register_sidebar( array(
