@@ -148,7 +148,7 @@ class FbSiteOptions {
       'type' => 'text',
     ) );
     $cmb->add_field( array(
-      'name' => __( 'Default Facebook Sharing Image', 'firebelly' ),
+      'name' => __( 'Default Sharing Image', 'firebelly' ),
       'desc'    => __( 'This will be used if unable to find an image for shared post/page', 'firebelly' ),
       'id'   => 'default_metatag_image',
       'type' => 'file',
