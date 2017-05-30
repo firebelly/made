@@ -120,6 +120,7 @@ class fb_project_blog_slider_widget extends WP_Widget {
     $recent_posts = get_posts($query_args);
 
     if (!empty($recent_posts)) { 
+
       foreach ($recent_posts as $recent_post) {
         $title = get_the_title($recent_post->ID) ? get_the_title($recent_post->ID) : __( '(no title)', 'genesis' );
         $excerpt = empty( $recent_post->post_excerpt ) ? 
@@ -181,10 +182,19 @@ class fb_comic_updates_widget extends WP_Widget {
     $recent_posts = get_posts($query_args);
 
     if (!empty($recent_posts)) { 
+
+      $class = '';
+      $count = count($recent_posts);
+      if ( $count >= 3 ) {
+        $class .= ' three-or-more';
+      } else {
+        $class .= ' fewer-than-three';
+      }
+
       foreach ($recent_posts as $recent_post) {
         $title = get_the_title($recent_post->ID) ? get_the_title($recent_post->ID) : __( '(no title)', 'genesis' );
         ?>
-        <section class="widget featured-content featuredpost">
+        <section class="widget featured-content featuredpost <?= $class ?>">
           <div class="widget-wrap">
             <article class="post type-post status-publish category-comic-updates entry hover-card bigclicky">
               <div class="thumbnail-wrap">

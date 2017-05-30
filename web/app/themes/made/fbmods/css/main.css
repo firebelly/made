@@ -3586,6 +3586,11 @@ blockquote::before {
           transform: translate(-50%, -50%) rotate(180deg);
 }
 
+.front-page-comic-updates .flexible-widgets .widget.fewer-than-three {
+  float: none;
+  display: inline-block;
+  margin: auto;
+}
 @media screen and (min-width: 800px) {
   .front-page-comic-updates .wrap {
     max-width: 85%;
@@ -3614,8 +3619,8 @@ blockquote::before {
   right: 0;
   bottom: 0;
   background-size: cover;
-  background-position: center center;
   background-color: #878787;
+  background-position: center center;
 }
 
 .single-post article {

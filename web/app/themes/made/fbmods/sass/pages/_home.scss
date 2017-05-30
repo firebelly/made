@@ -164,6 +164,14 @@
 // Comic Update Hover Cards
 .front-page-comic-updates {
 
+.flexible-widgets .widget {
+  &.fewer-than-three {
+    float: none;
+    display: inline-block;
+    margin: auto;
+  }
+}
+
   // Wrap
   .wrap {
     @include media-md{
@@ -193,8 +201,8 @@
       right: 0;
       bottom: 0;
       background-size: cover;
-      background-position: center center;
       background-color: $gray;
+      background-position: center center;
     }
   }
 }
