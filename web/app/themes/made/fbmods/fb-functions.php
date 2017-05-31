@@ -3,7 +3,7 @@
 // Enqueue styles.
 add_action( 'wp_enqueue_scripts', 'fb_enqueue_styles', 1 );
 function fb_enqueue_styles() {
-  wp_enqueue_style( 'main-css', get_stylesheet_directory_uri() . '/fbmods/css/main.min.css?', array(), CHILD_THEME_VERSION );
+  wp_enqueue_style( 'main-css', get_stylesheet_directory_uri() . '/fbmods/css/main.min.css', array(), CHILD_THEME_VERSION );
 }
 
 // Enqueue scripts.
@@ -92,7 +92,7 @@ function fb_post_thumbnail_html( $html, $post_id, $post_thumbnail_id, $size, $at
     $parent_slug = $id ? get_post( $id )->post_name : '';
 
     if($parent_slug === 'about' || is_archive()) { 
-      return ' <div class="thumbnail-wrap"><div class="thumbnail" style="background-image: url('.get_the_post_thumbnail_url($post_id).');"></div></div>'; 
+      return ' <div class="thumbnail-wrap"><div class="thumbnail" style="background-image: url('.wp_get_attachment_image_url(get_post_thumbnail_id($post_id),'featured_image').');"></div></div>'; 
     }
 
     return $html;
@@ -170,3 +170,7 @@ function fb_participating_artists_shortcode() {
   return $output;
 }
 add_shortcode('participating-artist-cards', 'fb_participating_artists_shortcode');
+
+
+// Add style file 
+add_editor_style( get_stylesheet_directory_uri() . '/fbmods/css/main.min.css' );

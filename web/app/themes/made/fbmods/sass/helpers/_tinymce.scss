@@ -1,3 +1,42 @@
 body#tinymce {
-  margin: 12px !important;
+  padding: 12px !important;
+  h1,h2,h3,blockquote {
+    color: $blue;
+    text-align: left;
+  }
+  h1 {
+    @include h2;
+  }
+  h2 {
+    @include h2;
+  }
+  img {
+    width: 100%;
+  }
+  h3 {
+    @include h3;
+  }
+  blockquote {
+    @include h2;
+    margin-left: 0;
+    margin-right: 0;
+    font-style: normal; // Overwrite itals
+    @include double-line-hr-after;
+    @include double-line-hr-before;
+    
+    @include media-md {
+      font-size: 30px; // The md version of h2 is a little too big
+    }
+    cite, p:last-child:not(:first-child) {
+      color: $black;
+      @include para-big;
+      text-align: center;
+    }
+    &::before {
+      position: static;
+      @include max-screen($breakpoint-medium - 1px) {
+        margin-bottom: 10px;
+      }
+    }
+  }
 }

@@ -3741,7 +3741,7 @@ blockquote::before {
   margin-bottom: 30px;
 }
 
-.page h1, .page h2, .page h3, .archive h1, .archive h2, .archive h3, .single h1, .single h2, .single h3 {
+.page h1, .page h2, .page h3, .page blockquote, .archive h1, .archive h2, .archive h3, .archive blockquote, .single h1, .single h2, .single h3, .single blockquote {
   color: #02bed6;
   text-align: left;
 }
@@ -3785,6 +3785,82 @@ blockquote::before {
   .page .entry-content h3, .archive .entry-content h3, .single .entry-content h3 {
     font-size: 20px;
     line-height: 1.25;
+  }
+}
+.page .entry-content blockquote, .archive .entry-content blockquote, .single .entry-content blockquote {
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: 1.25;
+  text-transform: none;
+  font-family: 'Work Sans', sans-serif;
+  margin-left: 0;
+  margin-right: 0;
+  font-style: normal;
+}
+@media screen and (min-width: 800px) {
+  .page .entry-content blockquote, .archive .entry-content blockquote, .single .entry-content blockquote {
+    font-size: 40px;
+    line-height: 1.25;
+  }
+}
+.page .entry-content blockquote::after, .archive .entry-content blockquote::after, .single .entry-content blockquote::after {
+  content: '';
+  width: 210px;
+  height: 20px;
+  display: block;
+  margin: 30px auto 20px;
+  background-size: 210px 9px;
+  background-repeat: no-repeat;
+  background-image: url(/app/themes/made/fbmods/images/hr.png);
+}
+@media screen and (min-width: 800px) {
+  .page .entry-content blockquote::after, .archive .entry-content blockquote::after, .single .entry-content blockquote::after {
+    margin: 45px auto 40px auto;
+  }
+}
+.page .entry-content blockquote::before, .archive .entry-content blockquote::before, .single .entry-content blockquote::before {
+  content: '';
+  width: 210px;
+  height: 20px;
+  display: block;
+  margin: 0 auto;
+  background-size: 210px 9px;
+  background-repeat: no-repeat;
+  background-image: url(/app/themes/made/fbmods/images/hr.png);
+}
+@media screen and (min-width: 800px) {
+  .page .entry-content blockquote::before, .archive .entry-content blockquote::before, .single .entry-content blockquote::before {
+    margin: 45px auto 40px auto;
+  }
+}
+@media screen and (min-width: 800px) {
+  .page .entry-content blockquote, .archive .entry-content blockquote, .single .entry-content blockquote {
+    font-size: 30px;
+  }
+}
+.page .entry-content blockquote cite, .page .entry-content blockquote p:last-child:not(:first-child), .archive .entry-content blockquote cite, .archive .entry-content blockquote p:last-child:not(:first-child), .single .entry-content blockquote cite, .single .entry-content blockquote p:last-child:not(:first-child) {
+  color: #000;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.5;
+  text-transform: none;
+  font-family: 'Work Sans', sans-serif;
+  text-align: center;
+}
+@media screen and (min-width: 800px) {
+  .page .entry-content blockquote cite, .page .entry-content blockquote p:last-child:not(:first-child), .archive .entry-content blockquote cite, .archive .entry-content blockquote p:last-child:not(:first-child), .single .entry-content blockquote cite, .single .entry-content blockquote p:last-child:not(:first-child) {
+    font-size: 20px;
+    line-height: 1.5;
+  }
+}
+.page .entry-content blockquote::before, .archive .entry-content blockquote::before, .single .entry-content blockquote::before {
+  position: static;
+}
+@media screen and (max-width: 799px) {
+  .page .entry-content blockquote::before, .archive .entry-content blockquote::before, .single .entry-content blockquote::before {
+    margin-bottom: 10px;
   }
 }
 
@@ -3912,5 +3988,130 @@ a:hover {
   }
 }
 body#tinymce {
-  margin: 12px !important;
+  padding: 12px !important;
+}
+body#tinymce h1, body#tinymce h2, body#tinymce h3, body#tinymce blockquote {
+  color: #02bed6;
+  text-align: left;
+}
+body#tinymce h1 {
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: 1.25;
+  text-transform: none;
+  font-family: 'Work Sans', sans-serif;
+}
+@media screen and (min-width: 800px) {
+  body#tinymce h1 {
+    font-size: 40px;
+    line-height: 1.25;
+  }
+}
+body#tinymce h2 {
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: 1.25;
+  text-transform: none;
+  font-family: 'Work Sans', sans-serif;
+}
+@media screen and (min-width: 800px) {
+  body#tinymce h2 {
+    font-size: 40px;
+    line-height: 1.25;
+  }
+}
+body#tinymce img {
+  width: 100%;
+}
+body#tinymce h3 {
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.5;
+  text-transform: none;
+  font-family: 'Work Sans', sans-serif;
+}
+@media screen and (min-width: 800px) {
+  body#tinymce h3 {
+    font-size: 20px;
+    line-height: 1.25;
+  }
+}
+body#tinymce blockquote {
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: 1.25;
+  text-transform: none;
+  font-family: 'Work Sans', sans-serif;
+  margin-left: 0;
+  margin-right: 0;
+  font-style: normal;
+}
+@media screen and (min-width: 800px) {
+  body#tinymce blockquote {
+    font-size: 40px;
+    line-height: 1.25;
+  }
+}
+body#tinymce blockquote::after {
+  content: '';
+  width: 210px;
+  height: 20px;
+  display: block;
+  margin: 30px auto 20px;
+  background-size: 210px 9px;
+  background-repeat: no-repeat;
+  background-image: url(/app/themes/made/fbmods/images/hr.png);
+}
+@media screen and (min-width: 800px) {
+  body#tinymce blockquote::after {
+    margin: 45px auto 40px auto;
+  }
+}
+body#tinymce blockquote::before {
+  content: '';
+  width: 210px;
+  height: 20px;
+  display: block;
+  margin: 0 auto;
+  background-size: 210px 9px;
+  background-repeat: no-repeat;
+  background-image: url(/app/themes/made/fbmods/images/hr.png);
+}
+@media screen and (min-width: 800px) {
+  body#tinymce blockquote::before {
+    margin: 45px auto 40px auto;
+  }
+}
+@media screen and (min-width: 800px) {
+  body#tinymce blockquote {
+    font-size: 30px;
+  }
+}
+body#tinymce blockquote cite, body#tinymce blockquote p:last-child:not(:first-child) {
+  color: #000;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.5;
+  text-transform: none;
+  font-family: 'Work Sans', sans-serif;
+  text-align: center;
+}
+@media screen and (min-width: 800px) {
+  body#tinymce blockquote cite, body#tinymce blockquote p:last-child:not(:first-child) {
+    font-size: 20px;
+    line-height: 1.5;
+  }
+}
+body#tinymce blockquote::before {
+  position: static;
+}
+@media screen and (max-width: 799px) {
+  body#tinymce blockquote::before {
+    margin-bottom: 10px;
+  }
 }
