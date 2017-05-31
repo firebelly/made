@@ -81,6 +81,3 @@ define('DISALLOW_FILE_EDIT', true);
 if (!defined('ABSPATH')) {
     define('ABSPATH', $webroot_dir . '/wp/');
 }
-
-// Extend upload limit
-define('WP_MEMORY_LIMIT', '64M');
