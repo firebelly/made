@@ -296,3 +296,6 @@ include_once( get_stylesheet_directory()  . '/fbmods/fb-widgets.php' );
 // Add Social Media Metatags and necessary code
 include_once( get_stylesheet_directory()  . '/fbmods/fb-siteoptions.php' );
 include_once( get_stylesheet_directory()  . '/fbmods/fb-metatags.php' );
+
+// Fb init to clean up tinymce
+include_once( get_stylesheet_directory()  . '/fbmods/fb-init.php' );
