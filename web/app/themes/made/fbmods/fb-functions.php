@@ -57,7 +57,7 @@ add_filter( 'body_class', 'fb_body_class_for_pages' );
 // Display Featured Image on top of the post 
 add_action( 'genesis_before_entry', 'fb_featured_post_image', 8 );
 function fb_featured_post_image() {
-  the_post_thumbnail('post-image');
+  the_post_thumbnail('featured_image');
 }
 
 // Customize entry meta header
@@ -122,9 +122,7 @@ function fb_custom_title($title) {
     return $title;
 }
 
-
-
-
+// A shorcode to generate the hover cards for participating artists
 function fb_participating_artists_shortcode() {
 
   $output = '';
