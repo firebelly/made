@@ -3988,11 +3988,11 @@ a:hover {
   }
 }
 body#tinymce {
-  margin: 0 auto;
-  padding: 12px !important;
-  max-width: 800px;
   width: 100%;
   float: none;
+  margin: 0 auto;
+  max-width: 800px;
+  padding: 12px !important;
 }
 body#tinymce h1, body#tinymce h2, body#tinymce h3, body#tinymce blockquote {
   color: #02bed6;
