@@ -1,5 +1,10 @@
 body#tinymce {
+  margin: 0 auto;
   padding: 12px !important;
+  max-width: 800px;
+  width: 100%;
+  float: none;
+
   h1,h2,h3,blockquote {
     color: $blue;
     text-align: left;
