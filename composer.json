@@ -38,7 +38,7 @@
     "vlucas/phpdotenv": "^2.0.1",
     "oscarotero/env": "^1.0",
     "roots/wp-password-bcrypt": "1.0.0",
-    "johnpbloch/wordpress": "^4.7.5",
+    "johnpbloch/wordpress": "^4.8",
     "wpackagist-plugin/duplicate-post": "^3.2",
     "wpackagist-plugin/wp-migrate-db": "^0.9.2",
     "wpackagist-plugin/regenerate-thumbnails": "^2.2.6",
