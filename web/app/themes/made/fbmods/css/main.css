@@ -3787,6 +3787,9 @@ blockquote::before {
     line-height: 1.25;
   }
 }
+.page .entry-content a, .archive .entry-content a, .single .entry-content a {
+  color: #02bed6;
+}
 .page .entry-content blockquote, .archive .entry-content blockquote, .single .entry-content blockquote {
   font-size: 20px;
   font-weight: 800;
@@ -4042,6 +4045,9 @@ body#tinymce h3 {
     font-size: 20px;
     line-height: 1.25;
   }
+}
+body#tinymce a {
+  color: #02bed6;
 }
 body#tinymce blockquote {
   font-size: 20px;

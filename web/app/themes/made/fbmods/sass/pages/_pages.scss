@@ -72,6 +72,9 @@ main.content {
     h3 {
       @include h3;
     }
+    a {
+      color: $blue;
+    }
     blockquote {
       @include h2;
       margin-left: 0;
