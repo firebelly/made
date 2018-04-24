@@ -1718,19 +1718,10 @@ img.alignright,
 /* Fadein Effect
 ---------------------------------------------------------------------------------------------------- */
 .site-container {
-  -webkit-animation: fadein 1s;
   animation: fadein 1s;
 }
 
 @keyframes fadein {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-@-webkit-keyframes fadein {
   from {
     opacity: 0;
   }
@@ -1853,14 +1844,11 @@ img.alignright,
   .sub-menu-toggle::before {
     display: inline-block;
     text-rendering: auto;
-    -webkit-transform: rotate(0);
     transform: rotate(0);
-    transition: -webkit-transform .25s ease-in-out;
     transition: transform .25s ease-in-out;
   }
 
   .sub-menu-toggle.activated::before {
-    -webkit-transform: rotate(180deg);
     transform: rotate(180deg);
   }
 
@@ -2437,38 +2425,21 @@ Loaded on the front page */
 .js .fadeup-effect {
   opacity: 0;
   overflow: hidden;
-  -webkit-animation-duration: 1s;
   animation-duration: 1s;
-  -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
-  -webkit-animation-timing-function: ease-in-out;
   animation-timing-function: ease-in-out;
-}
-
-@-webkit-keyframes fadeInUp {
-  from {
-    opacity: 0;
-    -webkit-transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    -webkit-transform: translateY(0);
-  }
 }
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    -webkit-transform: translateY(20px);
-            transform: translateY(20px);
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
+    transform: translateY(0);
   }
 }
 .fadeInUp {
-  -webkit-animation-name: fadeInUp;
   animation-name: fadeInUp;
 }
 
@@ -2743,7 +2714,6 @@ body:hover .visually-hidden a, body:hover .screen-reader-text a, body:hover .vis
 
 .slick-slider .slick-track,
 .slick-slider .slick-list {
-  -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }
 
@@ -2967,9 +2937,7 @@ blockquote::before {
     opacity: 1;
     width: 100px;
     height: auto;
-    -webkit-transform: none;
-            transform: none;
-    transition: width 0.2s ease-in-out, opacity 0.2s 0.2s ease-in-out, -webkit-transform 0.2s 0.2s ease-in-out;
+    transform: none;
     transition: width 0.2s ease-in-out, opacity 0.2s 0.2s ease-in-out, transform 0.2s 0.2s ease-in-out;
   }
   .front-page .site-header .genesis-nav-menu .menu-item-home a, .site-header .genesis-nav-menu .menu-item-home a {
@@ -3004,7 +2972,6 @@ blockquote::before {
     opacity: 0;
     width: 0px;
     height: auto;
-    transition: width 0.2s ease-in-out, opacity 0s ease-in-out, -webkit-transform 0.2s 0s ease-in-out, margin 0.2s 0s ease-in-out;
     transition: width 0.2s ease-in-out, opacity 0s ease-in-out, transform 0.2s 0s ease-in-out, margin 0.2s 0s ease-in-out;
   }
   .front-page .site-header:not(.scrolled) .genesis-nav-menu a {
@@ -3244,8 +3211,8 @@ blockquote::before {
   border: 0;
 }
 
-.hover-card:hover {
-  cursor: pointer;
+.hover-card {
+  cursor: default !important;
 }
 .hover-card a.aligncenter, .hover-card a.alignleft, .hover-card a.alignnone, .hover-card a.alignright {
   margin: 0;
@@ -3283,15 +3250,13 @@ blockquote::before {
 .hover-card .entry-header {
   transition: opacity 0s ease-in-out;
 }
-.hover-card .entry-header a {
+.hover-card .entry-header a, .hover-card .entry-header .temp-fake-link {
   z-index: 3;
   padding: 20px;
   position: relative;
   display: table-cell;
   vertical-align: middle;
-  -webkit-transform: translateY(10px);
-          transform: translateY(10px);
-  transition: -webkit-transform 0.4s ease-in-out;
+  transform: translateY(10px);
   transition: transform 0.4s ease-in-out;
 }
 .hover-card .entry-header.position-top a {
@@ -3299,8 +3264,7 @@ blockquote::before {
   vertical-align: top;
 }
 .hover-card:hover .entry-header a, .hover-card:focus .entry-header a, .hover-card.focused .entry-header a {
-  -webkit-transform: translateY(1px);
-          transform: translateY(1px);
+  transform: translateY(1px);
 }
 .hover-card .more-link:hover, .hover-card .more-link:focus {
   color: #fff;
@@ -3326,7 +3290,7 @@ blockquote::before {
     line-height: 1.25;
   }
 }
-.hover-card .entry-title a {
+.hover-card .entry-title a, .hover-card .entry-title .temp-fake-link {
   color: #000;
 }
 .hover-card p {
@@ -3341,13 +3305,11 @@ blockquote::before {
     height: auto;
     border-top: 0;
   }
-  .hover-card .entry-header a {
-    -webkit-transform: none;
-            transform: none;
+  .hover-card .entry-header a, .hover-card .entry-header .temp-fake-link {
+    transform: none;
   }
   .hover-card:hover .entry-header a, .hover-card:focus .entry-header a, .hover-card.focused .entry-header a {
-    -webkit-transform: none;
-            transform: none;
+    transform: none;
   }
   .hover-card.entry:hover .entry-header, .hover-card.entry:focus .entry-header, .hover-card.entry.focused .entry-header {
     opacity: 0.9;
@@ -3558,12 +3520,10 @@ blockquote::before {
   position: absolute;
   padding-bottom: 60%;
   background: transparent;
-  transition: -webkit-transform 0.2s;
   transition: transform 0.2s;
 }
 .front-page-project-news .slick-slider .next-arrow:hover, .front-page-project-news .slick-slider .previous-arrow:hover {
-  -webkit-transform: scale(1.3);
-          transform: scale(1.3);
+  transform: scale(1.3);
   background: transparent;
 }
 .front-page-project-news .slick-slider .arrow-icon {
@@ -3572,8 +3532,7 @@ blockquote::before {
   width: 36px;
   height: 36px;
   position: absolute;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 .front-page-project-news .slick-slider .next-arrow {
   right: -15px;
@@ -3582,8 +3541,7 @@ blockquote::before {
   left: -15px;
 }
 .front-page-project-news .slick-slider .previous-arrow .arrow-icon {
-  -webkit-transform: translate(-50%, -50%) rotate(180deg);
-          transform: translate(-50%, -50%) rotate(180deg);
+  transform: translate(-50%, -50%) rotate(180deg);
 }
 
 .front-page-comic-updates .flexible-widgets .widget.fewer-than-three {

@@ -75,10 +75,12 @@ function infinity_front_page_widgets() {
 		'after'  => '</div></div></div>',
 	) );
 
-	genesis_widget_area( 'front-page-3', array(
-		'before' => '<div id="front-page-3" class="front-page-3 front-page-project-news front-page-section"><div class="image-section widget-area fadeup-effect project-news-slider-area"><div class="wrap">',
-		'after'  => '</div></div></div>',
-	) );
+	// Temporarily disable:
+
+	// genesis_widget_area( 'front-page-3', array(
+	// 	'before' => '<div id="front-page-3" class="front-page-3 front-page-project-news front-page-section"><div class="image-section widget-area fadeup-effect project-news-slider-area"><div class="wrap">',
+	// 	'after'  => '</div></div></div>',
+	// ) );
 
 	genesis_widget_area( 'front-page-4', array(
 		'before' => '<div id="front-page-4" class="front-page-4 front-page-comic-updates front-page-section"><div class="flexible-widgets widget-area fadeup-effect widget-thirds fadeInUp hover-card-area"><div class="wrap">',
