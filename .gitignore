@@ -42,3 +42,6 @@ bin
 
 # Fonts
 web/app/themes/made/fbmods/fonts
+
+# Gems
+.gems
