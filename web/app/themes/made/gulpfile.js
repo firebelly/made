@@ -93,7 +93,7 @@ gulp.task('watch', function() {
   // Init BrowserSync
   browserSync.init({
     files: ['*.html', '*.php'],
-    proxy: 'made.dev',
+    proxy: 'made.localhost',
     notify: false,
   });
   // Kick it off with a build
