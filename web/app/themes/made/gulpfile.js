@@ -57,10 +57,10 @@ gulp.task('scripts', function() {
 
 // Compress images (must run glulp images manually)
 gulp.task('images', function() {
-  return gulp.src(paths.imgSrc)
-    .pipe(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true }))
-    .pipe(gulp.dest('images'))
-    .pipe(browserSync.stream());
+  // return gulp.src(paths.imgSrc)
+  //   .pipe(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true }))
+  //   .pipe(gulp.dest('images'))
+  //   .pipe(browserSync.stream());
 });
 
 // SVG time!
