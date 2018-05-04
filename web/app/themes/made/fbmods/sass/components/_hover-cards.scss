@@ -1,7 +1,9 @@
 // A more generalized refactor of inifinities .team-member hover class
 // ...since we want to use this styling in other places than intended.
 .hover-card {
-    cursor: default!important;
+  &:hover {
+    cursor: pointer;
+  }
   a {
     &.aligncenter, &.alignleft, &.alignnone, &.alignright {
       margin: 0;
@@ -40,7 +42,7 @@
   }
   .entry-header {
     transition: opacity 0s ease-in-out;
-    a, .temp-fake-link {
+    a {
       z-index: 3;
       padding: 20px;
       position: relative;
@@ -71,7 +73,7 @@
     overflow: hidden;
     text-align: center;
     margin-bottom: 10px;
-    a, .temp-fake-link {
+    a {
       color: $black;
     }
   }
@@ -91,7 +93,7 @@
       opacity: 0.9;
       height: auto;
       border-top: 0;
-      a, .temp-fake-link {
+      a {
         transform: none;
       }
     }

@@ -196,12 +196,12 @@ class fb_comic_updates_widget extends WP_Widget {
         ?>
         <section class="widget featured-content featuredpost <?= $class ?>">
           <div class="widget-wrap">
-            <article class="post type-post status-publish category-comic-updates entry hover-card">
+            <article class="post type-post status-publish category-comic-updates entry hover-card bigclicky">
               <div class="thumbnail-wrap">
                 <div class="thumbnail" style="background-image: url(<?= wp_get_attachment_image_url(get_post_thumbnail_id($recent_post->ID),'featured_image') ?>);"></div>
               </div>
               <header class="entry-header">
-                <h4 class="entry-title" itemprop="headline"><div class="temp-fake-link" href="<?= get_permalink($recent_post->ID) ?>"><?= $title ?></div></h4>
+                <h4 class="entry-title" itemprop="headline"><a href="<?= get_permalink($recent_post->ID) ?>"><?= $title ?></a></h4>
               </header>
             </article>
           </div>
