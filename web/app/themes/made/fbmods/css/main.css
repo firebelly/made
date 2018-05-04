@@ -3384,10 +3384,6 @@ blockquote::before {
   }
 }
 
-.front-page-4 .widget_text {
-  display: none;
-}
-
 .front-page-banner {
   height: 160px;
 }
