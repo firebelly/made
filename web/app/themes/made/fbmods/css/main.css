@@ -3383,6 +3383,9 @@ blockquote::before {
     line-height: 1.25;
   }
 }
+.front-page-section:nth-of-type(odd) {
+  background-color: #000;
+}
 
 .front-page-banner {
   height: 160px;

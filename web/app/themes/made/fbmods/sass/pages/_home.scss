@@ -20,12 +20,12 @@
     @include h2;
     color: $gold;
   }
-  // // Fallback background color if no image
-  // &:nth-of-type(odd) {
-  //   background-color: $black;
-  //   // output.php will add this as fallback if no image is selected:
-  //   background-image: url(/app/themes/made/fbmods/images/grunge.gif);
-  // }
+  // Fallback background color if no image
+  &:nth-of-type(odd) {
+    background-color: $black;
+    // output.php will add this as fallback if no image is selected:
+    // background-image: url(/app/themes/made/fbmods/images/grunge.gif);
+  }
 }
 
 

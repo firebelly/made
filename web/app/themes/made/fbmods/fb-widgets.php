@@ -200,6 +200,9 @@ class fb_comic_updates_widget extends WP_Widget {
               <div class="thumbnail-wrap">
                 <div class="thumbnail" style="background-image: url(<?= wp_get_attachment_image_url(get_post_thumbnail_id($recent_post->ID),'featured_image') ?>);"></div>
               </div>
+              <header class="entry-header">
+                <h4 class="entry-title" itemprop="headline"><div class="temp-fake-link" href="<?= get_permalink($recent_post->ID) ?>"><?= $title ?></div></h4>
+              </header>
             </article>
           </div>
         </section>
