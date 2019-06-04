@@ -1,0 +1,32 @@
+// WooCommerce overrides
+
+.woocommerce-cart table.cart td.actions .coupon .input-text,
+.woocommerce .quantity .qty,
+.woocommerce-cart table.cart td {
+  font-size: 1rem !important;
+}
+
+// Add space above tabs since we moved them below short description
+.woocommerce-tabs {
+  margin-top: 40px;
+}
+.woocommerce-product-gallery__image {
+  margin: 0 10px 5px 0;
+}
+.woocommerce-product-gallery__image:first-of-type {
+  margin: 0 0 20px 0;
+}
+
+.single.woocommerce {
+  .summary {
+    h2 {
+      @include h3;
+    }
+    .product_meta {
+      display: none;
+      >span {
+        display: block;
+      }
+    }
+  }
+}
