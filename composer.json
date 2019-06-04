@@ -45,7 +45,8 @@
     "wpackagist-plugin/disable-gutenberg": "^1.5",
     "wpackagist-plugin/woocommerce": "^3.6",
     "wpackagist-plugin/genesis-connect-woocommerce": "^1.0",
-    "wpackagist-plugin/jetpack": "^7.4"
+    "wpackagist-plugin/jetpack": "^7.4",
+    "wpackagist-plugin/woocommerce-extend-tabs": "^1.10"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^2.5.1"
