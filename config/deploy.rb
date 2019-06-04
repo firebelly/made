@@ -2,7 +2,7 @@ set :application, 'made_production'
 set :theme, 'made'
 set :login, 'jbriseno100'
 set :repo_url, 'git@github.com:firebelly/made.git'
-set :php, 'php70'
+set :php, 'php72'
 # This directory should be gitignored, we will need to symlink it to a corresponding directory in shared/ where we can manually add protected font files
 set :fonts_path, 'web/app/themes/made/fbmods/fonts'
 

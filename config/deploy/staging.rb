@@ -1,6 +1,7 @@
 set :stage, :staging
+set :login, 'firebelly'
 set :application, 'made_staging'
-set :domain, 'staging.madecollaborative.com'
+set :domain, 'made2019.firebelly.co'
 
 # Simple Role Syntax
 # ==================
