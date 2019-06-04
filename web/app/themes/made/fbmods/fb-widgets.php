@@ -16,13 +16,13 @@ class fb_banner_made_logo_widget extends WP_Widget {
   function __construct() {
     parent::__construct(
       // Base ID of your widget
-      'fb_banner_made_logo_widget', 
+      'fb_banner_made_logo_widget',
 
       // Widget name will appear in UI
-      __('Banner MADE Logo', 'fb_widgets'), 
+      __('Banner MADE Logo', 'fb_widgets'),
 
       // Widget description
-      array( 'description' => __( 'Displays the MADE logo for homepage banner', 'fb_widgets' ), ) 
+      array( 'description' => __( 'Displays the MADE logo for homepage banner', 'fb_widgets' ), )
     );
   }
 
@@ -38,20 +38,20 @@ class fb_footer_made_logo_widget extends WP_Widget {
   function __construct() {
     parent::__construct(
       // Base ID of your widget
-      'fb_footer_made_logo_widget', 
+      'fb_footer_made_logo_widget',
 
       // Widget name will appear in UI
-      __('Footer MADE Logo', 'fb_widgets'), 
+      __('Footer MADE Logo', 'fb_widgets'),
 
       // Widget description
-      array( 'description' => __( 'Displays the MADE logo for footer', 'fb_widgets' ), ) 
+      array( 'description' => __( 'Displays the MADE logo for footer', 'fb_widgets' ), )
     );
   }
 
   // Creating widget front-end
   public function widget( $args, $instance ) {
     echo '<section class="widget widget_text widget_made_logo_footer"><div class="widget-wrap"><div class="textwidget">';
-    
+
     echo '<a href="'.get_bloginfo('url').'" itemprop="url"><h1 class="sr-only">Made Collaborative</h1><img alt="Made Logo" class="made-logo" src="'.get_stylesheet_directory_uri().'/fbmods/images/made-logo-footer.png"></a>';
 
     echo '</div></div></section>';
@@ -64,13 +64,13 @@ class fb_footer_connect_widget extends WP_Widget {
   function __construct() {
     parent::__construct(
       // Base ID of your widget
-      'fb_footer_connect_widget', 
+      'fb_footer_connect_widget',
 
       // Widget name will appear in UI
-      __('Footer Connect', 'fb_widgets'), 
+      __('Footer Connect', 'fb_widgets'),
 
       // Widget description
-      array( 'description' => __( 'Displays Social Media Icons/Links for footer', 'fb_widgets' ), ) 
+      array( 'description' => __( 'Displays Social Media Icons/Links for footer', 'fb_widgets' ), )
     );
   }
 
@@ -81,10 +81,16 @@ class fb_footer_connect_widget extends WP_Widget {
         <div class="widget-wrap"><h3 class="widgettitle widget-title">Connect</h3>
           <div class="textwidget">
             <ul class="social-links">
-              <li class="social-link"><a target="_blank" href="https://www.facebook.com/<?= \Firebelly\SiteOptions\get_option('facebook_id') ?>"><img src="<?= get_stylesheet_directory_uri() ?>/fbmods/images/facebook.png" class="social-icon"></a></li>
-              <li class="social-link"><a target="_blank" href="https://www.instagram.com/<?= \Firebelly\SiteOptions\get_option('instagram_id') ?>/"><img src="<?= get_stylesheet_directory_uri() ?>/fbmods/images/insta.png" class="social-icon"></a></li>
-              <li class="social-link"><a target="_blank" href="https://twitter.com/<?= \Firebelly\SiteOptions\get_option('twitter_id') ?>"><img src="<?= get_stylesheet_directory_uri() ?>/fbmods/images/twitter.png" class="social-icon"></a></li>
-            </ul> 
+              <?php if (!empty(\Firebelly\SiteOptions\get_option('facebook_id'))): ?>
+                <li class="social-link"><a target="_blank" href="https://www.facebook.com/<?= \Firebelly\SiteOptions\get_option('facebook_id') ?>"><img src="<?= get_stylesheet_directory_uri() ?>/fbmods/images/facebook.png" class="social-icon"></a></li>
+              <?php endif; ?>
+              <?php if (!empty(\Firebelly\SiteOptions\get_option('instagram_id'))): ?>
+                <li class="social-link"><a target="_blank" href="https://www.instagram.com/<?= \Firebelly\SiteOptions\get_option('instagram_id') ?>/"><img src="<?= get_stylesheet_directory_uri() ?>/fbmods/images/insta.png" class="social-icon"></a></li>
+              <?php endif; ?>
+              <?php if (!empty(\Firebelly\SiteOptions\get_option('twitter_id'))): ?>
+                <li class="social-link"><a target="_blank" href="https://twitter.com/<?= \Firebelly\SiteOptions\get_option('twitter_id') ?>"><img src="<?= get_stylesheet_directory_uri() ?>/fbmods/images/twitter.png" class="social-icon"></a></li>
+              <?php endif; ?>
+            </ul>
           </div>
         </div>
       </section>
@@ -98,13 +104,13 @@ class fb_project_blog_slider_widget extends WP_Widget {
   function __construct() {
     parent::__construct(
       // Base ID of your widget
-      'fb_project_blog_slider_widget', 
+      'fb_project_blog_slider_widget',
 
       // Widget name will appear in UI
-      __('Project Blog Slider', 'fb_widgets'), 
+      __('Project Blog Slider', 'fb_widgets'),
 
       // Widget description
-      array( 'description' => __( 'Project News slider for Front Page', 'fb_widgets' ), ) 
+      array( 'description' => __( 'Project News slider for Front Page', 'fb_widgets' ), )
     );
   }
 
@@ -119,13 +125,13 @@ class fb_project_blog_slider_widget extends WP_Widget {
     ];
     $recent_posts = get_posts($query_args);
 
-    if (!empty($recent_posts)) { 
+    if (!empty($recent_posts)) {
 
       foreach ($recent_posts as $recent_post) {
         $title = get_the_title($recent_post->ID) ? get_the_title($recent_post->ID) : __( '(no title)', 'genesis' );
-        $excerpt = empty( $recent_post->post_excerpt ) ? 
-          wp_kses_post( wp_trim_words( $recent_post->post_content, 30 ) ) : 
-          wp_kses_post( $recent_post->post_excerpt ); 
+        $excerpt = empty( $recent_post->post_excerpt ) ?
+          wp_kses_post( wp_trim_words( $recent_post->post_content, 30 ) ) :
+          wp_kses_post( $recent_post->post_excerpt );
 
         ?>
         <section class="widget featured-content featuredpost">
@@ -160,13 +166,13 @@ class fb_comic_updates_widget extends WP_Widget {
   function __construct() {
     parent::__construct(
       // Base ID of your widget
-      'fb_comic_updates_widget', 
+      'fb_comic_updates_widget',
 
       // Widget name will appear in UI
-      __('Recent Comic Updates', 'fb_widgets'), 
+      __('Recent Comic Updates', 'fb_widgets'),
 
       // Widget description
-      array( 'description' => __( 'Comic Updates Recent Posts for Front Page', 'fb_widgets' ), ) 
+      array( 'description' => __( 'Comic Updates Recent Posts for Front Page', 'fb_widgets' ), )
     );
   }
 
@@ -181,7 +187,7 @@ class fb_comic_updates_widget extends WP_Widget {
     ];
     $recent_posts = get_posts($query_args);
 
-    if (!empty($recent_posts)) { 
+    if (!empty($recent_posts)) {
 
       $class = '';
       $count = count($recent_posts);
