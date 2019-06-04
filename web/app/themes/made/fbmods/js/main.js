@@ -1,4 +1,4 @@
-
+// Firebelly MADE Collaborative 2016–
 
 var Main = (function ($) {
   return {
@@ -25,12 +25,14 @@ var Main = (function ($) {
       }
     },
     slickSliders: function () {
+      var slickOrDontTimer;
 
       // Markup for Slick
       $('.project-news-slider-area > .wrap > section:not(:first-child)').wrapAll('<div class="slider"></div>');
-      
+
       // Slides will be unslicked below md
       function slickOrDont() {
+        console.log('foo');
         if( $(window).width() < 800) {
           if ($('.slick-initialized').length) {
             $('.slider').slick('unslick');
@@ -47,7 +49,8 @@ var Main = (function ($) {
       slickOrDont();
 
       $(window).resize(function () {
-        slickOrDont();
+        clearTimeout(slickOrDontTimer);
+        slickOrDontTimer = setTimeout(slickOrDont, 250);
       });
     },
     bigClicky: function () {
@@ -107,7 +110,3 @@ var Main = (function ($) {
 })(jQuery);
 
 Main.initMain();
-
-
-
-
