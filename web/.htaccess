@@ -2,6 +2,7 @@
 RewriteEngine On
 RewriteBase /
 RewriteCond %{HTTP_HOST} !^madecollaborative.com$ [NC]
+RewriteCond %{HTTP_HOST} !^made2019.firebelly.co$ [NC]
 RewriteCond %{HTTP_HOST} !^made.localhost$ [NC]
 RewriteRule ^(.*)$ http://madecollaborative.com/$1 [R=301,L]
 # END redirects
