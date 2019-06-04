@@ -7,7 +7,7 @@
  *
  * @package Genesis\Templates
  * @author  StudioPress
- * @license GPL-2.0+
+ * @license GPL-2.0-or-later
  * @link    https://my.studiopress.com/themes/genesis/
  */
 
@@ -36,22 +36,30 @@ wp_head(); // We need this for plugins.
 ?>
 </head>
 <?php
-genesis_markup( array(
-	'open'    => '<body %s>',
-	'context' => 'body',
-) );
+genesis_markup(
+	array(
+		'open'    => '<body %s>',
+		'context' => 'body',
+	)
+);
+
+if ( function_exists( 'wp_body_open' ) ) {
+	wp_body_open();
+}
 
 /**
- * Fires immediately after the body element opening markup.
+ * Fires immediately after the `wp_body_open` action hook.
  *
  * @since 1.0.0
  */
 do_action( 'genesis_before' );
 
-genesis_markup( array(
-	'open'    => '<div %s>',
-	'context' => 'site-container',
-) );
+genesis_markup(
+	array(
+		'open'    => '<div %s>',
+		'context' => 'site-container',
+	)
+);
 
 /**
  * Fires immediately after the site container opening markup, before `genesis_header` action hook.
@@ -74,8 +82,10 @@ do_action( 'genesis_header' );
  */
 do_action( 'genesis_after_header' );
 
-genesis_markup( array(
-	'open'    => '<div %s>',
-	'context' => 'site-inner',
-) );
+genesis_markup(
+	array(
+		'open'    => '<div %s>',
+		'context' => 'site-inner',
+	)
+);
 genesis_structural_wrap( 'site-inner' );

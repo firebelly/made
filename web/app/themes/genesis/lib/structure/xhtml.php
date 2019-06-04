@@ -7,7 +7,7 @@
  *
  * @package Genesis\Markup
  * @author  StudioPress
- * @license GPL-2.0+
+ * @license GPL-2.0-or-later
  * @link    https://my.studiopress.com/themes/genesis/
  */
 
@@ -43,11 +43,11 @@ function genesis_markup_open_xhtml( $open, $args ) {
 
 	}
 
-	if ( 'entry-content' == $args['context'] && ! is_main_query() && ! genesis_is_blog_template() ) {
+	if ( 'entry-content' === $args['context'] && ! is_main_query() && ! genesis_is_blog_template() ) {
 		return '';
 	}
 
-	switch( $args['context'] ) {
+	switch ( $args['context'] ) {
 
 		case 'archive-pagination':
 		case 'adjacent-entry-pagination':
@@ -57,6 +57,15 @@ function genesis_markup_open_xhtml( $open, $args ) {
 
 		case 'body':
 			$open = sprintf( '<body class="%s">', implode( ' ', get_body_class() ) );
+			break;
+
+		case 'breadcrumb':
+			$open = '<div class="breadcrumb">';
+			break;
+
+		case 'breadcrumb-link':
+			$href = isset( $args['params']['href'] ) ? $args['params']['href'] : '';
+			$open = sprintf( '<a href="%s">', esc_attr( $href ) );
 			break;
 
 		case 'comments-shortcode':
@@ -88,7 +97,7 @@ function genesis_markup_open_xhtml( $open, $args ) {
 			break;
 
 		case 'entry-image-link':
-			$open = '<a href="' . get_permalink() . '" class="entry-image-link" aria-hidden="true">';
+			$open = '<a href="' . get_permalink() . '" class="entry-image-link" aria-hidden="true" tabindex="-1">';
 			break;
 
 		case 'entry-meta-after-content':
@@ -118,6 +127,33 @@ function genesis_markup_open_xhtml( $open, $args ) {
 
 		case 'header-widget-area':
 			$open = '<div class="widget-area header-widget-area">';
+			break;
+
+		case 'search-form':
+			$open = sprintf( '<form method="get" class="searchform search-form" action="%s" role="search" >', home_url( '/' ) );
+			break;
+
+		case 'search-form-label':
+			$open = '';
+			break;
+
+		case 'search-form-input':
+			/** This filter is documented in wp-includes/general-template.php */
+			$search_text = apply_filters( 'the_search_query', get_search_query() ); // WPCS: prefix ok.
+			$search_text = ! empty( $search_text ) ? $search_text : apply_filters( 'genesis_search_text', __( 'Search this website', 'genesis' ) . ' &#x02026;' );
+			$onfocus     = "if ('" . esc_js( $search_text ) . "' === this.value) {this.value = '';}";
+			$onblur      = "if ('' === this.value) {this.value = '" . esc_js( $search_text ) . "';}";
+			$open        = sprintf(
+				'<input type="text" value="%s" name="s" class="s search-input" onfocus="%s" onblur="%s" />',
+				$search_text,
+				$onfocus,
+				$onblur
+			);
+			break;
+
+		case 'search-form-submit':
+			$button_value = apply_filters( 'genesis_search_button_text', esc_attr__( 'Search', 'genesis' ) );
+			$open         = sprintf( '<input type="submit" class="searchsubmit search-submit" value="%s" />', $button_value );
 			break;
 
 		case 'sidebar-primary':
@@ -158,6 +194,8 @@ function genesis_markup_open_xhtml( $open, $args ) {
 			$open = '<div id="title-area">';
 			break;
 
+		case 'breadcrumb-link-wrap':
+		case 'breadcrumb-link-wrap-meta':
 		case 'entry-header':
 		case 'header-nav':
 		case 'semantic-description':
@@ -203,15 +241,15 @@ function genesis_markup_close_xhtml( $close, $args ) {
 		return $close;
 	}
 
-	if ( substr( $args['context'], 0, 4 ) == 'nav-' ) {
-		return 'nav-link-wrap' == $args['context'] ? '' : '</div>';
+	if ( substr( $args['context'], 0, 4 ) === 'nav-' ) {
+		return 'nav-link-wrap' === $args['context'] ? '' : '</div>';
 	}
 
-	if ( 'entry-content' == $args['context'] && ! is_main_query() && ! genesis_is_blog_template() ) {
+	if ( 'entry-content' === $args['context'] && ! is_main_query() && ! genesis_is_blog_template() ) {
 		return '';
 	}
 
-	switch( $args['context'] ) {
+	switch ( $args['context'] ) {
 
 		case 'default-widget-content-wrap':
 		case 'entry':
@@ -228,8 +266,10 @@ function genesis_markup_close_xhtml( $close, $args ) {
 			$close = '</div>';
 			break;
 
+		case 'breadcrumb-link-wrap':
 		case 'entry-header':
 		case 'header-nav':
+		case 'search-form-label':
 		case 'semantic-description':
 		case 'semantic-headings':
 		case 'widget-entry-content':
@@ -243,7 +283,7 @@ function genesis_markup_close_xhtml( $close, $args ) {
 		case 'entry-title':
 		case 'site-description':
 		case 'site-title':
-			$wrap = isset( $args['params'] ) && ! empty( $args['params']['wrap'] ) ? $args['params']['wrap'] : '';
+			$wrap  = isset( $args['params'] ) && ! empty( $args['params']['wrap'] ) ? $args['params']['wrap'] : '';
 			$close = "</{$wrap}>";
 			break;
 
@@ -274,12 +314,12 @@ function _genesis_builtin_sidebar_params() {
 
 	foreach ( $wp_registered_sidebars as $id => $params ) {
 
-		if ( ! isset( $params['_genesis_builtin'] ) && '<section id="%1$s" class="widget %2$s"><div class="widget-wrap">' != $wp_registered_sidebars[ $id ]['before_widget'] ) {
+		if ( ! isset( $params['_genesis_builtin'] ) && '<section id="%1$s" class="widget %2$s"><div class="widget-wrap">' !== $wp_registered_sidebars[ $id ]['before_widget'] ) {
 			continue;
 		}
 
-		$wp_registered_sidebars[ $id ]['before_widget'] = '<div id="%1$s" class="widget %2$s"><div class="widget-wrap">';
-		$wp_registered_sidebars[ $id ]['after_widget']  = '</div></div>';
+		$wp_registered_sidebars[ $id ]['before_widget'] = '<div id="%1$s" class="widget %2$s"><div class="widget-wrap">'; // phpcs:ignore WordPress.WP.GlobalVariablesOverride.OverrideProhibited -- Intentionally changing the markup.
+		$wp_registered_sidebars[ $id ]['after_widget']  = '</div></div>'; // phpcs:ignore WordPress.WP.GlobalVariablesOverride.OverrideProhibited -- Intentionally changing the markup.
 
 	}
 

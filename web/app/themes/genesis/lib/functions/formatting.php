@@ -7,7 +7,7 @@
  *
  * @package Genesis\Formatting
  * @author  StudioPress
- * @license GPL-2.0+
+ * @license GPL-2.0-or-later
  * @link    https://my.studiopress.com/themes/genesis/
  */
 
@@ -48,6 +48,7 @@ function genesis_truncate_phrase( $text, $max_characters ) {
 	return $text;
 }
 
+// phpcs:disable WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedFunctionFound, WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound -- Some of the earliest Genesis functions. Can't be renamed.
 /**
  * Return content stripped down and limited content.
  *
@@ -79,7 +80,7 @@ function get_the_content_limit( $max_characters, $more_link_text = '(more...)', 
 		$output = sprintf( '<p>%s %s</p>', $content, $link );
 	} else {
 		$output = sprintf( '<p>%s</p>', $content );
-		$link = '';
+		$link   = '';
 	}
 
 	return apply_filters( 'get_the_content_limit', $output, $content, $link, $max_characters );
@@ -96,10 +97,11 @@ function get_the_content_limit( $max_characters, $more_link_text = '(more...)', 
  */
 function genesis_a11y_more_link( $more_link_text ) {
 
- 	if ( ! empty( $more_link_text ) && genesis_a11y( 'screen-reader-text' ) ) {
+	if ( ! empty( $more_link_text ) && genesis_a11y( 'screen-reader-text' ) ) {
 		$more_link_text .= ' <span class="screen-reader-text">' . __( 'about ', 'genesis' ) . get_the_title() . '</span>';
- 	}
- 	return $more_link_text;
+	}
+
+	return $more_link_text;
 
 }
 
@@ -115,10 +117,11 @@ function genesis_a11y_more_link( $more_link_text ) {
 function the_content_limit( $max_characters, $more_link_text = '(more...)', $stripteaser = false ) {
 
 	$content = get_the_content_limit( $max_characters, $more_link_text, $stripteaser );
-	echo apply_filters( 'the_content_limit', $content );
+	echo apply_filters( 'the_content_limit', $content ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
 }
 
+// phpcs:enable WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedFunctionFound, WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
 /**
  * Add `rel="nofollow"` attribute and value to links within string passed in.
  *
@@ -206,14 +209,12 @@ function genesis_paged_post_url( $i, $post_id = 0 ) {
 
 	if ( 1 == $i ) {
 		$url = get_permalink( $post_id );
+	} elseif ( '' == get_option( 'permalink_structure' ) || in_array( $post->post_status, array( 'draft', 'pending' ) ) ) {
+		$url = add_query_arg( 'page', $i, get_permalink( $post_id ) );
+	} elseif ( 'page' == get_option( 'show_on_front' ) && get_option( 'page_on_front' ) == $post->ID ) {
+		$url = trailingslashit( get_permalink( $post_id ) ) . user_trailingslashit( "$wp_rewrite->pagination_base/" . $i, 'single_paged' );
 	} else {
-		if ( '' == get_option( 'permalink_structure' ) || in_array( $post->post_status, array( 'draft', 'pending' ) ) ) {
-			$url = add_query_arg( 'page', $i, get_permalink( $post_id ) );
-		} elseif ( 'page' == get_option( 'show_on_front' ) && get_option( 'page_on_front' ) == $post->ID ) {
-			$url = trailingslashit( get_permalink( $post_id ) ) . user_trailingslashit( "$wp_rewrite->pagination_base/" . $i, 'single_paged' );
-		} else {
-			$url = trailingslashit( get_permalink( $post_id ) ) . user_trailingslashit( $i, 'single_paged' );
-		}
+		$url = trailingslashit( get_permalink( $post_id ) ) . user_trailingslashit( $i, 'single_paged' );
 	}
 
 	return $url;
@@ -330,6 +331,10 @@ function genesis_formatting_kses( $string ) {
  */
 function genesis_human_time_diff( $older_date, $newer_date = false, $relative_depth = 2 ) {
 
+	if ( ! is_int( $older_date ) ) {
+		return '';
+	}
+
 	// If no newer date is given, assume now.
 	$newer_date = $newer_date ? $newer_date : time();
 
@@ -365,20 +370,24 @@ function genesis_human_time_diff( $older_date, $newer_date = false, $relative_de
 
 	$counted_seconds = 0;
 
-	$date_partials = array();
+	$date_partials        = array();
+	$amount_date_partials = 0;
+	$amount_units         = count( $units );
 
-	while ( count( $date_partials ) < $relative_depth && $i < count( $units ) ) {
+	while ( $amount_date_partials < $relative_depth && $i < $amount_units ) {
 		$seconds = $units[ $i ][0];
-		if ( ( $count = floor( ( $since - $counted_seconds ) / $seconds ) ) != 0 ) {
-			$date_partials[] = sprintf( translate_nooped_plural( $units[ $i ][1], $count, 'genesis' ), $count );
-			$counted_seconds += $count * $seconds;
+		$count   = (int) floor( ( $since - $counted_seconds ) / $seconds );
+		if ( 0 !== $count ) {
+			$date_partials[]      = sprintf( translate_nooped_plural( $units[ $i ][1], $count, 'genesis' ), $count );
+			$counted_seconds     += $count * $seconds;
+			$amount_date_partials = count( $date_partials );
 		}
 		$i++;
 	}
 
 	if ( empty( $date_partials ) ) {
 		$output = '';
-	} elseif ( 1 == count( $date_partials ) ) {
+	} elseif ( 1 === count( $date_partials ) ) {
 		$output = $date_partials[0];
 	} else {
 

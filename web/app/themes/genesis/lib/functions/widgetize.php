@@ -7,7 +7,7 @@
  *
  * @package Genesis\WidgetAreas
  * @author  StudioPress
- * @license GPL-2.0+
+ * @license GPL-2.0-or-later
  * @link    https://my.studiopress.com/themes/genesis/
  */
 
@@ -37,16 +37,20 @@
 function genesis_register_widget_area( $args ) {
 
 	$defaults = array(
-		'before_widget' => genesis_markup( array(
-			'open'    => '<section id="%%1$s" class="widget %%2$s"><div class="widget-wrap">',
-			'context' => 'widget-wrap',
-			'echo'    => false,
-		) ),
-		'after_widget'  => genesis_markup( array(
-			'close'   => '</div></section>' . "\n",
-			'context' => 'widget-wrap',
-			'echo'    => false,
-		) ),
+		'before_widget' => genesis_markup(
+			array(
+				'open'    => '<section id="%%1$s" class="widget %%2$s"><div class="widget-wrap">',
+				'context' => 'widget-wrap',
+				'echo'    => false,
+			)
+		),
+		'after_widget'  => genesis_markup(
+			array(
+				'close'   => '</div></section>' . "\n",
+				'context' => 'widget-wrap',
+				'echo'    => false,
+			)
+		),
 		'before_title'  => '<h4 class="widget-title widgettitle">',
 		'after_title'   => "</h4>\n",
 	);
@@ -92,15 +96,21 @@ add_action( 'genesis_setup', 'genesis_register_default_widget_areas' );
 function genesis_register_default_widget_areas() {
 
 	// Temporarily register placeholder widget areas, so that child themes can unregister directly in functions.php.
-	genesis_register_widget_area( array(
-		'id' => 'header-right',
-	) );
-	genesis_register_widget_area( array(
-		'id' => 'sidebar',
-	) );
-	genesis_register_widget_area( array(
-		'id' => 'sidebar-alt',
-	) );
+	genesis_register_widget_area(
+		array(
+			'id' => 'header-right',
+		)
+	);
+	genesis_register_widget_area(
+		array(
+			'id' => 'sidebar',
+		)
+	);
+	genesis_register_widget_area(
+		array(
+			'id' => 'sidebar-alt',
+		)
+	);
 
 	// Call all final widget area registration after themes setup, so text can be translated.
 	add_action( 'after_setup_theme', '_genesis_register_default_widget_areas_cb' );
@@ -241,25 +251,34 @@ function genesis_widget_area( $id, $args = array() ) {
 		return false;
 	}
 
-	$defaults = apply_filters( 'genesis_widget_area_defaults', array(
-		'before'              => genesis_markup( array(
-						'open'    => '<aside class="widget-area">' . genesis_sidebar_title( $id ),
-						'context' => 'widget-area-wrap',
-						'echo'    => false,
-						'params'  => array(
-							'id' => $id,
-						),
-				) ),
-		'after'               => genesis_markup( array(
-						'close'   => '</aside>',
-						'context' => 'widget-area-wrap',
-						'echo'    => false,
-				) ),
-		'default'             => '',
-		'show_inactive'       => 0,
-		'before_sidebar_hook' => 'genesis_before_' . $id . '_widget_area',
-		'after_sidebar_hook'  => 'genesis_after_' . $id . '_widget_area',
-	), $id, $args );
+	$defaults = apply_filters(
+		'genesis_widget_area_defaults',
+		array(
+			'before'              => genesis_markup(
+				array(
+					'open'    => '<aside class="widget-area">' . genesis_sidebar_title( $id ),
+					'context' => 'widget-area-wrap',
+					'echo'    => false,
+					'params'  => array(
+						'id' => $id,
+					),
+				)
+			),
+			'after'               => genesis_markup(
+				array(
+					'close'   => '</aside>',
+					'context' => 'widget-area-wrap',
+					'echo'    => false,
+				)
+			),
+			'default'             => '',
+			'show_inactive'       => 0,
+			'before_sidebar_hook' => 'genesis_before_' . $id . '_widget_area',
+			'after_sidebar_hook'  => 'genesis_after_' . $id . '_widget_area',
+		),
+		$id,
+		$args
+	);
 
 	$args = wp_parse_args( $args, $defaults );
 
@@ -288,7 +307,7 @@ function genesis_widget_area( $id, $args = array() ) {
 	}
 
 	// After hook.
-	if( $args['after_sidebar_hook'] ) {
+	if ( $args['after_sidebar_hook'] ) {
 			/**
 			 * Fires before widget area is output.
 			 *
@@ -322,10 +341,10 @@ function genesis_a11y_register_sidebar_defaults( $args ) {
 
 	if ( genesis_a11y( 'headings' ) ) {
 		$args['before_title'] = '<h3 class="widgettitle widget-title">';
-    	$args['after_title']  = "</h3>\n";
+		$args['after_title']  = "</h3>\n";
 	}
 
-    return $args;
+	return $args;
 }
 
 /**

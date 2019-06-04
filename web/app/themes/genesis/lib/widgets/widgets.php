@@ -7,7 +7,7 @@
  *
  * @package Genesis\Widgets
  * @author  StudioPress
- * @license GPL-2.0+
+ * @license GPL-2.0-or-later
  * @link    https://my.studiopress.com/themes/genesis/
  */
 
@@ -46,7 +46,7 @@ add_action( 'load-themes.php', 'genesis_remove_default_widgets_from_header_right
 function genesis_remove_default_widgets_from_header_right() {
 
 	// Some tomfoolery for a faux activation hook.
-	if ( ! isset( $_REQUEST['activated'] ) || 'true' !== $_REQUEST['activated'] ) {
+	if ( ! isset( $_REQUEST['activated'] ) || 'true' !== $_REQUEST['activated'] ) { // phpcs:ignore WordPress.Security.NonceVerification.NoNonceVerification -- No data is being processed.
 		return;
 	}
 

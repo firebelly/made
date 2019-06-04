@@ -7,12 +7,14 @@
  *
  * @package Genesis\Customizer\SEO Settings
  * @author  StudioPress
- * @license GPL-2.0+
+ * @license GPL-2.0-or-later
  * @link    https://my.studiopress.com/themes/genesis/
  */
 
 /**
  * The config array for setting up a Customizer panel, sections within that panel, settings and controls.
+ *
+ * If child theme contains a `customizer-seo-settings.php` config, it will be used instead of this config.
  *
  * @since 2.6.0
  */

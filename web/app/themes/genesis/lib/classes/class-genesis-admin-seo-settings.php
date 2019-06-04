@@ -7,7 +7,7 @@
  *
  * @package Genesis\Admin
  * @author  StudioPress
- * @license GPL-2.0+
+ * @license GPL-2.0-or-later
  * @link    https://my.studiopress.com/themes/genesis/
  */
 
@@ -29,6 +29,9 @@ class Genesis_Admin_SEO_Settings extends Genesis_Admin_Boxes {
 	 * @since 1.8.0
 	 */
 	public function __construct() {
+
+		$this->redirect_to     = admin_url( 'customize.php?autofocus[panel]=genesis-seo' );
+		$this->redirect_bypass = 'noredirect';
 
 		$page_id         = 'seo-settings';
 		$this->help_base = GENESIS_VIEWS_DIR . '/help/seo-';
@@ -204,11 +207,11 @@ class Genesis_Admin_SEO_Settings extends Genesis_Admin_Boxes {
 
 		printf(
 			'<div class="notice notice-info"><p>%s</p><p>%s</p></div>',
-			__( 'Hey there! Did you know that SEO settings can now be configured with a live preview in the Customizer?', 'genesis' ),
+			esc_html__( 'Hey there! Did you know that SEO settings can now be configured with a live preview in the Customizer?', 'genesis' ),
 			sprintf(
-			  /* translators: %s: Customizer admin URL */
-			  __( 'Eventually, settings pages like this one will no longer be available, and everything will be configured in the Customizer, so go ahead and <a href="%s">start using it now</a>!', 'genesis' ),
-			  esc_url( admin_url( 'customize.php?autofocus[panel]=genesis-seo' ) )
+				/* translators: %s: Customizer admin URL */
+				wp_kses_post( __( 'Eventually, settings pages like this one will no longer be available, and everything will be configured in the Customizer, so go ahead and <a href="%s">start using it now</a>!', 'genesis' ) ),
+				esc_url( admin_url( 'customize.php?autofocus[panel]=genesis-seo' ) )
 			)
 		);
 

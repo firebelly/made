@@ -7,7 +7,7 @@
  *
  * @package Genesis\Admin
  * @author  StudioPress
- * @license GPL-2.0+
+ * @license GPL-2.0-or-later
  * @link    https://my.studiopress.com/themes/genesis/
  */
 
@@ -116,8 +116,16 @@ function genesis_add_admin_submenus() {
 
 	}
 
+	// Add the plugin menu (redirects to plugin install screen).
+	new Genesis_Admin_Plugins();
+
 	// Add the upgraded page (no menu).
 	new Genesis_Admin_Upgraded();
+
+	// Create Getting Started onboarding page.
+	if ( version_compare( $GLOBALS['wp_version'], '5.0', '>=' ) && is_readable( locate_template( '/config/onboarding.php' ) ) ) {
+		new Genesis_Admin_Onboarding();
+	}
 
 }
 

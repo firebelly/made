@@ -7,7 +7,7 @@
  *
  * @package Genesis\Images
  * @author  StudioPress
- * @license GPL-2.0+
+ * @license GPL-2.0-or-later
  * @link    https://my.studiopress.com/themes/genesis/
  */
 
@@ -101,7 +101,7 @@ function genesis_get_image( $args = array() ) {
 	// If we have an id, get the HTML and URL.
 	if ( isset( $id ) ) {
 		$html        = wp_get_attachment_image( $id, $args['size'], false, $args['attr'] );
-		list( $url ) = wp_get_attachment_image_src( $id, $args['size'], false, $args['attr'] );
+		list( $url ) = wp_get_attachment_image_src( $id, $args['size'], false );
 	} elseif ( is_array( $args['fallback'] ) ) {
 		// Else if fallback HTML and URL exist, use them.
 		$id   = 0;
@@ -176,6 +176,19 @@ function genesis_image( $args = array() ) {
 function genesis_get_image_sizes() {
 	global $_wp_additional_image_sizes;
 
+	/**
+	 * Allows controlling the image sizes before running the get_intermediate_image_sizes() logic.
+	 *
+	 * The return value must be false or a two-dimensional array with `width`, `height`, and `crop` subkeys.
+	 *
+	 * @param bool|array $pre False or genesis_get_image_sizes compatible array.
+	 */
+	$pre = apply_filters( 'genesis_pre_get_image_sizes', false );
+
+	if ( $pre ) {
+		return $pre;
+	}
+
 	$sizes = array();
 
 	foreach ( get_intermediate_image_sizes() as $size ) {
@@ -194,7 +207,12 @@ function genesis_get_image_sizes() {
 		}
 	}
 
-	return $sizes;
+	/**
+	 * Allows filtering the genesis_get_image_sizes() output.
+	 *
+	 * @param array $sizes Two-dimensional, with `width`, `height` and `crop` sub-keys.
+	 */
+	return apply_filters( 'genesis_get_image_sizes', $sizes );
 }
 
 /**

@@ -7,7 +7,7 @@
  *
  * @package Genesis\Menus
  * @author  StudioPress
- * @license GPL-2.0+
+ * @license GPL-2.0-or-later
  * @link    https://my.studiopress.com/themes/genesis/
  */
 
@@ -88,10 +88,12 @@ function genesis_do_nav() {
 		$class .= ' js-superfish';
 	}
 
-	genesis_nav_menu( array(
-		'theme_location' => 'primary',
-		'menu_class'     => $class,
-	) );
+	genesis_nav_menu(
+		array(
+			'theme_location' => 'primary',
+			'menu_class'     => $class,
+		)
+	);
 
 }
 
@@ -115,10 +117,12 @@ function genesis_do_subnav() {
 		$class .= ' js-superfish';
 	}
 
-	genesis_nav_menu( array(
-		'theme_location' => 'secondary',
-		'menu_class'     => $class,
-	) );
+	genesis_nav_menu(
+		array(
+			'theme_location' => 'secondary',
+			'menu_class'     => $class,
+		)
+	);
 
 }
 

@@ -7,7 +7,7 @@
  *
  * @package StudioPress\Genesis
  * @author  StudioPress
- * @license GPL-2.0+
+ * @license GPL-2.0-or-later
  * @link    https://my.studiopress.com/themes/genesis/
  */
 
@@ -29,10 +29,15 @@
 					</p>
 					<p><?php esc_html_e( 'Choose the file from your computer and click "Upload file and Import"', 'genesis' ); ?></p>
 
-						<form enctype="multipart/form-data" method="post" action="<?php echo menu_page_url( 'genesis-import-export', 0 ); ?>">
+						<form enctype="multipart/form-data" method="post" action="<?php echo esc_url( menu_page_url( 'genesis-import-export', 0 ) ); ?>">
 							<?php wp_nonce_field( 'genesis-import', 'genesis-import-nonce' ); ?>
 							<input type="hidden" name="genesis-import" value="1" />
-							<label for="genesis-import-upload"><?php printf( __( 'Upload File (Maximum Size: %s): ', 'genesis' ), ini_get( 'post_max_size' ) ); ?></label>
+							<label for="genesis-import-upload">
+								<?php
+								// translators: Maximum size import files can have.
+								printf( esc_html__( 'Upload File (Maximum Size: %s): ', 'genesis' ), esc_html( ini_get( 'post_max_size' ) ) );
+								?>
+							</label>
 							<input type="file" id="genesis-import-upload" name="genesis-import-upload" />
 							<?php
 							submit_button( __( 'Upload File and Import', 'genesis' ), 'primary', 'upload' );
@@ -53,12 +58,13 @@
 					</p>
 					<p><?php esc_html_e( 'Once you have saved the download file, you can use the import function on another site to import this data.', 'genesis' ); ?></p>
 
-						<form method="post" action="<?php echo menu_page_url( 'genesis-import-export', 0 ); ?>">
+						<form method="post" action="<?php echo esc_url( menu_page_url( 'genesis-import-export', 0 ) ); ?>">
 							<?php
 							wp_nonce_field( 'genesis-export', 'genesis-export-nonce' );
 							$this->export_checkboxes();
-							if ( $this->get_export_options() )
+							if ( $this->get_export_options() ) {
 								submit_button( __( 'Download Export File', 'genesis' ), 'primary', 'download' );
+							}
 							?>
 						</form>
 

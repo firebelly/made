@@ -7,12 +7,14 @@
  *
  * @package Genesis\Customizer\Theme Settings
  * @author  StudioPress
- * @license GPL-2.0+
+ * @license GPL-2.0-or-later
  * @link    https://my.studiopress.com/themes/genesis/
  */
 
 /**
  * The config array for setting up a Customizer panel, sections within that panel, settings and controls.
+ *
+ * If child theme contains a `customizer-theme-settings.php` config, it will be used instead of this config.
  *
  * @since 2.6.0
  */
@@ -78,7 +80,7 @@ return array(
 				'description' => sprintf( __( 'Auto Ads must be enabled in your AdSense account for this feature to work properly. <a href="%s">Click here to enable.</a>', 'genesis' ), 'https://www.google.com/adsense/new/myads/auto-ads/' ) .
 									'<br /><br />' .
 									/* translators: %s: AdSense URL */
-									sprintf( __( "Don't have AdSense? <a href='%s' target='_blank'>Click here</a> to sign up!", 'genesis' ), 'https://www.google.com/adsense/start/?utm_source=Genesis&utm_medium=partnerships&utm_campaign=GenesisCustomizer' ),
+									sprintf( __( "Don't have AdSense? <a href='%s' target='_blank' rel='noopener noreferrer'>Click here</a> to sign up!", 'genesis' ), 'https://www.google.com/adsense/start/?utm_source=Genesis&utm_medium=partnerships&utm_campaign=GenesisCustomizer' ),
 				'panel'       => 'genesis',
 				'controls'    => array(
 					'adsense_id' => array(
@@ -94,7 +96,7 @@ return array(
 			),
 			'genesis_color_scheme' => array(
 				'active_callback' => 'genesis_has_color_schemes',
-				'theme_supports'  => 'genesis_style_selector',
+				'theme_supports'  => 'genesis-style-selector',
 				'title'           => __( 'Color Scheme', 'genesis' ),
 				'panel'           => 'genesis',
 				'controls'        => array(
@@ -142,7 +144,7 @@ return array(
 					),
 					'breadcrumb_front_page' => array(
 						'active_callback' => 'genesis_page_show_on_front',
-						'label'           => __( 'Breadcrumbs on Front Page', 'genesis' ),
+						'label'           => __( 'Breadcrumbs on Homepage', 'genesis' ),
 						'section'         => 'genesis_breadcrumbs',
 						'type'            => 'checkbox',
 						'settings'        => array(
@@ -151,7 +153,7 @@ return array(
 					),
 					'breadcrumb_posts_page' => array(
 						'active_callback' => 'genesis_page_show_on_front',
-						'label'           => __( 'Breadcrumbs on Posts Page', 'genesis' ),
+						'label'           => __( 'Breadcrumbs on Posts page', 'genesis' ),
 						'section'         => 'genesis_breadcrumbs',
 						'type'            => 'checkbox',
 						'settings'        => array(
@@ -183,7 +185,7 @@ return array(
 						),
 					),
 					'breadcrumb_404'        => array(
-						'label'    => __( 'Breadcrumbs on 404 Page', 'genesis' ),
+						'label'    => __( 'Breadcrumbs on 404 page', 'genesis' ),
 						'section'  => 'genesis_breadcrumbs',
 						'type'     => 'checkbox',
 						'settings' => array(
@@ -271,7 +273,7 @@ return array(
 						),
 					),
 					'image_size'                => array(
-						'label'    => __( 'Featured image size', 'genesis' ),
+						'label'    => __( 'Featured Image Size', 'genesis' ),
 						'section'  => 'genesis_archives',
 						'type'     => 'select',
 						'choices'  => genesis_get_image_sizes_for_customizer(),
@@ -284,7 +286,7 @@ return array(
 						'section'  => 'genesis_archives',
 						'type'     => 'select',
 						'choices'  => array(
-							''            => __( '- None -', 'genesis' ),
+							''            => __( 'None', 'genesis' ),
 							'alignleft'   => __( 'Left', 'genesis' ),
 							'alignright'  => __( 'Right', 'genesis' ),
 							'aligncenter' => __( 'Center', 'genesis' ),

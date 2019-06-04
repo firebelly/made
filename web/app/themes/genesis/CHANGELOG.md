@@ -2,7 +2,152 @@
 
 https://my.studiopress.com/themes/genesis/
 
-This project does not follow semantic versioning. It follows the WordPress policy where updates of _x_ and _y_ in an _x.y.z_ version number means a major release, and updates to _z_ means a patch release.
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+Up until release 2.7.0, this project did _not_ follow semantic versioning. It followed the WordPress policy where updates of x and y in an x.y.z version number means a major release, and updates to z means a patch release.
+
+## [2.10.1] - 2019-05-07
+
+### Added
+* Added action links (via filter) to the end of the update completed screen.
+
+### Removed
+* Removed automatic redirect to Theme Settings after an update.
+* Removed the function that output a "success" notice after database upgrade. Upgrades are now silent.
+
+### Fixed
+* Fixed issue on Genesis Plugins page that resulted in a fatal error on WP 5.x or older.
+* Fixed issue with the database upgrade that would cause it not to run in certain circumstances.
+
+## [2.10.0] - 2019-05-01
+
+### Added
+* Added `wp genesis core upgrade` WP-CLI Command.
+* Added `wp genesis core version` WP-CLI Command.
+* Added `wp genesis db upgrade` WP-CLI Command.
+* Added `wp genesis db version` WP-CLI Command.
+* Added `wp genesis setting get` WP-CLI Command.
+* Added `wp genesis setting update` WP-CLI Command.
+* Added child theme version to data sent to update server.
+* Added Genesis Plugins page, to allow Genesis plugins to be discovered and installed easily.
+* Added actions hooks before and after content import during Theme Setup.
+* Added `wp_body_open()` to the header template, directly after the opening `<body>` tag.
+* Added ability for Genesis to run a database upgrade after an update.
+
+### Changed
+* Pass all comment markup through the Markup API.
+* Process shortcodes and embeds in archive intro text.
+* Allow for the import of local images during Theme Setup.
+* Made output of the Theme Setup screen conditional based on the content in the onboarding config file.
+* Pass comment author name through Markup API.
+
+### Fixed
+* Fixed broken comment author link in xHTML.
+* Fixed empty H1 on Theme Setup page.
+* Fixed many WordPress code standards warnings and errors.
+* Fixed multiple home links in breadcrumbs under certain circumstances.
+* Fixed instances where users who can't install plugins are sent to onboarding screen.
+
+## [2.9.1] - 2019-03-20
+
+### Fixed
+- Fixed issue where `get_comment_author_link()` was being escaped improperly.
+
+
+## [2.9.0] - 2019-03-13
+### Added
+* Added menu support to onboarding process.
+* Added featured image support to onboarding process.
+* Added support for assigning static Posts page to onboarding process.
+* Added post excerpt support to onboarding process.
+* Added dynamic support for child theme constants.
+* Added support for importing specified settings on theme activation via a config file.
+* Added functions to get, set, and delete settings that eventually expire.
+
+### Changed
+* Improved the onboarding process for screen readers.
+* Update Superfish to 1.7.10.
+* Changed references of "Front Page" to "Homepage" where appropriate.
+* Use the post type's label as linked text in the metabox on CPT archive settings.
+* Changed the Genesis update storage to an expiring setting rather than a transient.
+
+### Removed
+* Removed several Grunt dev tools and replaced with node scripts.
+* Removed sitemap from 404 template (performance and security).
+
+## [2.8.1] - 2019-01-30
+### Fixed
+- Fixed `genesis_human_time_diff()` to display accurate relative dates.
+- Fixed a problem with `aria-hidden` and `tabindex` attributes were being escaped, causing the quotes to be unintentionally encoded.
+
+## [2.8.0] - 2019-01-16
+### Added
+- Add a `genesis_get_config()` function, to locate and load config files from Genesis and a child theme.
+- Add a new "onboarding" feature that allows users to import homepage demo content in WordPress 5.0.
+- Add a new function that allows you to get an author box by specified user.
+
+### Changed
+- Improved/clarified the labels on settings/customizer pages.
+- Changed references of "- None -" to "None" in forms, for better accessibility.
+
+## [2.7.3] - 2018-12-19
+### Fixed
+- Fixed an issue with the search form, where some elements were missing attributes, or had the wrong attributes.
+
+## [2.7.2] - 2018-12-13
+### Fixed
+- Fixed issue with schema on the breadcrumbs wrapper by removing breadcrumb div schema.org attributes when not needed, use RDFa for Breadcrumb NavXT.
+- Fixed issue with the search form not properly outputting a label when a11y is enabled.
+
+## [2.7.1] - 2018-11-15
+### Fixed
+- Fixed issue with filtered content being passed to `wp_kses_post()`.
+- Fixed issue with the `genesis_search_form()` function returning nothing if used directly.
+
+## [2.7.0] - 2018-11-14
+### Added
+- Added soft PHP 5.3 requirement, with admin messaging.
+- Added meta tag for breadcrumb position.
+- Added ability to export or remove private data via the WordPress privacy tools.
+- Added ability to autoload namespaced classes.
+- Added `genesis_is_amp()` utility function for detecting when the request is an AMP URL.
+- Added `minimum-scale` to the viewport meta tag when the request is an AMP URL.
+- Added a `genesis_more_text` filter.
+- Added a `/docs` folder for housing Genesis documentation.
+- Added individual changelog files for each release.
+- Added SEO support for SEOPress.
+- Added Genesis version to the "At a Glance" dashboard widget.
+- Added `rel="noopener noreferrer"` to new window links.
+- Added `aria-current` to pagination for accessibility.
+
+### Changed
+- Use [Semantic Versioning](https://semver.org/) for all future releases.
+- Use config file for breadcrumb arguments.
+- Use Markup API to build breadcrumb links.
+- Redirect to the "What's New" page on all upgrades, not just "major" ones.
+- Change the license line in all file headers to "GPL-2.0-or-later".
+- Use `wp_strip_all_tags()` instead of `strip_tags()`.
+- Replace all references to "Copyblogger" with "StudioPress".
+- Refresh `.editorconfig`.
+- Use Markup API for opening and closing `entry-content` tags.
+- Clear cache at the end of an upgrade.
+
+### Fixed
+- Fixed various code standards violations.
+- Fixed various missing or incorrect inline documentation.
+- Fixed issue where avatars were fetched even when the size to fetch is `0`.
+- Fixed issue where `genesis_update_action_links()` was not returning an array.
+- Fixed potential null pointer exceptions.
+- Fixed misuses of `mb_strlen()`.
+- Fixed Tiago Hillebrandt's Twitter link.
+
+### Removed
+- Deprecated `genesis_is_major_version()`.
+- Removed direct file access block from `comments.php`.
+- Removed an unused variable assignment in the entry content output function.
+- Removed a duplicate `description` from `composer.json`.
+- Removed tab stop on `aria-hidden` featured images.
+- Remove all references to "Scribe".
 
 ## [2.6.1] - 2018-03-14
 ### Fixed
@@ -1019,29 +1164,39 @@ _Requires WordPress 3.1.0._
 
 First public release.
 
-[2.6.1]: https://github.com/copyblogger/genesis/compare/2.6.0...2.6.1
-[2.6.0]: https://github.com/copyblogger/genesis/compare/2.5.3...2.6.0
-[2.5.3]: https://github.com/copyblogger/genesis/compare/2.5.2...2.5.3
-[2.5.3]: https://github.com/copyblogger/genesis/compare/2.5.2...2.5.3
-[2.5.2]: https://github.com/copyblogger/genesis/compare/2.5.1...2.5.2
-[2.5.1]: https://github.com/copyblogger/genesis/compare/2.5.0...2.5.1
-[2.5.0]: https://github.com/copyblogger/genesis/compare/2.4.2...2.5.0
-[2.4.2]: https://github.com/copyblogger/genesis/compare/2.4.1...2.4.2
-[2.4.1]: https://github.com/copyblogger/genesis/compare/2.4.0...2.4.1
-[2.4.0]: https://github.com/copyblogger/genesis/compare/2.3.1...2.4.0
-[2.3.1]: https://github.com/copyblogger/genesis/compare/2.3.0...2.3.1
-[2.3.0]: https://github.com/copyblogger/genesis/compare/2.2.7...2.3.0
-[2.2.7]: https://github.com/copyblogger/genesis/compare/2.2.6...2.2.7
-[2.2.6]: https://github.com/copyblogger/genesis/compare/2.2.5...2.2.6
-[2.2.5]: https://github.com/copyblogger/genesis/compare/2.2.4...2.2.5
-[2.2.4]: https://github.com/copyblogger/genesis/compare/2.2.3...2.2.4
-[2.2.3]: https://github.com/copyblogger/genesis/compare/2.2.2...2.2.3
-[2.2.2]: https://github.com/copyblogger/genesis/compare/2.2.1...2.2.2
-[2.2.1]: https://github.com/copyblogger/genesis/compare/2.2.0...2.2.1
-[2.2.0]: https://github.com/copyblogger/genesis/compare/2.1.3...2.2.0
-[2.1.3]: https://github.com/copyblogger/genesis/compare/2.1.2...2.1.3
-[2.1.2]: https://github.com/copyblogger/genesis/compare/2.1.1...2.1.2
-[2.1.1]: https://github.com/copyblogger/genesis/compare/2.1.0...2.1.1
-[2.1.0]: https://github.com/copyblogger/genesis/compare/2.0.2...2.1.0
-[2.0.2]: https://github.com/copyblogger/genesis/compare/2.0.1...2.0.2
-[2.0.1]: https://github.com/copyblogger/genesis/compare/2.0.0...2.0.1
+[2.10.1]: https://github.com/studiopress/genesis/compare/2.10.0...2.10.1
+[2.10.0]: https://github.com/studiopress/genesis/compare/2.9.1...2.10.0
+[2.9.1]: https://github.com/studiopress/genesis/compare/2.9.0...2.9.1
+[2.9.0]: https://github.com/studiopress/genesis/compare/2.8.1...2.9.0
+[2.8.1]: https://github.com/studiopress/genesis/compare/2.8.0...2.8.1
+[2.8.0]: https://github.com/studiopress/genesis/compare/2.7.3...2.8.0
+[2.7.3]: https://github.com/studiopress/genesis/compare/2.7.2...2.7.3
+[2.7.2]: https://github.com/studiopress/genesis/compare/2.7.1...2.7.2
+[2.7.1]: https://github.com/studiopress/genesis/compare/2.7.0...2.7.1
+[2.7.0]: https://github.com/studiopress/genesis/compare/2.6.1...2.7.0
+[2.6.1]: https://github.com/studiopress/genesis/compare/2.6.0...2.6.1
+[2.6.0]: https://github.com/studiopress/genesis/compare/2.5.3...2.6.0
+[2.5.3]: https://github.com/studiopress/genesis/compare/2.5.2...2.5.3
+[2.5.3]: https://github.com/studiopress/genesis/compare/2.5.2...2.5.3
+[2.5.2]: https://github.com/studiopress/genesis/compare/2.5.1...2.5.2
+[2.5.1]: https://github.com/studiopress/genesis/compare/2.5.0...2.5.1
+[2.5.0]: https://github.com/studiopress/genesis/compare/2.4.2...2.5.0
+[2.4.2]: https://github.com/studiopress/genesis/compare/2.4.1...2.4.2
+[2.4.1]: https://github.com/studiopress/genesis/compare/2.4.0...2.4.1
+[2.4.0]: https://github.com/studiopress/genesis/compare/2.3.1...2.4.0
+[2.3.1]: https://github.com/studiopress/genesis/compare/2.3.0...2.3.1
+[2.3.0]: https://github.com/studiopress/genesis/compare/2.2.7...2.3.0
+[2.2.7]: https://github.com/studiopress/genesis/compare/2.2.6...2.2.7
+[2.2.6]: https://github.com/studiopress/genesis/compare/2.2.5...2.2.6
+[2.2.5]: https://github.com/studiopress/genesis/compare/2.2.4...2.2.5
+[2.2.4]: https://github.com/studiopress/genesis/compare/2.2.3...2.2.4
+[2.2.3]: https://github.com/studiopress/genesis/compare/2.2.2...2.2.3
+[2.2.2]: https://github.com/studiopress/genesis/compare/2.2.1...2.2.2
+[2.2.1]: https://github.com/studiopress/genesis/compare/2.2.0...2.2.1
+[2.2.0]: https://github.com/studiopress/genesis/compare/2.1.3...2.2.0
+[2.1.3]: https://github.com/studiopress/genesis/compare/2.1.2...2.1.3
+[2.1.2]: https://github.com/studiopress/genesis/compare/2.1.1...2.1.2
+[2.1.1]: https://github.com/studiopress/genesis/compare/2.1.0...2.1.1
+[2.1.0]: https://github.com/studiopress/genesis/compare/2.0.2...2.1.0
+[2.0.2]: https://github.com/studiopress/genesis/compare/2.0.1...2.0.2
+[2.0.1]: https://github.com/studiopress/genesis/compare/2.0.0...2.0.1

@@ -7,7 +7,7 @@
  *
  * @package Genesis\Sanitizer
  * @author  StudioPress
- * @license GPL-2.0+
+ * @license GPL-2.0-or-later
  * @link    https://my.studiopress.com/themes/genesis/
  */
 
@@ -33,6 +33,8 @@ class Genesis_Settings_Sanitizer {
 	 * The sanitizer object.
 	 *
 	 * @since 2.6.1
+	 *
+	 * @var Genesis_Sanitizer Sanitizer object.
 	 */
 	public $sanitizer;
 
@@ -49,6 +51,8 @@ class Genesis_Settings_Sanitizer {
 	 * Constructor.
 	 *
 	 * @since 1.7.0
+	 *
+	 * @param Genesis_Sanitizer $sanitizer Sanitizer object.
 	 */
 	public function __construct( Genesis_Sanitizer $sanitizer ) {
 
