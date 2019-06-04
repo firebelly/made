@@ -12,9 +12,10 @@
   }
   a:hover {
     filter: none;
+    color: $black !important;
   }
   &.entry {
-    color: #fff;
+    color: $white;
     position: relative;
   }
   .entry-header {
@@ -61,11 +62,11 @@
   }
   .more-link {
     &:hover, &:focus {
-      color: #fff;
+      color: $white;
     }
   }
   .entry-title {
-    width: 100%; 
+    width: 100%;
     @include h3;
     height: 100%;
     margin-top: 0;
@@ -78,7 +79,7 @@
     }
   }
   p {
-    color: #fff;
+    color: $white;
   }
 }
 
@@ -114,7 +115,7 @@
 .hover-card-area {
   @include clearfix();
   @include media-md{
-    margin: 0 -10px 30px;  
+    margin: 0 -10px 30px;
   }
 }
 
