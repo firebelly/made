@@ -11,7 +11,15 @@
   border: 0;
 }
 
-// Dekstop
+// Keep nav compressed until 1200px now that we added several more items
+@include max-screen(1200px) {
+  .genesis-nav-menu a {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+// Desktop
 @include min-screen($breakpoint-nav) {
 
   // Home Logo For Mobile
@@ -73,7 +81,7 @@
     .genesis-nav-menu a {
       @include h4;
       color: $black;
-      padding: 16px 8px;
+      padding: 8px 4px;
       @include min-screen(850px){
         padding: 16px 15px;
       }
