@@ -12,6 +12,7 @@ web/wp
 # WP-CLI
 db-sync
 sql-dump-*.sql
+config/backup
 
 # Dotenv
 .env
@@ -23,7 +24,7 @@ sql-dump-*.sql
 vendor/*
 !vendor/.gitkeep
 
-# Them dist folder
+# Theme dist folder
 web/app/themes/*/dist
 
 # Node Package Manager
