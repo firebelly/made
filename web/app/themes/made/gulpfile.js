@@ -1,26 +1,36 @@
 // Gulp setup for Start Here front end boilerplate
 
 // Load required plugins
-var gulp = require('gulp'),
-    sass = require('gulp-ruby-sass'),
-    autoprefixer = require('gulp-autoprefixer'),
-    minifycss = require('gulp-minify-css'),
-    jshint = require('gulp-jshint'),
-    uglify = require('gulp-uglify'),
-    rename = require('gulp-rename'),
-    runSequence  = require('run-sequence'),
-    imagemin = require('gulp-imagemin'),
-    concat = require('gulp-concat'),
-    browserSync = require('browser-sync').create(),
-    svgstore = require('gulp-svgstore'),
-    svgmin = require('gulp-svgmin')
+var argv         = require('minimist')(process.argv.slice(2));
+var gulp         = require('gulp');
+var gulpif       = require('gulp-if');
+var sass         = require('gulp-sass');
+var autoprefixer = require('gulp-autoprefixer');
+var minifycss    = require('gulp-minify-css');
+var jshint       = require('gulp-jshint');
+var uglify       = require('gulp-uglify');
+var rename       = require('gulp-rename');
+var runSequence  = require('run-sequence');
+var imagemin     = require('gulp-imagemin');
+var concat       = require('gulp-concat');
+var browserSync  = require('browser-sync').create();
+var svgstore     = require('gulp-svgstore');
+var svgmin       = require('gulp-svgmin');
+var sourcemaps   = require('gulp-sourcemaps');
 
 // File path vars
 var paths = {
-    scssSrc: 'fbmods/sass/**/*.scss',
+    scssSrc: 'fbmods/sass/**/*',
+    jsSrc: ['fbmods/js/libs/*.js', 'fbmods/js/main.js'],
     imgSrc: 'fbmods/images/**/*',
     svgSrc: 'fbmods/svgs/*.svg'
 }
+
+// CLI options
+var enabled = {
+  // Disable source maps when `--production`
+  maps: !argv.production
+};
 
 // Setup browsersync
 gulp.task('browser-sync', function() {
@@ -33,18 +43,27 @@ gulp.task('browser-sync', function() {
 
 // Sass compilation and output
 gulp.task('styles', function() {
-  return sass('fbmods/sass/main.scss', { style: 'expanded' })
+  return gulp.src([
+      'fbmods/sass/main.scss'
+    ])
+    .pipe(gulpif(enabled.maps, sourcemaps.init()))
+    .pipe(sass())
     .pipe(autoprefixer())
     .pipe(gulp.dest('fbmods/css'))
     .pipe(rename({suffix: '.min'}))
     .pipe(minifycss())
     .pipe(gulp.dest('fbmods/css'))
-    .pipe(browserSync.stream());
+    .pipe(browserSync.stream())
+    .pipe(gulpif(enabled.maps, sourcemaps.write('.', {
+        sourceRoot: 'fbmods/css/'
+     }))
+    );
+
 });
 
 // Javascript concatenation
 gulp.task('scripts', function() {
-  return gulp.src(['fbmods/js/libs/*.js', 'fbmods/js/main.js'])
+  return gulp.src(paths.jsSrc)
     .pipe(jshint())
     .pipe(jshint.reporter('default'))
     .pipe(concat('site.js'))
@@ -95,13 +114,18 @@ gulp.task('watch', function() {
     files: ['*.html', '*.php'],
     proxy: 'made.localhost',
     notify: false,
+    open: false,
+    snippetOptions: {
+      whitelist: ['/wp-admin/admin-ajax.php'],
+      blacklist: ['/wp-admin/**']
+    }
   });
   // Kick it off with a build
   gulp.start('build');
   // Watch sass files
   gulp.watch(paths.scssSrc, ['styles']);
   // Watch js files
-  gulp.watch(['fbmods/js/libs/*.js', 'fbmods/js/main.js'], ['scripts']);
+  gulp.watch(paths.jsSrc, ['scripts']);
   // Watch SVGs
   gulp.watch(paths.svgSrc, ['svgs']);
 });
