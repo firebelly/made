@@ -37,6 +37,7 @@ hr {
   background-size: 210px 9px;
   background-repeat: no-repeat;
   background-image: url(/app/themes/made/fbmods/images/hr.png);
+  border: none;
   @include media-md {
     margin: 45px auto 40px auto;
   }
