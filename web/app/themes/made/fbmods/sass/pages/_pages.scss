@@ -1,7 +1,6 @@
 // Selectively remove headers that are redundant because the top nav also shows page title
 // .archive .archive-description,
 .page-about main > article > .entry-header,
-.page-scholarship-fund main > article > .entry-header,
 .page-get-involved main > article > .entry-header {
   @include sr-only;
 }

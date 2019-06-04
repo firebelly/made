@@ -2958,7 +2958,6 @@ blockquote::before {
       margin-bottom: 0; }
 
 .page-about main > article > .entry-header,
-.page-scholarship-fund main > article > .entry-header,
 .page-get-involved main > article > .entry-header {
   position: absolute;
   width: 1px;
