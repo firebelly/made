@@ -1,21 +1,21 @@
 set :application, 'made_production'
 set :theme, 'made'
 set :login, 'jbriseno100'
+set :domain, 'made2019.firebelly.co'
 set :repo_url, 'git@github.com:firebelly/made.git'
-set :php, 'php72'
-# This directory should be gitignored, we will need to symlink it to a corresponding directory in shared/ where we can manually add protected font files
+set :php, 'php70'
+
+# This directory is not in the repo and is symlinked from shared/ on deploy, so we can add licensed font files
 set :fonts_path, 'web/app/themes/made/fbmods/fonts'
 
 # For wpcli db command search-replace
 set :wpcli_remote_url, "http://#{fetch(:domain)}"
 set :wpcli_local_url, "http://#{fetch(:theme)}.localhost"
 
-# Hardcodes branch to always be master
-# This could be overridden in a stage config file
+# This can be overridden in a stage config file to pull from a different branch
 set :branch, :master
 
 set :deploy_to, -> { "/home/#{fetch(:login)}/webapps/#{fetch(:application)}" }
-
 set :tmp_dir, -> { "/home/#{fetch(:login)}/tmp" }
 
 # Use :debug for more verbose output when troubleshooting
