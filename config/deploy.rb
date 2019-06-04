@@ -1,10 +1,14 @@
 set :application, 'made_production'
-set :domain, 'jbriseno100.webfactional.com'
 set :theme, 'made'
 set :login, 'jbriseno100'
 set :repo_url, 'git@github.com:firebelly/made.git'
 set :php, 'php70'
-set :fonts_path, 'web/app/themes/made/fbmods/fonts' # This directory should be gitignored, we will need to symlink it to a corresponding directory in shared/ where we can manually add protected font files
+# This directory should be gitignored, we will need to symlink it to a corresponding directory in shared/ where we can manually add protected font files
+set :fonts_path, 'web/app/themes/made/fbmods/fonts'
+
+# For wpcli db command search-replace
+set :wpcli_remote_url, "http://#{fetch(:domain)}"
+set :wpcli_local_url, "http://#{fetch(:theme)}.localhost"
 
 # Hardcodes branch to always be master
 # This could be overridden in a stage config file
@@ -20,8 +24,7 @@ set :log_level, :info
 # Apache users with .htaccess files:
 # it needs to be added to linked_files so it persists across deploys:
 set :linked_files, fetch(:linked_files, []).push('.env', 'web/.htaccess', 'web/php.ini')
-set :linked_dirs, fetch(:linked_dirs, []).push('web/app/uploads')
-set :linked_dirs, fetch(:linked_dirs, []).push(fetch(:fonts_path))
+set :linked_dirs, fetch(:linked_dirs, []).push('web/app/uploads', fetch(:fonts_path))
 
 namespace :deploy do
   desc 'Restart application'

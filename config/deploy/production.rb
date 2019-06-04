@@ -1,13 +1,7 @@
 set :stage, :production
 set :application, 'made_production'
-set :domain, 'jbriseno100.webfactional.com'
-set :theme, 'made'
-set :login, 'jbriseno100'
-set :repo_url, 'git@github.com:firebelly/made.git'
-set :php, 'php70'
-set :fonts_path, 'web/app/themes/made/fbmods/fonts' # This directory should be gitignored, we will need to symlink it to a corresponding directory in shared/ where we can manually add protected font files
-
-
+set :domain, 'madecollaborative.com'
+set :wpcli_remote_url, "https://#{fetch(:domain)}.com"
 
 # Simple Role Syntax
 # ==================
