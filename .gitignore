@@ -13,6 +13,7 @@ web/wp
 db-sync
 sql-dump-*.sql
 config/backup
+log/
 
 # Dotenv
 .env
