@@ -1,15 +1,15 @@
-<?php 
+<?php
 
 // Enqueue styles.
 add_action( 'wp_enqueue_scripts', 'fb_enqueue_styles', 1 );
 function fb_enqueue_styles() {
-  wp_enqueue_style( 'main-css', get_stylesheet_directory_uri() . '/fbmods/css/main.min.css', array(), CHILD_THEME_VERSION );
+  wp_enqueue_style( 'main-css', get_stylesheet_directory_uri() . '/fbmods/css/main.min-1560267570.css', array(), CHILD_THEME_VERSION );
 }
 
 // Enqueue scripts.
 add_action( 'wp_enqueue_scripts', 'fb_enqueue_scripts', 11);
 function fb_enqueue_scripts() {
-  wp_enqueue_script( 'site-js', get_stylesheet_directory_uri() . '/fbmods/js/build/site.min.js',  array(), CHILD_THEME_VERSION  );
+  wp_enqueue_script( 'site-js', get_stylesheet_directory_uri() . '/fbmods/js/build/site.min-1560267570.js',  array(), CHILD_THEME_VERSION  );
 }
 
 // Remove footer widgets, we're gonna stick em somewhere else
@@ -38,7 +38,7 @@ function fb_body_class_for_pages( $classes ) {
     global $post;
 
     // Add class for this post's name
-    $classes[] = 'page-' . $post->post_name;   
+    $classes[] = 'page-' . $post->post_name;
 
     //Add class for this parent's post name
     $parents = get_post_ancestors( $post->ID );
@@ -54,7 +54,7 @@ function fb_body_class_for_pages( $classes ) {
 }
 add_filter( 'body_class', 'fb_body_class_for_pages' );
 
-// Display Featured Image on top of the post 
+// Display Featured Image on top of the post
 add_action( 'genesis_before_entry', 'fb_featured_post_image', 8 );
 function fb_featured_post_image() {
   the_post_thumbnail('featured_image');
@@ -84,20 +84,20 @@ add_action( 'genesis_header', 'fb_add_logo_to_header', 5 );
 
 
 // Replace post thumbnail with background-image divs
-function fb_post_thumbnail_html( $html, $post_id, $post_thumbnail_id, $size, $attr ) { 
+function fb_post_thumbnail_html( $html, $post_id, $post_thumbnail_id, $size, $attr ) {
 
     // See if we are a child of about
     $parents = get_post_ancestors( $post_id );
     $id = ($parents) ? $parents[count($parents)-1] : false;
     $parent_slug = $id ? get_post( $id )->post_name : '';
 
-    if($parent_slug === 'about' || is_archive()) { 
-      return ' <div class="thumbnail-wrap"><div class="thumbnail" style="background-image: url('.wp_get_attachment_image_url(get_post_thumbnail_id($post_id),'featured_image').');"></div></div>'; 
+    if($parent_slug === 'about' || is_archive()) {
+      return ' <div class="thumbnail-wrap"><div class="thumbnail" style="background-image: url('.wp_get_attachment_image_url(get_post_thumbnail_id($post_id),'featured_image').');"></div></div>';
     }
 
     return $html;
-}; 
-add_filter( 'post_thumbnail_html', 'fb_post_thumbnail_html', 10, 5 ); 
+};
+add_filter( 'post_thumbnail_html', 'fb_post_thumbnail_html', 10, 5 );
 
 
 // Set the favicon
@@ -141,10 +141,10 @@ function fb_participating_artists_shortcode() {
   );
   $artist_pages = get_children( $args );
 
-  if (!empty($artist_pages)) { 
+  if (!empty($artist_pages)) {
     foreach ($artist_pages as $artist_page) {
       $title = get_the_title($artist_page->ID) ? get_the_title($artist_page->ID) : __( '(no title)', 'genesis' );
-      ob_start(); 
+      ob_start();
         ?>
         <section class="widget featured-content featuredpage">
           <div class="widget-wrap">
@@ -158,8 +158,8 @@ function fb_participating_artists_shortcode() {
             </article>
           </div>
         </section>
-        <?php  
-      $output .= ob_get_contents(); 
+        <?php
+      $output .= ob_get_contents();
       ob_end_clean();
     }
   }
@@ -172,5 +172,5 @@ function fb_participating_artists_shortcode() {
 add_shortcode('participating-artist-cards', 'fb_participating_artists_shortcode');
 
 
-// Add style file 
+// Add style file
 add_editor_style( get_stylesheet_directory_uri() . '/fbmods/css/main.min.css' );

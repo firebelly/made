@@ -2775,6 +2775,24 @@ blockquote::before {
   .front-page-section:nth-of-type(odd) {
     background-color: #000; }
 
+body.front-page #front-page-3 h3.widget-title,
+.category-project-blog h1.archive-title {
+  background: transparent url("/app/themes/made/images/this-and-that-yellow.png") left top no-repeat;
+  background-size: contain;
+  width: 257px;
+  height: 50px;
+  margin: 0 auto;
+  text-indent: -9999px; }
+  @media screen and (min-width: 800px) {
+    body.front-page #front-page-3 h3.widget-title,
+    .category-project-blog h1.archive-title {
+      width: 400px;
+      height: 78px; } }
+
+.category-project-blog h1.archive-title {
+  background-image: url("/app/themes/made/images/this-and-that-blue.png");
+  margin: 0 0 40px; }
+
 .front-page-banner {
   height: 160px; }
   @media screen and (min-width: 800px) {

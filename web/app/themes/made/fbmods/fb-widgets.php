@@ -98,7 +98,7 @@ class fb_footer_connect_widget extends WP_Widget {
   }
 }
 
-// Project Mews Slider
+// Project Blog Slider
 class fb_project_blog_slider_widget extends WP_Widget {
 
   function __construct() {
@@ -118,10 +118,10 @@ class fb_project_blog_slider_widget extends WP_Widget {
   public function widget( $args, $instance ) {
 
     $query_args = [
-      'post_type'   => 'post',
-      'category_name'   => 'project-blog',
-      'orderby'     => 'date',
-      'numberposts' => 5,
+      'post_type'     => 'post',
+      'category_name' => 'project-blog',
+      'orderby'       => 'date',
+      'numberposts'   => 5,
     ];
     $recent_posts = get_posts($query_args);
 
