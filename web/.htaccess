@@ -2,10 +2,19 @@
 RewriteEngine On
 RewriteBase /
 RewriteCond %{HTTP_HOST} !^madecollaborative.com$ [NC]
+RewriteCond %{HTTP_HOST} !^staging.madecollaborative.com$ [NC]
 RewriteCond %{HTTP_HOST} !^made2019.firebelly.co$ [NC]
 RewriteCond %{HTTP_HOST} !^made.localhost$ [NC]
 RewriteRule ^(.*)$ http://madecollaborative.com/$1 [R=301,L]
 # END redirects
+
+# Force HTTPS
+RewriteCond %{REQUEST_URI} !\.well-known
+RewriteCond %{HTTP:X-Forwarded-SSL} !on
+RewriteCond %{HTTP_HOST} !^made2019.firebelly.co$ [NC]
+RewriteCond %{HTTP_HOST} !^made.localhost$ [NC]
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+# END force HTTPS
 
 # BEGIN speedups
 FileETag none
@@ -23,6 +32,7 @@ ExpiresByType text/css "access plus 6 months"
 AddOutputFilterByType DEFLATE text/text text/html text/plain text/xml text/css application/x-javascript application/javascript
 </IfModule>
 # END speedups
+
 
 # BEGIN WordPress
 <IfModule mod_rewrite.c>
