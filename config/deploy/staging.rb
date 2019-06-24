@@ -1,7 +1,7 @@
 set :stage, :staging
-set :login, 'firebelly'
 set :application, 'made_staging'
-set :domain, 'made2019.firebelly.co'
+set :domain, 'staging.madecollaborative.com'
+set :wpcli_remote_url, "https://#{fetch(:domain)}.com"
 
 # Simple Role Syntax
 # ==================
