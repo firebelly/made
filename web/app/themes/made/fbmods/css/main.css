@@ -2752,7 +2752,7 @@ blockquote::before {
   background-color: #02bed6; }
 
 .front-page-section {
-  padding: 20px 0 28px 0;
+  padding: 50px 0;
   margin-top: 0;
   border-top: none; }
   @media screen and (min-width: 800px) {
@@ -2826,7 +2826,15 @@ body.front-page #front-page-3 h3.widget-title,
       margin-left: -1ch;
       margin-right: -1ch; } }
 
-.front-page-description .textwidget, .front-page-description .textwidget p {
+.front-page-description .button {
+  color: #000;
+  font-weight: bold;
+  margin: 0 20px 25px; }
+  @media screen and (min-width: 800px) {
+    .front-page-description .button {
+      margin: 20px 30px; } }
+
+.front-page-description section.widget_text:last-of-type .textwidget, .front-page-description section.widget_text:last-of-type .textwidget p {
   font-size: 16px;
   font-weight: 400;
   letter-spacing: 0;
@@ -2834,11 +2842,11 @@ body.front-page #front-page-3 h3.widget-title,
   text-transform: none;
   font-family: 'Work Sans', sans-serif; }
   @media screen and (min-width: 800px) {
-    .front-page-description .textwidget, .front-page-description .textwidget p {
+    .front-page-description section.widget_text:last-of-type .textwidget, .front-page-description section.widget_text:last-of-type .textwidget p {
       font-size: 20px;
       line-height: 1.5; } }
 
-.front-page-description .textwidget::before {
+.front-page-description section.widget_text:last-of-type .textwidget::before {
   content: '';
   width: 210px;
   height: 20px;
@@ -2848,7 +2856,7 @@ body.front-page #front-page-3 h3.widget-title,
   background-repeat: no-repeat;
   background-image: url(/app/themes/made/fbmods/images/hr.png); }
   @media screen and (min-width: 800px) {
-    .front-page-description .textwidget::before {
+    .front-page-description section.widget_text:last-of-type .textwidget::before {
       margin: 45px auto 40px auto; } }
 
 .front-page-project-news .wrap {
