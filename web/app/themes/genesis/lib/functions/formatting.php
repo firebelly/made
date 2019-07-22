@@ -117,7 +117,7 @@ function genesis_a11y_more_link( $more_link_text ) {
 function the_content_limit( $max_characters, $more_link_text = '(more...)', $stripteaser = false ) {
 
 	$content = get_the_content_limit( $max_characters, $more_link_text, $stripteaser );
-	echo apply_filters( 'the_content_limit', $content ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+	echo apply_filters( 'the_content_limit', $content ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- escaping handled in `get_the_content_limit()`.
 
 }
 

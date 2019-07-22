@@ -51,9 +51,9 @@ function genesis_do_taxonomy_title_description() {
 	}
 
 	$intro_text = get_term_meta( $term->term_id, 'intro_text', true );
-	$intro_text = wpautop( $intro_text );
 	$intro_text = $wp_embed->autoembed( $intro_text );
 	$intro_text = do_shortcode( $intro_text );
+	$intro_text = wpautop( $intro_text );
 
 	/**
 	 * Filter the archive intro text.

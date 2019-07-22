@@ -17,23 +17,19 @@
  * Supported keys for `$args` are:
  *
  *  - `html5` (`sprintf()` pattern markup),
- *  - `xhtml` (XHTML markup),
  *  - `context` (name of context),
  *  - `echo` (default is true).
- *
- * If the child theme supports HTML5, then this function will output the `html5` value, with a call to `genesis_attr()`
- * with the same context added in. Otherwise, it will output the `xhtml` value.
  *
  * Applies a `genesis_markup_{context}` filter early to allow shortcutting the function.
  *
  * Applies a `genesis_markup_{context}_output` filter at the end.
  *
  * @since 1.9.0
+ * @since 3.0.0 Removed xhtml argument key as xhtml support was removed.
  *
  * @param array $args {
  *     Contains markup arguments.
  *     @type string html5   Legacy HTML5 markup.
- *     @type string xhtml   Legacy XHTML markup.
  *     @type string context Markup context.
  *     @type string open    Opening HTML markup.
  *     @type string close   Closing HTML markup.
@@ -46,7 +42,6 @@ function genesis_markup( $args = array() ) {
 
 	$defaults = array(
 		'html5'   => '',
-		'xhtml'   => '',
 		'context' => '',
 		'open'    => '',
 		'close'   => '',
@@ -79,17 +74,12 @@ function genesis_markup( $args = array() ) {
 
 	}
 
-	if ( $args['html5'] || $args['xhtml'] ) {
+	if ( $args['html5'] ) {
 
-		// If HTML5, return HTML5 tag. Maybe add attributes. Else XHTML.
-		if ( genesis_html5() ) {
-			$tag = $args['context'] ? sprintf( $args['html5'], genesis_attr( $args['context'] ) ) : $args['html5'];
-		} else {
-			$tag = $args['xhtml'];
-		}
+		$tag = $args['context'] ? sprintf( $args['html5'], genesis_attr( $args['context'] ) ) : $args['html5'];
 
 		/**
-		 * Legacy contextual filter to modify 'xhtml' or 'html5' output markup.
+		 * Legacy contextual filter to modify 'html5' output markup.
 		 *
 		 * @since 1.9.0
 		 *
@@ -191,24 +181,6 @@ function genesis_markup( $args = array() ) {
 		return null;
 	} else {
 		return $open . $content . $close;
-	}
-
-}
-
-add_action( 'after_setup_theme', 'genesis_xhtml_check' );
-/**
- * Conditionally load XHTML markup.
- *
- * @since 2.4.0
- */
-function genesis_xhtml_check() {
-
-	if ( ! genesis_html5() ) {
-		require_once PARENT_DIR . '/lib/structure/xhtml.php';
-		add_filter( 'genesis_markup_open', 'genesis_markup_open_xhtml', 10, 2 );
-		add_filter( 'genesis_markup_close', 'genesis_markup_close_xhtml', 10, 2 );
-		add_filter( 'genesis_markup_search-form-label_content', '__return_empty_string' );
-		_genesis_builtin_sidebar_params();
 	}
 
 }
@@ -586,10 +558,6 @@ add_filter( 'genesis_markup_search-form_content', 'genesis_markup_search_form_co
  * @return string Potentially modified search form content.
  */
 function genesis_markup_search_form_content( $content ) {
-
-	if ( ! genesis_html5() ) {
-		return $content;
-	}
 
 	$meta = array(
 		'open'    => '<meta %s>',

@@ -37,10 +37,10 @@ You can use the code in the *Constant* column wherever you might use the code in
 
 ```php
 wp_enqueue_script(
-	'custom-theme',
+	genesis_get_theme_handle(),
 	get_stylesheet_directory_uri() . '/js/custom-theme.js',
 	array( 'jquery' ),
-	wp_get_theme()->get( 'Version' ),
+	genesis_get_theme_version(),
 	true
 );
 ```
@@ -49,10 +49,10 @@ You can do this for brevity and to avoid an additional function call:
 
 ```php
 wp_enqueue_script(
-	'custom-theme',
+	genesis_get_theme_handle(),
 	CHILD_URL . '/js/custom-theme.js', // <-- Constant used here.
 	array( 'jquery' ),
-	wp_get_theme()->get( 'Version' ),
+	genesis_get_theme_version(),
 	true
 );
 ```

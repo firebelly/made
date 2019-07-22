@@ -11,48 +11,6 @@
  * @link    https://my.studiopress.com/themes/genesis/
  */
 
-add_shortcode( 'footer_backtotop', 'genesis_footer_backtotop_shortcode' );
-/**
- * Produces the "Return to Top" link.
- *
- * Supported shortcode attributes are:
- *   after (output after link, default is empty string),
- *   before (output before link, default is empty string),
- *   href (link url, default is fragment identifier '#wrap'),
- *   nofollow (boolean for whether to make the link include the rel="nofollow"
- *     attribute. Default is true),
- *   text (Link text, default is 'Return to top of page').
- *
- * Output passes through `genesis_footer_backtotop_shortcode` filter before returning.
- *
- * @since 1.1.0
- *
- * @param array|string $atts Shortcode attributes. Empty string if no attributes.
- * @return string Output for `footer_backtotop` shortcode.
- */
-function genesis_footer_backtotop_shortcode( $atts ) {
-
-	$defaults = array(
-		'after'    => '',
-		'before'   => '',
-		'href'     => '#wrap',
-		'nofollow' => true,
-		'text'     => __( 'Return to top of page', 'genesis' ),
-	);
-	$atts     = shortcode_atts( $defaults, $atts, 'footer_backtotop' );
-
-	$nofollow = $atts['nofollow'] ? 'rel="nofollow"' : '';
-
-	$output = sprintf( '%s<a href="%s" %s>%s</a>%s', $atts['before'], esc_url( $atts['href'] ), $nofollow, $atts['text'], $atts['after'] );
-
-	if ( genesis_html5() ) {
-		$output = '';
-	}
-
-	return apply_filters( 'genesis_footer_backtotop_shortcode', $output, $atts );
-
-}
-
 add_shortcode( 'footer_copyright', 'genesis_footer_copyright_shortcode' );
 /**
  * Adds the visual copyright notice.

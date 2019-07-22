@@ -53,7 +53,7 @@ class Genesis_Search_Form {
 
 		$this->strings = array_merge( $default_strings, $strings );
 
-		$this->unique_id = 'searchform-' . uniqid( '', true );
+		$this->unique_id = wp_unique_id( 'searchform-' );
 
 	}
 

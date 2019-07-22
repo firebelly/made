@@ -202,10 +202,10 @@ function genesis_constants() {
 	// Define Theme Info Constants.
 	// phpcs:disable WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedConstantFound
 	define( 'PARENT_THEME_NAME', 'Genesis' );
-	define( 'PARENT_THEME_VERSION', '2.10.1' );
-	define( 'PARENT_THEME_BRANCH', '2.10' );
-	define( 'PARENT_DB_VERSION', '2901' );
-	define( 'PARENT_THEME_RELEASE_DATE', date_i18n( 'F j, Y', strtotime( '07 May 2019' ) ) );
+	define( 'PARENT_THEME_VERSION', '3.0.2' );
+	define( 'PARENT_THEME_BRANCH', '3.0' );
+	define( 'PARENT_DB_VERSION', '3001' );
+	define( 'PARENT_THEME_RELEASE_DATE', date_i18n( 'F j, Y', strtotime( '03 July 2019' ) ) );
 
 	// Define Parent and Child Directory Location and URL Constants.
 	define( 'PARENT_DIR', get_template_directory() );
@@ -351,6 +351,7 @@ function genesis_load_framework() {
 		require_once $admin_dir . 'sanitization.php';
 		require_once $admin_dir . 'privacy-requests.php';
 		require_once $admin_dir . 'plugin-install.php';
+		require_once $admin_dir . 'site-health.php';
 		require_once $admin_dir . 'onboarding/theme-activation.php';
 		require_once $admin_dir . 'onboarding/ajax-functions.php';
 		require_once $functions_dir . 'onboarding.php';

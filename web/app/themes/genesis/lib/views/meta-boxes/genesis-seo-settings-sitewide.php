@@ -15,7 +15,7 @@
 <table class="form-table">
 <tbody>
 
-	<?php if ( genesis_html5() && $this->get_field_value( 'semantic_headings' ) ) : ?>
+	<?php if ( $this->get_field_value( 'semantic_headings' ) ) : ?>
 	<tr valign="top">
 		<th scope="row"><?php esc_html_e( 'Section Headings', 'genesis' ); ?></th>
 		<td>

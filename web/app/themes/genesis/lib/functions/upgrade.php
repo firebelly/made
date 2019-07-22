@@ -142,6 +142,202 @@ function genesis_upgrade_db_latest() {
 }
 
 /**
+ * Upgrade the database for changes in db version 3001.
+ *
+ * @since 3.0.0
+ */
+function genesis_upgrade_3001() {
+
+	genesis_upgrade_3001_page_blog();
+	genesis_upgrade_3001_page_archive();
+
+}
+
+/**
+ * Migrate query_args and/or template for pages using page_blog.php template in 3.0.0.
+ *
+ * @since 3.0.0
+ */
+function genesis_upgrade_3001_page_blog() {
+	$page_blog_ids = get_posts(
+		array(
+			'post_type'  => 'page',
+			'meta_key'   => '_wp_page_template',
+			'meta_value' => 'page_blog.php',
+			'nopaging'   => true,
+			'fields'     => 'ids',
+		)
+	);
+
+	if ( empty( $page_blog_ids ) ) {
+		return;
+	}
+
+	if ( ! genesis_theme_has_page_blog_template() ) {
+		genesis_create_page_blog_file();
+	}
+
+	$parameters = array_filter(
+		array(
+			'cat'              => genesis_get_option( 'blog_cat', GENESIS_SETTINGS_FIELD, false ),
+			'category__not_in' => genesis_get_option( 'blog_cat_exclude', GENESIS_SETTINGS_FIELD, false ),
+			'showposts'        => genesis_get_option( 'blog_cat_num', GENESIS_SETTINGS_FIELD, false ),
+		)
+	);
+
+	foreach ( $page_blog_ids as $page_blog_id ) {
+		$existing_query_args = genesis_get_custom_field( 'query_args', $page_blog_id );
+		$query_args          = wp_parse_args( $existing_query_args, $parameters );
+
+		if ( $query_args ) {
+			update_post_meta( $page_blog_id, 'query_args', urldecode( http_build_query( $query_args ) ) );
+		}
+	}
+}
+
+/**
+ * Generate page_archive.php template file for blogs using default Genesis page_archive.php.
+ *
+ * @since 3.0.0
+ */
+function genesis_upgrade_3001_page_archive() {
+	$page_archive_ids = get_posts(
+		array(
+			'post_type'  => 'page',
+			'meta_key'   => '_wp_page_template',
+			'meta_value' => 'page_archive.php',
+			'nopaging'   => true,
+			'fields'     => 'ids',
+		)
+	);
+
+	if ( empty( $page_archive_ids ) ) {
+		return;
+	}
+
+	if ( ! genesis_theme_has_page_archive_template() ) {
+		genesis_create_page_archive_file();
+	}
+}
+
+/**
+ * Determine if the 'Blog' page template is available.
+ *
+ * @since 3.0.0
+ *
+ * @return bool True if the 'Blog' template theme exists. False if else.
+ */
+function genesis_theme_has_page_blog_template() {
+	$templates = get_page_templates();
+
+	return isset( $templates['Blog'] );
+}
+
+/**
+ * Determine if the 'Archive' page template is available.
+ *
+ * @since 3.0.0
+ *
+ * @return bool True if the 'Archive' template theme exists. False if else.
+ */
+function genesis_theme_has_page_archive_template() {
+	$templates = get_page_templates();
+
+	return isset( $templates['Archive'] );
+}
+
+/**
+ * Create the 'page_blog.php' file within child theme if missing.
+ *
+ * @since 3.0.0
+ *
+ * @return null|integer|boolean Null if file exists, number of bytes written, or false if error.
+ */
+function genesis_create_page_blog_file() {
+	$directory_path = get_stylesheet_directory();
+	$page_blog_path = "{$directory_path}/page_blog.php";
+
+	if ( file_exists( $page_blog_path ) ) {
+		return;
+	}
+
+	$content = <<<'CONTENT'
+<?php
+/**
+ * Template Name: Blog
+ */
+
+genesis();
+CONTENT;
+
+	return file_put_contents( $page_blog_path, $content );
+}
+
+/**
+ * Create the 'page_archive.php' file within child theme if missing.
+ *
+ * @since 3.0.0
+ *
+ * @return null|integer|boolean Null if file exists, number of bytes written, or false if error.
+ */
+function genesis_create_page_archive_file() {
+	$directory_path    = get_stylesheet_directory();
+	$page_archive_path = "{$directory_path}/page_archive.php";
+
+	if ( file_exists( $page_archive_path ) ) {
+		return;
+	}
+
+	$content = <<<'CONTENT'
+<?php
+/**
+ * Template Name: Archive
+ */
+
+remove_action( 'genesis_entry_content', 'genesis_do_post_content' );
+add_action( 'genesis_entry_content', 'genesis_page_archive_content' );
+
+function genesis_page_archive_content() {
+    $heading = ( genesis_a11y( 'headings' ) ? 'h2' : 'h4' );
+
+    genesis_sitemap( $heading );
+}
+
+genesis();
+CONTENT;
+
+	return file_put_contents( $page_archive_path, $content );
+}
+
+/**
+ * Upgrade the database for changes in db version 3000.
+ *
+ * @since 3.0.0
+ */
+function genesis_upgrade_3000() {
+	if ( genesis_get_option( 'adsense_id' ) ) {
+		$header_scripts = genesis_get_option( 'header_scripts' );
+		$adsense_id     = genesis_get_option( 'adsense_id' );
+		$adsense        = <<<ADSENSE
+<script async src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({
+google_ad_client: "$adsense_id",
+enable_page_level_ads: true,
+tag_partner: "genesis"
+});
+</script>
+ADSENSE;
+
+		genesis_update_settings(
+			array(
+				'header_scripts' => $header_scripts . "\n" . $adsense,
+			)
+		);
+	}
+}
+
+/**
  * Upgrade the database to version 2700.
  *
  * @since 2.7.0
@@ -691,6 +887,16 @@ function genesis_upgrade() {
 		genesis_upgrade_2700();
 	}
 
+	// UPDATE DB TO VERSION 3000.
+	if ( genesis_get_option( 'db_version', null, false ) < '3000' ) {
+		genesis_upgrade_3000();
+	}
+
+	// UPDATE DB TO VERSION 3001.
+	if ( genesis_get_option( 'db_version', null, false ) < '3001' ) {
+		genesis_upgrade_3001();
+	}
+
 	// UPDATE DB TO LATEST VERSION.
 	if ( genesis_get_option( 'db_version', null, false ) < PARENT_DB_VERSION ) {
 		genesis_upgrade_db_latest();
@@ -814,8 +1020,8 @@ function genesis_update_action_links( array $actions, $theme ) {
 
 	return array(
 		sprintf(
-			'<a href="%s">%s</a>',
-			menu_page_url( 'genesis-upgraded', 0 ),
+			'<a href="%s" target="_blank" rel="noopener noreferrer">%s</a>',
+			'https://genesischangelog.com/',
 			esc_html__( 'Check out what\'s new', 'genesis' )
 		),
 		sprintf(

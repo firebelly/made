@@ -24,7 +24,7 @@ class Genesis_Admin_Plugins extends Genesis_Admin_Basic {
 	 * @since 2.10.0
 	 */
 	public function __construct() {
-		$this->redirect_to = admin_url( 'plugin-install.php?s=studiopress&tab=search&type=author' );
+		$this->redirect_to = network_admin_url( 'plugin-install.php?s=studiopress&tab=search&type=author' );
 
 		$menu_ops = array(
 			'submenu' => array(
