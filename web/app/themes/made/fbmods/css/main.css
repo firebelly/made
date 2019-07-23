@@ -2805,6 +2805,14 @@ body.front-page #front-page-3 h3.widget-title,
       .front-page-banner .made-logo {
         width: 390px;
         height: auto; } }
+  .front-page-banner .widget_text .button {
+    font-weight: bold;
+    color: #fdbb30;
+    background: #000;
+    margin: 30px 10px 0; }
+    @media screen and (min-width: 800px) {
+      .front-page-banner .widget_text .button {
+        margin: 40px 20px 0; } }
 
 .front-page-description .wrap {
   max-width: 800px; }
@@ -2825,14 +2833,6 @@ body.front-page #front-page-3 h3.widget-title,
     .front-page-description .widget-title {
       margin-left: -1ch;
       margin-right: -1ch; } }
-
-.front-page-description .button {
-  color: #000;
-  font-weight: bold;
-  margin: 0 20px 25px; }
-  @media screen and (min-width: 800px) {
-    .front-page-description .button {
-      margin: 20px 30px; } }
 
 .front-page-description section.widget_text:last-of-type .textwidget, .front-page-description section.widget_text:last-of-type .textwidget p {
   font-size: 16px;

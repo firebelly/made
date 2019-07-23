@@ -61,6 +61,18 @@ body.front-page #front-page-3 h3.widget-title,
       height: auto;
     }
   }
+  .widget_text {
+    .button {
+      font-weight: bold;
+      color: $gold;
+      background: $black;
+      margin: 30px 10px 0;
+
+      @include media-md {
+        margin: 40px 20px 0;
+      }
+    }
+  }
 }
 
 // Main headline/description under banner
@@ -79,16 +91,6 @@ body.front-page #front-page-3 h3.widget-title,
       margin-left: -1ch;
       margin-right: -1ch;
     };
-  }
-
-  .button {
-    color: $black;
-    font-weight: bold;
-    margin: 0 20px 25px;
-
-    @include media-md {
-      margin: 20px 30px;
-    }
   }
 
   // Subheader
