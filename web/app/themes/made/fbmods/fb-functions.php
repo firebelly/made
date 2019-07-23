@@ -3,13 +3,13 @@
 // Enqueue styles.
 add_action( 'wp_enqueue_scripts', 'fb_enqueue_styles', 1 );
 function fb_enqueue_styles() {
-  wp_enqueue_style( 'main-css', get_stylesheet_directory_uri() . '/fbmods/css/main.min-1563829204.css', array(), CHILD_THEME_VERSION );
+  wp_enqueue_style( 'main-css', get_stylesheet_directory_uri() . '/fbmods/css/main.min-1563910490.css', array(), CHILD_THEME_VERSION );
 }
 
 // Enqueue scripts.
 add_action( 'wp_enqueue_scripts', 'fb_enqueue_scripts', 11);
 function fb_enqueue_scripts() {
-  wp_enqueue_script( 'site-js', get_stylesheet_directory_uri() . '/fbmods/js/build/site.min-1563829204.js',  array(), CHILD_THEME_VERSION  );
+  wp_enqueue_script( 'site-js', get_stylesheet_directory_uri() . '/fbmods/js/build/site.min-1563910490.js',  array(), CHILD_THEME_VERSION  );
 }
 
 // Remove footer widgets, we're gonna stick em somewhere else
