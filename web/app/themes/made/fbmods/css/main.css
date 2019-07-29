@@ -2409,13 +2409,20 @@ blockquote::before {
     padding-right: 10px; } }
 
 @media screen and (min-width: 800px) {
-  .nav-primary li.-button a {
+  .front-page .site-header:not(.scrolled) .nav-primary li.-button a {
     background-color: #000;
+    color: #fdbb30 !important; }
+    .front-page .site-header:not(.scrolled) .nav-primary li.-button a:hover {
+      opacity: 1 !important;
+      filter: brightness(1) !important;
+      color: #fff !important; }
+  .nav-primary li.-button a {
+    background-color: #fdbb30;
     display: inline-block;
     padding: 8px !important;
     margin-top: 8px !important;
     margin-right: 8px !important;
-    color: #fdbb30 !important; }
+    color: #000 !important; }
   .menu-item-home-mobile {
     display: none; }
   .front-page .site-header, .site-header {

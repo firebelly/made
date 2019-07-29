@@ -22,15 +22,25 @@
 // Desktop
 @include min-screen($breakpoint-nav) {
 
+  .front-page .site-header:not(.scrolled) .nav-primary li.-button a {
+    background-color: $black;
+    color: $gold !important;
+    &:hover {
+      opacity: 1 !important;
+      filter: brightness(1) !important;
+      color: $white !important;
+    }
+  }
+
   // CTA buttons in nav
   .nav-primary li.-button a {
-    background-color: $black;
+    background-color: $gold;
     display: inline-block;
     padding: 8px !important;
     margin-top: 8px !important;
     margin-right: 8px !important;
     // width: auto !important;
-    color: $gold !important;
+    color: $black !important;
   }
 
   // Home Logo For Mobile
