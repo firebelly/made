@@ -22,6 +22,17 @@
 // Desktop
 @include min-screen($breakpoint-nav) {
 
+  // CTA buttons in nav
+  .nav-primary li.-button a {
+    background-color: $black;
+    display: inline-block;
+    padding: 8px !important;
+    margin-top: 8px !important;
+    margin-right: 8px !important;
+    // width: auto !important;
+    color: $gold !important;
+  }
+
   // Home Logo For Mobile
   .menu-item-home-mobile {
     display: none;
@@ -118,6 +129,16 @@
 
 // Mobile
 @include max-screen($breakpoint-nav - 1px) {
+
+  // CTA buttons in nav
+  .nav-primary li.-button a {
+    background-color: $gold;
+    display: inline-block;
+    padding: 12px !important;
+    margin: 12px 0 0 20px !important;
+    width: auto !important;
+    color: $black !important;
+  }
 
   .site-header {
     position: fixed;

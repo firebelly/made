@@ -2409,6 +2409,13 @@ blockquote::before {
     padding-right: 10px; } }
 
 @media screen and (min-width: 800px) {
+  .nav-primary li.-button a {
+    background-color: #000;
+    display: inline-block;
+    padding: 8px !important;
+    margin-top: 8px !important;
+    margin-right: 8px !important;
+    color: #fdbb30 !important; }
   .menu-item-home-mobile {
     display: none; }
   .front-page .site-header, .site-header {
@@ -2490,6 +2497,13 @@ blockquote::before {
     background: url(/app/themes/made/fbmods/svgs/mobile-nav.svg); }
 
 @media screen and (max-width: 799px) {
+  .nav-primary li.-button a {
+    background-color: #fdbb30;
+    display: inline-block;
+    padding: 12px !important;
+    margin: 12px 0 0 20px !important;
+    width: auto !important;
+    color: #000 !important; }
   .site-header {
     position: fixed;
     top: 0;
