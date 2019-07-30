@@ -2863,6 +2863,8 @@ body.front-page #front-page-3 h3.widget-title,
   margin: 0 -20px 0; }
 
 .front-page-description .widget_text .button {
+  color: #fdbb30;
+  background: #000;
   font-weight: bold;
   margin: 0 10px 20px; }
 
