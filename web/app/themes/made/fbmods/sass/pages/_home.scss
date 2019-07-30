@@ -93,6 +93,13 @@ body.front-page #front-page-3 h3.widget-title,
     };
   }
 
+  .widget_text {
+    .button {
+      font-weight: bold;
+      margin: 0 10px 0;
+    }
+  }
+
   // Subheader
   section.widget_text:last-of-type .textwidget {
     &, p {

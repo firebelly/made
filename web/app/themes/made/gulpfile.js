@@ -50,7 +50,7 @@ gulp.task('styles', function() {
     .pipe(sass())
     .pipe(autoprefixer())
     .pipe(gulp.dest('fbmods/css'))
-    .pipe(rename({suffix: '.min-1564413535'}))
+    .pipe(rename({suffix: '.min-1564519849'}))
     .pipe(minifycss())
     .pipe(gulp.dest('fbmods/css'))
     .pipe(browserSync.stream())
@@ -68,7 +68,7 @@ gulp.task('scripts', function() {
     .pipe(jshint.reporter('default'))
     .pipe(concat('site.js'))
     .pipe(gulp.dest('fbmods/js/build'))
-    .pipe(rename({suffix: '.min-1564413535'}))
+    .pipe(rename({suffix: '.min-1564519849'}))
     .pipe(uglify())
     .pipe(gulp.dest('fbmods/js/build'))
     .pipe(browserSync.stream());
