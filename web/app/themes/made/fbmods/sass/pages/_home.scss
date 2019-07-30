@@ -94,9 +94,12 @@ body.front-page #front-page-3 h3.widget-title,
   }
 
   .widget_text {
+    .hide-on-desktop {
+      margin: 0 -20px 0;
+    }
     .button {
       font-weight: bold;
-      margin: 0 10px 0;
+      margin: 0 10px 20px;
     }
   }
 

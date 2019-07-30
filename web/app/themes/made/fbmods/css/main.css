@@ -2859,9 +2859,12 @@ body.front-page #front-page-3 h3.widget-title,
       margin-left: -1ch;
       margin-right: -1ch; } }
 
+.front-page-description .widget_text .hide-on-desktop {
+  margin: 0 -20px 0; }
+
 .front-page-description .widget_text .button {
   font-weight: bold;
-  margin: 0 10px 0; }
+  margin: 0 10px 20px; }
 
 .front-page-description section.widget_text:last-of-type .textwidget, .front-page-description section.widget_text:last-of-type .textwidget p {
   font-size: 16px;
