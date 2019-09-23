@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8f790983a6fe005386a5488ee805f654",
+    "content-hash": "54c439855044830c88147d2b3d8fd90f",
     "packages": [
         {
             "name": "composer/installers",
@@ -517,15 +517,15 @@
         },
         {
             "name": "wpackagist-plugin/jetpack",
-            "version": "7.7.1",
+            "version": "7.7.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/jetpack/",
-                "reference": "tags/7.7.1"
+                "reference": "tags/7.7.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/jetpack.7.7.1.zip"
+                "url": "https://downloads.wordpress.org/plugin/jetpack.7.7.2.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -570,22 +570,58 @@
             "homepage": "https://wordpress.org/plugins/woocommerce-extend-tabs/"
         },
         {
-            "name": "wpackagist-plugin/woocommerce-gateway-stripe",
-            "version": "4.2.3",
+            "name": "wpackagist-plugin/woocommerce-gateway-paypal-express-checkout",
+            "version": "1.6.17",
             "source": {
                 "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/woocommerce-gateway-stripe/",
-                "reference": "tags/4.2.3"
+                "url": "https://plugins.svn.wordpress.org/woocommerce-gateway-paypal-express-checkout/",
+                "reference": "tags/1.6.17"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/woocommerce-gateway-stripe.4.2.3.zip"
+                "url": "https://downloads.wordpress.org/plugin/woocommerce-gateway-paypal-express-checkout.1.6.17.zip"
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/woocommerce-gateway-paypal-express-checkout/"
+        },
+        {
+            "name": "wpackagist-plugin/woocommerce-gateway-stripe",
+            "version": "4.2.4",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/woocommerce-gateway-stripe/",
+                "reference": "tags/4.2.4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/woocommerce-gateway-stripe.4.2.4.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/woocommerce-gateway-stripe/"
+        },
+        {
+            "name": "wpackagist-plugin/woocommerce-services",
+            "version": "1.21.1",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/woocommerce-services/",
+                "reference": "tags/1.21.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/woocommerce-services.1.21.1.zip"
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/woocommerce-services/"
         },
         {
             "name": "wpackagist-plugin/wp-widgets-shortcode",

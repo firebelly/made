@@ -47,7 +47,9 @@
     "wpackagist-plugin/genesis-connect-woocommerce": "^1.0",
     "wpackagist-plugin/jetpack": "^7.4",
     "wpackagist-plugin/woocommerce-extend-tabs": "^1.10",
-    "wpackagist-plugin/woocommerce-gateway-stripe": "^4.2"
+    "wpackagist-plugin/woocommerce-gateway-stripe": "^4.2",
+    "wpackagist-plugin/woocommerce-gateway-paypal-express-checkout": "^1.6.17",
+    "wpackagist-plugin/woocommerce-services": "^1.21.1"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^2.5.1"
