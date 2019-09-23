@@ -204,3 +204,21 @@ main.content {
 a {
   @include darken-hover;
 }
+
+// Custom logo for Scholarship header
+.page-scholarship-fund h1.entry-title {
+  background: transparent url('/app/themes/made/images/made-scholarship-logo-blue.png') left top no-repeat;
+  background-size: contain;
+  width: 258px;
+  height: 50px;
+  margin: 0 0 40px;
+  text-indent: -9999px;
+  @include media-sm {
+    width: 403px;
+    height: 78px;
+  }
+  @include media-md {
+    width: 599px;
+    height: 116px;
+  }
+}

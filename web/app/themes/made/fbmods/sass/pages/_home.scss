@@ -28,6 +28,7 @@
   }
 }
 
+// Custom This & That logo on homepage...
 body.front-page #front-page-3 h3.widget-title,
 .category-project-blog h1.archive-title {
   background: transparent url('/app/themes/made/images/this-and-that-yellow.png') left top no-repeat;
@@ -41,6 +42,7 @@ body.front-page #front-page-3 h3.widget-title,
     height: 78px;
   }
 }
+// ...and Project Blog landing page
 .category-project-blog h1.archive-title {
   background-image: url('/app/themes/made/images/this-and-that-blue.png');
   margin: 0 0 40px;

@@ -3359,6 +3359,22 @@ body.front-page #front-page-3 h3.widget-title,
 a:hover {
   filter: brightness(0.7); }
 
+.page-scholarship-fund h1.entry-title {
+  background: transparent url("/app/themes/made/images/made-scholarship-logo-blue.png") left top no-repeat;
+  background-size: contain;
+  width: 258px;
+  height: 50px;
+  margin: 0 0 40px;
+  text-indent: -9999px; }
+  @media screen and (min-width: 480px) {
+    .page-scholarship-fund h1.entry-title {
+      width: 403px;
+      height: 78px; } }
+  @media screen and (min-width: 800px) {
+    .page-scholarship-fund h1.entry-title {
+      width: 599px;
+      height: 116px; } }
+
 .woocommerce-cart table.cart td.actions .coupon .input-text,
 .woocommerce .quantity .qty,
 .woocommerce-cart table.cart td {
