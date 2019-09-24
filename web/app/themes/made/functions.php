@@ -311,7 +311,7 @@ add_action('after_setup_theme', function() {
 remove_action('woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs', 10);
 add_action('woocommerce_single_product_summary', 'woocommerce_output_product_data_tabs', 60);
 
-// Make
+// Redirect to single product page if there's only one product
 add_action('template_redirect', function() {
   global $wp_query;
   if ((is_shop() || is_product_category() || is_product_tag()) && $wp_query->post_count == 1) {
@@ -320,4 +320,10 @@ add_action('template_redirect', function() {
     wp_safe_redirect($post_url ,302);
     exit;
   }
+});
+
+// Add View Cart button
+
+add_action('woocommerce_after_add_to_cart_button', function() {
+  echo '<a href="/cart/" class="button alt" style="margin-left: 10px;">View cart</a>';
 });
