@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "364a856c11c4ac5cb2b5d124f92f1884",
+    "content-hash": "7a12acfcf7e9dda37f361b65025b5528",
     "packages": [
         {
             "name": "composer/installers",
@@ -498,15 +498,15 @@
         },
         {
             "name": "wpackagist-plugin/disable-gutenberg",
-            "version": "1.9",
+            "version": "2.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/disable-gutenberg/",
-                "reference": "tags/1.9"
+                "reference": "tags/2.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/disable-gutenberg.1.9.zip"
+                "url": "https://downloads.wordpress.org/plugin/disable-gutenberg.2.1.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -552,15 +552,15 @@
         },
         {
             "name": "wpackagist-plugin/jetpack",
-            "version": "7.9.1",
+            "version": "8.5",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/jetpack/",
-                "reference": "tags/7.9.1"
+                "reference": "tags/8.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/jetpack.7.9.1.zip"
+                "url": "https://downloads.wordpress.org/plugin/jetpack.8.5.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -624,15 +624,15 @@
         },
         {
             "name": "wpackagist-plugin/woocommerce-gateway-paypal-express-checkout",
-            "version": "1.6.21",
+            "version": "2.0.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/woocommerce-gateway-paypal-express-checkout/",
-                "reference": "tags/1.6.21"
+                "reference": "tags/2.0.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/woocommerce-gateway-paypal-express-checkout.1.6.21.zip"
+                "url": "https://downloads.wordpress.org/plugin/woocommerce-gateway-paypal-express-checkout.2.0.1.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
