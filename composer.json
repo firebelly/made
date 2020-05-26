@@ -38,7 +38,7 @@
     "vlucas/phpdotenv": "^2.0.1",
     "oscarotero/env": "^1.0",
     "roots/wp-password-bcrypt": "^1.0.0",
-    "johnpbloch/wordpress": "^5.0.0",
+    "johnpbloch/wordpress": ">=5.4.0",
     "wpackagist-plugin/wp-widgets-shortcode": "^1.0.3",
     "wpackagist-plugin/cmb2": "^2.2.4",
     "wpackagist-plugin/intuitive-custom-post-order": "^3.0.8",
