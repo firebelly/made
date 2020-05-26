@@ -103,8 +103,12 @@ add_theme_support( 'custom-header', array(
 ) );
 
 // Add image sizes.
-add_image_size( 'mini-thumbnail', 75, 75, TRUE );
-add_image_size( 'team-member', 600, 600, TRUE );
+// add_image_size( 'mini-thumbnail', 75, 75, TRUE );
+// add_image_size( 'team-member', 600, 600, TRUE );
+
+// Update large image size
+update_option( 'large_size_w', 1800 );
+update_option( 'large_size_h', 1800 );
 
 // Add support for after entry widget.
 add_theme_support( 'genesis-after-entry-widget-area' );
