@@ -43,13 +43,13 @@
     "wpackagist-plugin/cmb2": "^2.2.4",
     "wpackagist-plugin/intuitive-custom-post-order": ">=3.0.8",
     "wpackagist-plugin/disable-gutenberg": ">=2.0",
-    "wpackagist-plugin/woocommerce": "^3.6",
+    "wpackagist-plugin/woocommerce": ">=4.0",
     "wpackagist-plugin/genesis-connect-woocommerce": "^1.0",
     "wpackagist-plugin/jetpack": ">=8.0",
-    "wpackagist-plugin/woocommerce-extend-tabs": "^1.10",
-    "wpackagist-plugin/woocommerce-gateway-stripe": "^4.2",
+    "wpackagist-plugin/woocommerce-extend-tabs": ">=1.10",
+    "wpackagist-plugin/woocommerce-gateway-stripe": ">=4.2",
     "wpackagist-plugin/woocommerce-gateway-paypal-express-checkout": ">=2.0",
-    "wpackagist-plugin/woocommerce-services": "^1.21.1",
+    "wpackagist-plugin/woocommerce-services": ">=1.21.1",
     "wpackagist-plugin/regenerate-thumbnails": "^3.1"
   },
   "require-dev": {
