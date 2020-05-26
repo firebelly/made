@@ -61,7 +61,7 @@ class FbSiteOptions {
     $wp_admin_bar->add_node(array(
       'parent' => 'site-name',
       'id'     => 'site-options',
-      'title'  => 'Site Options',
+      'title'  => 'Social Media Options',
       'href'   => esc_url(admin_url('admin.php?page='.$this->key)),
     ));
   }
