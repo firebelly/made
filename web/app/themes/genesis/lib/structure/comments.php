@@ -27,7 +27,7 @@ function genesis_get_comments_template() {
 		return;
 	}
 
-	if ( is_singular() && ! in_array( get_post_type(), array( 'post', 'page' ), true ) ) {
+	if ( is_singular() && ! in_array( get_post_type(), [ 'post', 'page' ], true ) ) {
 		comments_template( '', true );
 	} elseif ( is_singular( 'post' ) && ( genesis_get_option( 'trackbacks_posts' ) || genesis_get_option( 'comments_posts' ) ) ) {
 		comments_template( '', true );
@@ -56,8 +56,7 @@ function genesis_do_comments() {
 
 	global $wp_query;
 
-	// Bail if comments are off for this post type.
-	if ( ( is_page() && ! genesis_get_option( 'comments_pages' ) ) || ( is_single() && ! genesis_get_option( 'comments_posts' ) ) ) {
+	if ( ! genesis_comments_enabled() ) {
 		return;
 	}
 
@@ -67,13 +66,13 @@ function genesis_do_comments() {
 	if ( ! empty( $wp_query->comments_by_type['comment'] ) && have_comments() ) {
 
 		genesis_markup(
-			array(
+			[
 				'open'    => '<div %s>',
 				'context' => 'entry-comments',
-			)
+			]
 		);
 
-		$comments_title = wp_kses_post( __( '<h3>Comments</h3>', 'genesis' ) );
+		$comments_title = sprintf( '<h3>%s</h3>', esc_html__( 'Comments', 'genesis' ) );
 
 		/**
 		 * Comments title filter
@@ -108,26 +107,28 @@ function genesis_do_comments() {
 			$pagination .= sprintf( '<div class="pagination-next alignright">%s</div>', $next_link );
 
 			genesis_markup(
-				array(
+				[
 					'open'    => '<div %s>',
 					'close'   => '</div>',
 					'content' => $pagination,
 					'context' => 'comments-pagination',
-				)
+				]
 			);
 
 		}
 
 		genesis_markup(
-			array(
+			[
 				'close'   => '</div>',
 				'context' => 'entry-comments',
-			)
+			]
 		);
 
-	} elseif ( 'open' === get_post()->comment_status && $no_comments_text ) {
+	} elseif ( $no_comments_text && 'open' === get_post()->comment_status ) {
+		// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Text Produced by a third party
 		echo sprintf( '<div %s>', genesis_attr( 'entry-comments' ) ) . $no_comments_text . '</div>';
 	} elseif ( $comments_closed_text ) {
+		// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Text Produced by a third party
 		echo sprintf( '<div %s>', genesis_attr( 'entry-comments' ) ) . $comments_closed_text . '</div>';
 	}
 
@@ -152,8 +153,7 @@ function genesis_do_pings() {
 
 	global $wp_query;
 
-	// Bail if trackbacks are off for this post type.
-	if ( ( is_page() && ! genesis_get_option( 'trackbacks_pages' ) ) || ( is_single() && ! genesis_get_option( 'trackbacks_posts' ) ) ) {
+	if ( ! genesis_trackbacks_enabled() ) {
 		return;
 	}
 
@@ -165,13 +165,13 @@ function genesis_do_pings() {
 		}
 
 		genesis_markup(
-			array(
+			[
 				'open'    => '<div %s>',
 				'context' => 'entry-pings',
-			)
+			]
 		);
 
-		$pings_title = wp_kses_post( __( '<h3>Trackbacks</h3>', 'genesis' ) );
+		$pings_title = sprintf( '<h3>%s</h3>', esc_html__( 'Trackbacks', 'genesis' ) );
 
 		/**
 		 * Pings/trackbacks title filter
@@ -197,10 +197,10 @@ function genesis_do_pings() {
 		echo '</ol>';
 
 		genesis_markup(
-			array(
+			[
 				'close'   => '</div>',
 				'context' => 'entry-pings',
-			)
+			]
 		);
 
 	} else {
@@ -235,12 +235,13 @@ add_action( 'genesis_list_comments', 'genesis_default_list_comments' );
  */
 function genesis_default_list_comments() {
 
-	$defaults = array(
+	$defaults = [
 		'type'        => 'comment',
 		'avatar_size' => 48,
 		'format'      => 'html5', // Not necessary, but a good example.
 		'callback'    => 'genesis_html5_comment_callback',
-	);
+		'add_below'   => 'article-comment',
+	];
 
 	$args = apply_filters( 'genesis_comment_list_args', $defaults );
 
@@ -260,9 +261,9 @@ function genesis_default_list_pings() {
 
 	$args = apply_filters(
 		'genesis_ping_list_args',
-		array(
+		[
 			'type' => 'pings',
-		)
+		]
 	);
 
 	wp_list_comments( $args );
@@ -326,19 +327,19 @@ function genesis_html5_comment_callback( $comment, array $args, $depth ) {
 				}
 
 				genesis_markup(
-					array(
+					[
 						'open'    => '<span %s>',
 						'close'   => '</span>',
 						'content' => $author,
 						'context' => 'comment-author-name',
-					)
+					]
 				);
 
-				$comment_author_says_allowed = array(
-					'span' => array(
-						'class' => array(),
-					),
-				);
+				$comment_author_says_allowed = [
+					'span' => [
+						'class' => [],
+					],
+				];
 
 				echo wp_kses( $comment_author_says_text, $comment_author_says_allowed );
 				?>
@@ -357,39 +358,40 @@ function genesis_html5_comment_callback( $comment, array $args, $depth ) {
 
 			if ( $comment_date ) {
 				$comment_time_link = genesis_markup(
-					array(
+					[
 						'open'    => '<a %s>',
 						'context' => 'comment-time-link',
 						'content' => esc_html(
 							sprintf(
+								/* translators: 1: A date, 2: A time. */
 								__( '%1$s at %2$s', 'genesis' ),
 								get_comment_date(),
 								get_comment_time()
 							)
 						),
 						'close'   => '</a>',
-						'params'  => array(
-							'comment' => $comment
-						),
+						'params'  => [
+							'comment' => $comment,
+						],
 						'echo'    => false,
-					)
+					]
 				);
-				$comment_time = genesis_markup(
-					array(
+				$comment_time      = genesis_markup(
+					[
 						'open'    => '<time %s>',
 						'context' => 'comment-time',
 						'content' => $comment_time_link,
 						'close'   => '</time>',
 						'echo'    => false,
-					)
+					]
 				);
 				genesis_markup(
-					array(
+					[
 						'open'    => '<p %s>',
 						'context' => 'comment-meta',
 						'content' => $comment_time,
 						'close'   => '</p>',
-					)
+					]
 				);
 			}
 
@@ -411,7 +413,9 @@ function genesis_html5_comment_callback( $comment, array $args, $depth ) {
 				 */
 				$comment_awaiting_moderation_text = apply_filters( 'genesis_comment_awaiting_moderation', __( 'Your comment is awaiting moderation.', 'genesis' ) );
 				?>
-				<p class="alert"><?php echo $comment_awaiting_moderation_text; ?></p>
+				<p class="alert">
+				<?php // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Text Produced by a third party ?>
+				<?php echo $comment_awaiting_moderation_text; ?></p>
 			<?php endif; ?>
 
 			<?php comment_text(); ?>
@@ -421,11 +425,11 @@ function genesis_html5_comment_callback( $comment, array $args, $depth ) {
 		comment_reply_link(
 			array_merge(
 				$args,
-				array(
+				[
 					'depth'  => $depth,
 					'before' => sprintf( '<div %s>', genesis_attr( 'comment-reply' ) ),
 					'after'  => '</div>',
-				)
+				]
 			)
 		);
 		?>
@@ -457,15 +461,14 @@ add_action( 'genesis_comment_form', 'genesis_do_comment_form' );
  */
 function genesis_do_comment_form() {
 
-	// Bail if comments are closed for this post type.
-	if ( ( is_page() && ! genesis_get_option( 'comments_pages' ) ) || ( is_single() && ! genesis_get_option( 'comments_posts' ) ) ) {
+	if ( ! genesis_comments_enabled() ) {
 		return;
 	}
 
 	comment_form(
-		array(
+		[
 			'format' => 'html5',
-		)
+		]
 	);
 
 }
@@ -488,4 +491,55 @@ function genesis_comments_link_filter( $link, $post_id ) {
 
 	return $link;
 
+}
+
+/**
+ * Are comments enabled in Genesis at Theme Settings → Comments and Trackbacks?
+ *
+ * @since 3.3.0
+ *
+ * @return bool True if comments are enabled for this post type.
+ */
+function genesis_comments_enabled() {
+	return ( is_page() && genesis_get_option( 'comments_pages' ) )
+		|| ( is_single() && genesis_get_option( 'comments_posts' ) );
+}
+
+/**
+ * Are trackbacks enabled in Genesis at Theme Settings → Comments and Trackbacks?
+ *
+ * @since 3.3.0
+ *
+ * @return bool True if trackbacks are enabled for this post type.
+ */
+function genesis_trackbacks_enabled() {
+	return ( is_page() && genesis_get_option( 'trackbacks_pages' ) )
+		|| ( is_single() && genesis_get_option( 'trackbacks_posts' ) );
+}
+
+/**
+ * Are trackbacks or comments appearing on the current post?
+ *
+ * Used to improve heading level hierarchy in comments.php if comments or
+ * trackbacks are visible.
+ *
+ * @since 3.3.0
+ *
+ * @return bool True if trackbacks or comments are showing on the current post.
+ */
+function genesis_comments_trackbacks_showing() {
+	global $wp_query;
+
+	$showing = false;
+
+	if ( genesis_comments_enabled() ) {
+		$has_comments = ! empty( $wp_query->comments_by_type['comment'] );
+		$showing      = $has_comments || comments_open();
+	}
+
+	if ( ! $showing && genesis_trackbacks_enabled() ) {
+		$showing = ! empty( $wp_query->comments_by_type['pings'] );
+	}
+
+	return $showing;
 }
