@@ -106,7 +106,7 @@ class FbSiteOptions {
     //   'options'          => array(
     //     'textarea_rows'  => 5, // Hide the text input for the url
     //   ),
-    // ) );   
+    // ) );
     // $cmb->add_field( array(
     //   'name' => __( 'Contact Organization', 'firebelly' ),
     //   'id'   => 'org',
@@ -121,24 +121,27 @@ class FbSiteOptions {
     //   'name' => __( 'Contact Email', 'firebelly' ),
     //   'id'   => 'email',
     //   'type' => 'text',
-    // ) );    
+    // ) );
     // Set our CMB2 fields
     $cmb->add_field( array(
-      'name' => __( 'Instagram ID', 'firebelly' ),
-      'id'   => 'instagram_id',
-      'desc' => 'Instagram ID',
+      'name' => __( 'Instagram URL', 'firebelly' ),
+      'id'   => 'instagram_url',
       'type' => 'text',
     ) );
     // Set our CMB2 fields
     $cmb->add_field( array(
-      'name' => __( 'Twitter ID', 'firebelly' ),
-      'id'   => 'twitter_id',
-      'desc' => 'Twitter ID without "@"',
+      'name' => __( 'Twitter URL', 'firebelly' ),
+      'id'   => 'twitter_url',
       'type' => 'text',
     ) );
     $cmb->add_field( array(
-      'name' => __( 'Facebook ID', 'firebelly' ),
-      'id'   => 'facebook_id',
+      'name' => __( 'Facebook URL', 'firebelly' ),
+      'id'   => 'facebook_url',
+      'type' => 'text',
+    ) );
+    $cmb->add_field( array(
+      'name' => __( 'Workplace URL', 'firebelly' ),
+      'id'   => 'workplace_url',
       'type' => 'text',
     ) );
     $cmb->add_field( array(

@@ -81,14 +81,17 @@ class fb_footer_connect_widget extends WP_Widget {
         <div class="widget-wrap"><h3 class="widgettitle widget-title">Connect</h3>
           <div class="textwidget">
             <ul class="social-links">
-              <?php if (!empty(\Firebelly\SiteOptions\get_option('facebook_id'))): ?>
-                <li class="social-link"><a target="_blank" href="https://www.facebook.com/<?= \Firebelly\SiteOptions\get_option('facebook_id') ?>"><img src="<?= get_stylesheet_directory_uri() ?>/fbmods/images/facebook.png" class="social-icon"></a></li>
+              <?php if (!empty(\Firebelly\SiteOptions\get_option('facebook_url'))): ?>
+                <li class="social-link"><a target="_blank" href="<?= \Firebelly\SiteOptions\get_option('facebook_url') ?>"><img src="<?= get_stylesheet_directory_uri() ?>/fbmods/images/facebook.png" class="social-icon"></a></li>
               <?php endif; ?>
-              <?php if (!empty(\Firebelly\SiteOptions\get_option('instagram_id'))): ?>
-                <li class="social-link"><a target="_blank" href="https://www.instagram.com/<?= \Firebelly\SiteOptions\get_option('instagram_id') ?>/"><img src="<?= get_stylesheet_directory_uri() ?>/fbmods/images/insta.png" class="social-icon"></a></li>
+              <?php if (!empty(\Firebelly\SiteOptions\get_option('instagram_url'))): ?>
+                <li class="social-link"><a target="_blank" href="<?= \Firebelly\SiteOptions\get_option('instagram_url') ?>/"><img src="<?= get_stylesheet_directory_uri() ?>/fbmods/images/insta.png" class="social-icon"></a></li>
               <?php endif; ?>
-              <?php if (!empty(\Firebelly\SiteOptions\get_option('twitter_id'))): ?>
-                <li class="social-link"><a target="_blank" href="https://twitter.com/<?= \Firebelly\SiteOptions\get_option('twitter_id') ?>"><img src="<?= get_stylesheet_directory_uri() ?>/fbmods/images/twitter.png" class="social-icon"></a></li>
+              <?php if (!empty(\Firebelly\SiteOptions\get_option('twitter_url'))): ?>
+                <li class="social-link"><a target="_blank" href="<?= \Firebelly\SiteOptions\get_option('twitter_url') ?>"><img src="<?= get_stylesheet_directory_uri() ?>/fbmods/images/twitter.png" class="social-icon"></a></li>
+              <?php endif; ?>
+              <?php if (!empty(\Firebelly\SiteOptions\get_option('workplace_url'))): ?>
+                <li class="social-link"><a target="_blank" href="<?= \Firebelly\SiteOptions\get_option('workplace_url') ?>"><img src="<?= get_stylesheet_directory_uri() ?>/fbmods/images/workplace.png" class="social-icon"></a></li>
               <?php endif; ?>
             </ul>
           </div>
