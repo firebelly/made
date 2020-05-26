@@ -98,6 +98,10 @@ var Main = (function ($) {
         });
         // Do scroll functions once at the beginning
         Main.onScroll();
+
+        // Fit them vids!
+        $('main.content').fitVids();
+
       });
 
       // On load
