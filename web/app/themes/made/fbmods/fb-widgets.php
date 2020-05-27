@@ -85,7 +85,7 @@ class fb_footer_connect_widget extends WP_Widget {
                 <li class="social-link"><a target="_blank" href="<?= \Firebelly\SiteOptions\get_option('facebook_url') ?>"><img src="<?= get_stylesheet_directory_uri() ?>/fbmods/images/facebook.png" class="social-icon"></a></li>
               <?php endif; ?>
               <?php if (!empty(\Firebelly\SiteOptions\get_option('instagram_url'))): ?>
-                <li class="social-link"><a target="_blank" href="<?= \Firebelly\SiteOptions\get_option('instagram_url') ?>/"><img src="<?= get_stylesheet_directory_uri() ?>/fbmods/images/insta.png" class="social-icon"></a></li>
+                <li class="social-link"><a target="_blank" href="<?= \Firebelly\SiteOptions\get_option('instagram_url') ?>"><img src="<?= get_stylesheet_directory_uri() ?>/fbmods/images/insta.png" class="social-icon"></a></li>
               <?php endif; ?>
               <?php if (!empty(\Firebelly\SiteOptions\get_option('twitter_url'))): ?>
                 <li class="social-link"><a target="_blank" href="<?= \Firebelly\SiteOptions\get_option('twitter_url') ?>"><img src="<?= get_stylesheet_directory_uri() ?>/fbmods/images/twitter.png" class="social-icon"></a></li>
