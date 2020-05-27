@@ -3,7 +3,7 @@ set :theme, 'made'
 set :login, 'jbriseno100'
 set :domain, 'made2019.firebelly.co'
 set :repo_url, 'git@github.com:firebelly/made.git'
-set :php, 'php70'
+set :php, 'php74'
 
 # This directory is not in the repo and is symlinked from shared/ on deploy, so we can add licensed font files
 set :fonts_path, 'web/app/themes/made/fbmods/fonts'
