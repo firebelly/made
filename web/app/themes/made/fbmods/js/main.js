@@ -32,7 +32,6 @@ var Main = (function ($) {
 
       // Slides will be unslicked below md
       function slickOrDont() {
-        console.log('foo');
         if( $(window).width() < 800) {
           if ($('.slick-initialized').length) {
             $('.slider').slick('unslick');
